@@ -1,0 +1,9 @@
+<?php
+
+
+
+echo "INDEX.PHP";
+
+
+
+?>
