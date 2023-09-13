@@ -20,8 +20,11 @@
     }
 
     body {
-        background-image: url("../imagens/puma.jpeg");
-        background-color: #cccccc;
+        min-height: 100%;
+        background-image: url("../imagens/2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 </style>
 
