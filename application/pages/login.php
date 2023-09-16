@@ -8,7 +8,7 @@
     }
 
     .background {
-        background-color: black;
+        background-color: #1C1C1C;
     }
 
     .title {
@@ -17,7 +17,7 @@
 
     body {
         min-height: 100%;
-        ackground-image: url("../imagens/dunk-preto-branco.png");
+        background-image: url("../imagens/dunk-preto-branco.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
