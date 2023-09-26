@@ -34,33 +34,51 @@
                     <img class="menu" src="../imagens/MENU.png" alt="menu">
                 </div>
 
-                <a class="navbar-brand justify-content-start" href="#"><img class="img_logo" src="..\imagens\logo_principal.png" alt="Lavechia Store"></a>
 
-                <div class="navbar-collapse" >
+
+                <a class="navbar-brand justify-content-start" href="#"><img class="img_logo" src="..\imagens\lavechiastoresemfundo.png" alt="Lavechia Store" width="250" height="40"></a>
+
+                <div class="navbar-collapse">
                 </div>
+                
+                <ul class="nav justify-content-center me-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Suporte</a>
+                    </li>
+
+                </ul>
 
                 <form class="d-flex me-5">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                 </form>
 
                 <div class="side-nave-button p-2 me-3">
-                    <img class="menu" src="../imagens/CARRINHO.png" alt="menu">
+
+                    <a href="">
+                        <img class="menu" src="../imagens/CARRINHO.png" alt="menu">
+                    </a>
                 </div>
 
-                
+
                 <div class="side-nave-button p-2 me-3">
-                    <img class="menu" src="../imagens/USUARIO.png" alt="menu">
+                    <a href="">
+                        <img class="menu" src="../imagens/USUARIO.png" alt="menu">
+                    </a>
                 </div>
 
 
-                </div>
+        </div>
 
-            </nav>
+        </nav>
         </div>
     </header>
 
 </body>
 
 </html>
-
-
