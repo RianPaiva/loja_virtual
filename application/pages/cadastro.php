@@ -7,15 +7,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleregister.css">
+    <link rel="stylesheet" href="../css/style_register.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Cadastro</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/cadastro.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="imagem/lavechia_imports-removebg-preview.png" alt="">
+            <img src="../imagens/logo_principal.png">
         </div>
         <div class="form">
             <form action="#">
@@ -23,9 +25,8 @@
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
-                    <div class="login-button">
-                        <button><a href="login.html">Entrar</a></button>
-                    </div>
+                    <input type="button" class="btn golden" id="btn_login" value="Entrar">
+                    
                 </div>
 
                 <div class="input-group">
@@ -91,7 +92,7 @@
 
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
+                    <input type="submit" class="btn lg-button" id="btn_continuar" value="Entrar">
                 </div>
             </form>
         </div>

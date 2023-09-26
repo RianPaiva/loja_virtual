@@ -13,14 +13,12 @@ body {
     justify-content: center;
     align-items: center;
     background: #0000004d !important;
-    
 }
 
 .container {
     width: 80%;
     height: 80vh;
     display: flex;
-    
 }
 
 .form-image {
@@ -30,6 +28,7 @@ body {
     align-items: center;
     background-color: #000000d7;
     padding: 1rem;
+    order:2;
 }
 
 .form-image img {
@@ -42,7 +41,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 3rem;
 }
 
@@ -52,33 +51,10 @@ body {
     justify-content: space-between;
 }
 
-.login-button {
-    display: flex;
-    align-items: center;
-}
-
-.login-button button {
-    border: none;
-    background-color: #aeb128c5;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-button button:hover {
-    background-color: #c9cc12d5;
-}
-
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
-}
-
 .form-header h1::after {
     content: '';
     display: block;
-    width: 5rem;
+    width: 2.5rem;
     height: 0.3rem;
     background-color: #aeb128c5;
     margin: 0 auto;
@@ -88,10 +64,8 @@ body {
 
 .input-group {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 1rem 0;
-    margin:auto;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input-box {
@@ -102,7 +76,7 @@ body {
 
 .input-box input {
     margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
@@ -117,8 +91,7 @@ body {
     outline: 1px solid #aeb128c5;
 }
 
-.input-box label,
-.gender-title h5 {
+.input-box label {
     font-size: 0.9rem;
     font-weight: 600;
     color: #000000c0;
@@ -128,31 +101,27 @@ body {
     color: #000000be;
 }
 
-.gender-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0.5rem;
+.golden{
+    background-color: #CFB53B !important;
+    border: none !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    width: 50% !important;
+    height: 60% !important;
+    margin:10px !important;
+    padding: 10px !important;
+
 }
 
-.gender-input {
-    display: flex;
-    align-items: center;
-}
 
-.gender-input input {
-    margin-right: 0.35rem;
-}
-
-.gender-input label {
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
+.golden:hover {
+    color: #000 !important;
 }
 
 .continue-button button {
     width: 100%;
-    margin-top: 2.5rem;
+    margin-top: 1.2rem;
     border: none;
     background-color: #aeb128c5;
     padding: 0.62rem;
@@ -171,6 +140,14 @@ body {
     color: #fff;
 }
 
+.esquecisenha h6{
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: right;
+}
+
+
+
 @media screen and (max-width: 1330px) {
     .form-image {
         display: none;
@@ -183,22 +160,3 @@ body {
     }
 }
 
-@media screen and (max-width: 1064px) {
-    .container {
-        width: 90%;
-        height: auto;
-    }
-
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
-        flex-direction: column;
-    }
-    .gender-title h6 {
-        margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
-    }
-}
