@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="continue-button">
-                        <button><a href="#">Continuar</a> </button>
+                        <input type="button" class="btn btn-warning continue"  id="btn_login" value="Continue">
                     </div>
                 </div>
             </form>
