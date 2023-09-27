@@ -36,11 +36,12 @@
 
 
 
-                <a class="navbar-brand justify-content-start" href="#"><img class="img_logo" src="..\imagens\lavechiastoresemfundo.png" alt="Lavechia Store" width="250" height="40"></a>
+                <a class="navbar-brand justify-content-start d-flex" href="#"><img class="img_logo" src="..\imagens\lavechiastoresemfundo.png" alt="Lavechia Store" width="250" height="40"></a>
 
                 <div class="navbar-collapse">
                 </div>
-                
+
+
                 <ul class="nav justify-content-center me-5">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -66,10 +67,15 @@
                 </div>
 
 
-                <div class="side-nave-button p-2 me-3">
-                    <a href="">
-                        <img class="menu" src="../imagens/USUARIO.png" alt="menu">
-                    </a>
+                <div class="side-nave-button p-2 me-5 nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="menu" src="../imagens/USUARIO.png" alt="menu"> </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"> Redifinir Senha </a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"> Sair </a></li>
+                    </ul>
                 </div>
 
 
