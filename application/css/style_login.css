@@ -131,6 +131,7 @@ body {
     border-radius: 5px !important;
     cursor: pointer !important;
     transition: all .2s ease !important;
+    font-size: 15px !important;
 }
 
 .continue:hover {
