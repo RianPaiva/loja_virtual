@@ -23,7 +23,7 @@
             <img src="../imagens/logo_principal.png">
         </div>
         <div class="form">
-            <form action="#">
+            <form action="">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
@@ -72,22 +72,22 @@
 
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
+                            <input id="F" value="F" type="radio" name="gender">
                             <label for="female">Feminino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
+                            <input id="M" value="M" type="radio" name="gender">
                             <label for="male">Masculino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
+                            <input id="O" value="O" type="radio" name="gender">
                             <label for="others">Outros</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
+                            <input id="N" value="N" type="radio" name="gender">
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
 
 
                 <div class="continue-button">
-                    <input type="submit" class="btn lg-button" id="btn_continuar" value="Entrar">
+                    <input type="submit" class="btn lg-button" id="btn_cadastrar" value="Cadastrar">
                 </div>
             </form>
         </div>

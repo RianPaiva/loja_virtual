@@ -1,3 +1,51 @@
+<?php
+include("../conexoes/conexao_bd.php");
+
+
+if(isset($_POST["email"]) || isset($_POST["password"])){
+
+    if(strlen($_POST["email"]) == 0){
+        echo "<script> alert('Prencha seu email corretamente!') </script>";
+    }else if(strlen($_POST["password"]) == 0){
+        echo "<script> alert('Prencha sua senha corretamente!') </script>";
+    }else{
+
+        $email = mysqli_real_escape_string($conn , $_POST["email"]);
+        $password = mysqli_real_escape_string($conn , $_POST["password"]);
+
+        
+
+        $sql = "SELECT * FROM tb_cliente WHERE email = '" .$email. "' LIMIT 1";
+        $result = mysqli_query($conn, $sql);
+        if($result->num_rows  == 1){
+            
+            $tbl = $result->fetch_assoc();
+
+            if(password_verify($password, $tbl['senha'])){
+                
+            $id_cliente =  $tbl['id_cliente'];
+            $nome_cliente = $tbl['nome'];
+            
+            if(!isset($_SESSION)){
+                session_start();
+            }
+            
+            $_SESSION['id_cliente'] = $id_cliente;
+            $_SESSION['nome_cliente'] = $nome_cliente;
+
+            header("Location: index.php");
+            }else{
+                echo "<script> alert('Senha incorreta!') </script>";            
+            }
+
+        }else{
+            echo "<script> alert('Email ou senha incorretos!') </script>";
+        }
+
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,20 +74,20 @@
                 <div class="title">
                     <h1> Login </h1>
                 </div>
-                <input type="button" class="btn btn-warning golden"  id="btn_cadastro" value="Cadastre-se">
+                <input type="button" class="btn btn-warning golden" id="btn_cadastro" value="Cadastre-se">
             </div>
 
 
-            <form>
+            <form action="" method="POST">
                 <div class="input-group">
                     <div class="input-box">
                         <label for="Email"> Email </label>
-                        <input id="email" type="text" name="email" placeholder="Digite seu email" required>
+                        <input id="email" type="text" name="email" id="email" placeholder="Digite seu email" required>
                     </div>
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" name="password" id="password" placeholder="Digite sua senha" required>
                     </div>
 
 
@@ -48,7 +96,7 @@
                     </div>
 
                     <div class="continue-button">
-                        <input type="button" class="btn btn-warning continue"  id="btn_login" value="Continue">
+                        <input type="submit" class="btn btn-warning continue"  id="btn_login" value="Continue">
                     </div>
                 </div>
             </form>

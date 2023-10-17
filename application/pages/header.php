@@ -1,7 +1,7 @@
 <?php
 
 
-/*include("../conexoes/conexao_bd.php");*/
+include("../conexoes/conexao_bd.php");
 
 
 ?>
@@ -56,7 +56,7 @@
                 <div class="side-nave-button p-2 me-5 nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="menu" src="../imagens/usuario.png" alt="menu"> </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"> Redifinir Senha </a></li>
+                        <li><a class="dropdown-item" href="#"> Configurações </a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
