@@ -15,7 +15,7 @@ $(document).ready(function () {
         $('input:radio[name=gender]').each(function () {
             //Verifica qual está selecionado
             if ($(this).is(':checked')) {
-                genero = parseInt($(this).val());
+                genero = ($(this).val());
             }
         });
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 
 
-                            if ($("#confirmPassword").val() === null || $("#confirmPassword").val().length < 2) {
+                            if ($("#password_conf").val() === null || $("#password_conf").val().length < 2) {
                                 alert("Confirme Corretamente a SENHA!");
                             } else{
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
                                             email: $("#email").val(),
                                             telefone: $("#number").val(),
                                             senha: $("#password").val(),
-                                            conf_senha: $("#confirmPassword").val(),
+                                            conf_senha: $("#password_conf").val(),
                                             genero: genero
 
                                             
