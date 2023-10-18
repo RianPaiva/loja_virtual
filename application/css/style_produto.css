@@ -1,0 +1,77 @@
+.nome-produto,
+.valor-produto,
+.tamanho {
+    font-size: 25px;
+}
+
+.comprar {
+    color: black !important;
+    width: 50% !important;
+    margin-top: 2.0rem !important;
+    border: none !important;
+    background-color: #CFB53B !important;
+    padding: 0.62rem !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: all .2s ease !important;
+    font-size: 25px !important;
+}
+
+.comprar:hover {
+    background-color: #B59D35 !important;
+    font-size: 26px !important;
+}
+
+.comprar {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: black;
+}
+
+.btn-secondary {
+    padding: 7px;
+}
+
+.text-container {
+    margin-left: 70px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+.img-prod {
+    height: 100px;
+    width: 120px;
+    min-height: 20px;
+    min-width: 40px;
+}
+
+.card {
+    background-color: #2E2E2E;
+    color: white;
+    border-color: #2E2E2E;
+}
+
+.custom-card {
+    width: 200px;
+    height: 300px;
+    transition: all .2s ease !important;
+    border-radius: 5px !important;
+}
+
+.custom-card:hover {
+    width: 220px;
+    height: 320px;
+    border-color: #CFB53B !important;
+    color: #CFB53B !important;
+    border-width: 2px !important;
+}
+
+.col-custom {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+}

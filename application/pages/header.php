@@ -1,7 +1,7 @@
 <?php
 
 
-include("../conexoes/conexao_bd.php");
+include("../conexoes/conexao_bd.php"); 
 
 
 ?>
