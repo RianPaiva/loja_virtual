@@ -29,10 +29,6 @@
     color: black;
 }
 
-.btn-secondary {
-    padding: 7px;
-}
-
 .text-container {
     margin-left: 70px;
     margin-top: 60px;
@@ -53,16 +49,22 @@
     border-color: #2E2E2E;
 }
 
+.card-produto {
+    border: none;
+    background-color: transparent;
+}
+
 .custom-card {
-    width: 200px;
-    height: 300px;
+    width: 220px !important;
+    height: 255px !important;
     transition: all .2s ease !important;
     border-radius: 5px !important;
+    font-size: 15px !important;
 }
 
 .custom-card:hover {
-    width: 220px;
-    height: 320px;
+    width: 225px !important;
+    height: 260px !important;
     border-color: #CFB53B !important;
     color: #CFB53B !important;
     border-width: 2px !important;
@@ -74,4 +76,30 @@
     justify-content: center !important;
     align-items: center !important;
     height: 100% !important;
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    padding: 2px 9px;
+    display: inline-block;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 3px;
+}
+
+label.radio input:checked+span {
+    border-color: black;
+    background-color: #2E2E2E;
+    color: #fff
 }

@@ -3,43 +3,41 @@ include("header.php");
 ?>
 
 <link rel="stylesheet" href="../css/style_produto.css">
+<script src="../js/produto.js"></script>
 
 <div class="clearfix"></div>
 
 <div class="container-fluid">
 
-    <div class="container vh-90 align-items-center" style="margin-top:40px; border: 3px solid brown">
+    <div class="container  align-items-center" >
 
-        <div class="row justify-content-center" style="border:1px solid blue;">
+        <div class="row justify-content-center" >
 
 
             <!-- Coluna Imagem do Produto -->
 
-            <div class="col-xxl-8" style="border:1px solid blue;">
+            <div class="col-xxl-8" >
 
-                <div class="row justify-content-center">
-
-                    <div class="d-flex justify-content-center">
-                        <img class="img-fluid" src="..\imagens\dunk-verde.png" width="800" height="500" alt="Produto">
-                    </div>
-
-                    <div class="row justify-content-sm-center" style="border:1px solid blue;">
-
-                        <div class="col-2 p-3">
-                            <input type="radio" class="btn-check" name="options" id="option1-1" autocomplete="off">
-                            <label class="btn btn-light" for="option1-1"> <img class="img-fluid img-prod" src="..\imagens\dunk-preto-branco.png" alt="" width="60" height="60"> </label>
+                <div class="card card-produto">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <div class="images p-3">
+                                <div class="text-center p-4">
+                                    <img id="main-image" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" width="350" />
+                                </div>
+                                <div class="row mt-8">
+                                    <div class="col col-custom thumbnail mt-5">
+                                        <img class="" onclick="change_image(this)" src="../imagens/tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" height="70" width="70">
+                                    </div>
+                                    <div class="col col-custom thumbnail mt-5">
+                                        <img onclick="change_image(this)" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" height="70" width="70">
+                                    </div>
+                                    <div class="col col-custom thumbnail mt-5">
+                                        <img onclick="change_image(this)" src="../imagens/tenis-air-jordan-1-low-se-gs-sky.png" height="70" width="70">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="col-2 p-3">
-                            <input type="radio" class="btn-check" name="options" id="option2-1" autocomplete="off">
-                            <label class="btn btn-light" for="option2-1"> <img class="img-fluid img-prod" src="..\imagens\airforce-teste.png" alt="" width="60" height="60"> </label>
-                        </div>
-
-                        <div class="col-2 p-3">
-                            <input type="radio" class="btn-check" name="options" id="option3-1" autocomplete="off">
-                            <label class="btn btn-light" for="option3-1"> <img class="img-fluid img-prod" src="..\imagens\adidas-superstar.png" alt="" width="60" height="60"> </label>
-                        </div>
-
                     </div>
                 </div>
 
@@ -49,7 +47,7 @@ include("header.php");
 
             <!-- Coluna Descrição do Produto -->
 
-            <div class="col-sm-4 mt-5" style="border:1px solid black; border-radius: 10px; max-height: 500px;">
+            <div class="col-sm-4 mt-5" style="border:1px solid black; border-radius: 10px;">
 
                 <!-- Descrição do Produto -->
 
@@ -70,50 +68,53 @@ include("header.php");
 
                 <div class="row ms-2 d-flex flex-row">
 
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
-                        <label class="btn btn-secondary" for="option1">36</label>
+                    <div class="sizes mt-1 mb-3">
+                        <label class="radio">
+                            <input type="radio" name="size" value="36">
+                            <span>36</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="37">
+                            <span>37</span>
+                        </label>
+
+                        <label class="radio"> <input type="radio" name="size" value="38">
+                            <span>38</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="39">
+                            <span>39</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="40">
+                            <span>40</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="41">
+                            <span>41</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="42">
+                            <span>42</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="43">
+                            <span>43</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="size" value="44">
+                            <span>44</span>
+                        </label>
+
                     </div>
 
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">37</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">38</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">39</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">40</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">41</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">42</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">43</label>
-                    </div>
-
-                    <div class="col-1 p-3">
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">44</label>
-                    </div>
                 </div>
 
                 <!-- Fim Escolha de tamanho do Tênis -->
@@ -129,24 +130,30 @@ include("header.php");
 
                 </div>
 
+                <!-- Fim Calcular Frete -->
+
+                <!-- Botão Comprar -->
+
                 <div class="row">
-                    <div class="comprar-button d-flex justify-content-center">
-                        <input type="submit" class="btn btn-warning comprar" id="btn_login" value="Comprar">
+                    <div class="comprar-button d-flex justify-content-center mb-4">
+                        <input type="submit" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
                     </div>
                 </div>
 
-                <!-- Fim Calcular Frete -->
+                <!-- Fim Botão Comprar -->
 
             </div>
             <!-- Fim Coluna Descrição Do Produto-->
 
         </div>
 
+        <!-- Fim Coluna Descrição do Produto -->
+
         <div class="row">
 
             <div class="col">
                 <p>
-                <div class="text-container" style="font-weight:500" >
+                <div class="text-container" style="font-weight:500">
                     MAIS OPÇÕES
                 </div>
                 </p>
@@ -154,33 +161,36 @@ include("header.php");
 
         </div>
 
-        <div class="row justify-content-around" style="border:1px solid blue;">
+        <div class="row justify-content-around mb-4" >
 
-            <div class="col col-custom" style="border:1px solid blue;">
+            <div class="col col-custom mb-3" >
                 <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\pumasemfundo.png " alt="Imagem de capa do card" width="300" height="300">
+                    <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
                     <div class="card-body">
-                        <h5 class="card-title text-center"> Puma </h5>
+                        <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low SE <br>
+                            "JUST DO IT-WHITE" </h5>
                         <p class="card-text text-center"> R$200,00 </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col col-custom" style="border:1px solid blue;">
+            <div class="col col-custom mb-3" >
                 <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\dior.png" alt="Imagem de capa do card" width="300" height="300">
+                    <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
                     <div class="card-body">
-                        <h5 class="card-title text-center"> Dior </h5>
+                        <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro <br>
+                            "CARGO KHAKI/MYSTIC RED" </h5>
                         <p class="card-text text-center">R$200,00 </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col col-custom" style="border:1px solid blue;">
+            <div class="col col-custom mb-3" >
                 <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\jordan4.png" alt="Imagem de capa do card" width="300" height="300">
+                    <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
                     <div class="card-body">
-                        <h5 class="card-title text-center"> Cactus </h5>
+                        <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 <br>
+                            "BRED" </h5>
                         <p class="card-text text-center"> R$200,00 </p>
                     </div>
                 </div>
