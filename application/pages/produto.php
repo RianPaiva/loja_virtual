@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+
+
 ?>
 
 <link rel="stylesheet" href="../css/style_produto.css">
@@ -7,33 +9,34 @@ include("header.php");
 
 <div class="clearfix"></div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-3">
 
-    <div class="container  align-items-center" >
+    <div class="container align-items-center">
 
-        <div class="row justify-content-center" >
+        <div class="row justify-content-center">
 
 
             <!-- Coluna Imagem do Produto -->
 
-            <div class="col-xxl-8" >
+            <div class="col-xxl-8">
 
-                <div class="card card-produto">
+                <div class="card card-produto ms-5 me-5">
                     <div class="row">
                         <div class="col-sm-12 ">
                             <div class="images p-3">
                                 <div class="text-center p-4">
-                                    <img id="main-image" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" width="350" />
+                                    <img id="main-image" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" width="400" height="350">
                                 </div>
                                 <div class="row mt-8">
                                     <div class="col col-custom thumbnail mt-5">
-                                        <img class="" onclick="change_image(this)" src="../imagens/tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" height="70" width="70">
+                                       <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
-                                        <img onclick="change_image(this)" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" height="70" width="70">
+
+                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
-                                        <img onclick="change_image(this)" src="../imagens/tenis-air-jordan-1-low-se-gs-sky.png" height="70" width="70">
+                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis-air-jordan-1-low-se-gs-sky.png" height="80" width="80">
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +50,7 @@ include("header.php");
 
             <!-- Coluna Descrição do Produto -->
 
-            <div class="col-sm-4 mt-5" style="border:1px solid black; border-radius: 10px;">
+            <div class="col-sm-4 mt-5 mb-5" style="border:1px solid black; border-radius: 10px;">
 
                 <!-- Descrição do Produto -->
 
@@ -161,36 +164,33 @@ include("header.php");
 
         </div>
 
-        <div class="row justify-content-around mb-4" >
+        <div class="row justify-content-around mb-4">
 
-            <div class="col col-custom mb-3" >
+            <div class="col col-custom mb-3">
                 <div class="card custom-card">
                     <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
                     <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low SE <br>
-                            "JUST DO IT-WHITE" </h5>
+                        <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
                         <p class="card-text text-center"> R$200,00 </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col col-custom mb-3" >
+            <div class="col col-custom mb-3">
                 <div class="card custom-card">
                     <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
                     <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro <br>
-                            "CARGO KHAKI/MYSTIC RED" </h5>
+                        <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
                         <p class="card-text text-center">R$200,00 </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col col-custom mb-3" >
+            <div class="col col-custom mb-3">
                 <div class="card custom-card">
                     <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
                     <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 <br>
-                            "BRED" </h5>
+                        <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
                         <p class="card-text text-center"> R$200,00 </p>
                     </div>
                 </div>
@@ -201,3 +201,9 @@ include("header.php");
     </div>
 
 </div>
+
+<?php
+
+include("footer.php");
+
+?>

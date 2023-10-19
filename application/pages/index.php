@@ -28,3 +28,7 @@ echo "INDEX.PHP";
 </body>
 
 </html>
+
+<?php
+include("footer.php");
+?>
