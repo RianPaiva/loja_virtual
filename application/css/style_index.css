@@ -1,0 +1,47 @@
+.col-custom {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.custom-card {
+    background-color: #2E2E2E !important;
+    color: white !important;
+    border-color: #2E2E2E !important;
+    width: 240px !important;
+    height: 270px !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+}
+
+.card-img-top {
+    transition: all .2s ease !important;
+}
+
+.custom-card:hover {
+    border-color: #CFB53B !important;
+    color: #CFB53B !important;
+    border-width: 2px !important;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1) !important;
+}
+
+.text-container {
+    margin-left: 70px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+.bg-custom {
+    background-color: #2E2E2E;
+    height: 430px;
+}
+
+.text-center {
+    color: #CFB53B;
+}
