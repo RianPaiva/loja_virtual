@@ -20,7 +20,6 @@ include("../conexoes/conexao_bd.php");
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/style_header.css">
-    <a target="_blank" href="https://icons8.com/icon/15893/carrinho-de-compras">carrinho</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">

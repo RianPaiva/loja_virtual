@@ -70,7 +70,6 @@ body {
 .golden:hover {
     color: #ffffff !important;
     background-color: #B59D35 !important;
-    font-size: 16px !important;
 }
 
 
@@ -91,7 +90,6 @@ body {
 .lg-button:hover {
     color: #ffffff !important;
     background-color: #B59D35 !important;
-    font-size: 16px !important;
 }
 
 .form-header h1::after {

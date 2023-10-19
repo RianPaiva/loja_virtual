@@ -1,8 +1,8 @@
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/style_footer.css">
 
 
-<body>
-    <footer class="pt-4 pb-4 text-white">
+<body class="bottom-0" >
+    <footer class="pt-4 pb-4 text-white position-relative bottom-0">
 
         <div class="container-fluid">
 

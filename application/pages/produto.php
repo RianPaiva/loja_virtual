@@ -138,7 +138,7 @@ include("header.php");
                 <!-- Botão Comprar -->
 
                 <div class="row">
-                    <div class="comprar-button d-flex justify-content-center mb-4">
+                    <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
                         <input type="submit" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 footer {
     position: relative;
-    bottom: 0px;
-    width: 100%;
+    bottom: 0px !important;
+    width: 100% !important;
     background-color: black;
     max-height: 100%;
 }

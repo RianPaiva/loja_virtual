@@ -20,7 +20,7 @@ include("header.php");
     <main class="container-fluid" style="border: 2px solid black">
         <div class="row meucarrinho" style="border: 2px solid blue">
 
-            <div class="p-2 ms-3 row" style="border: 2px solid blue">
+            <div class="p-2 ms-3 row mt-3" style="border: 2px solid blue">
                 <h2> MEU CARRINHO </h2>
             </div>
 
@@ -159,3 +159,7 @@ include("header.php");
 </body>
 
 </html>
+
+<?php
+include("../pages/footer.php");
+?>

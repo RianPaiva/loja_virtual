@@ -5,11 +5,8 @@
 }
 
 .comprar {
-    color: black !important;
     width: 50% !important;
-    margin-top: 2.0rem !important;
     border: none !important;
-    background-color: #CFB53B !important;
     padding: 0.62rem !important;
     border-radius: 5px !important;
     cursor: pointer !important;
@@ -19,14 +16,7 @@
 
 .comprar:hover {
     background-color: #B59D35 !important;
-    font-size: 26px !important;
-}
-
-.comprar {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: black;
+    color: white !important;
 }
 
 .text-container {

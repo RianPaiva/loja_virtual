@@ -118,7 +118,6 @@ body {
 .golden:hover {
     color: #ffffff !important;
     background-color: #B59D35 !important;
-    font-size: 16px !important;
 }
 
 .continue {
@@ -136,7 +135,6 @@ body {
 
 .continue:hover {
     background-color: #B59D35 !important;
-    font-size: 16px !important;
 }
 
 .continue {
