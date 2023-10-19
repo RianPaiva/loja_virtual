@@ -1,97 +1,42 @@
-
-body > main {
-    background: #fff;
-    padding: 0 30px 30px;
-  }
-  
-  body > main .page-title {
-    font-size: 40px;
-    text-align: left;
-  }
-  
-  body > main .content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  
-  body > main .content section {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-  
-  body > main .content aside {
-    min-width: 250px;
-  }
-  
-  button {
-    cursor: pointer;
-    font-family: 'Lato', sans-serif;
+.bg-css{
+    background-color: #D3D3D3;
   }
   
   table {
     width: 100%;
     border-collapse: collapse;
   }
-  
-  
-  
+
+.meucarrinho{
+  padding-top: 40px;
+}
+
   table thead tr th {
     padding-top: 15px;
-    padding-left: 10px;
-    text-align: left;
+    text-align: center;
     padding-bottom: 15px;
     text-transform: uppercase;
     color: black;
     background-color: #CFB53B;
   }
-  
-  .prod{
-    padding-left: 100px;
-  }
-  
+
   .form-control:focus-visible{
     outline: 1px solid #CFB53B;
   }
-  
-  
+
   table tbody tr:last-child {
     border: 0;
   }
-  
+
   table tbody tr td {
     padding: 10px 0;
   }
-  
-  .product {
-    margin-left: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  
+
   .product img {
-    border-radius: 6px;
+    border-radius: 4px;
   }
-  
-  .product .info {
-    margin-left: 20px;
-  }
-  
-  .product .info .name {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .product .info .category {
-    color: #666;
-  }
-  
-  .qty {
+
+.qtd {
     background: #eee;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -107,12 +52,12 @@ body > main {
     overflow: hidden;
     height: 30px;
   }
-  
-  .qty span {
+
+  .qtd span {
     margin: 0 10px;
   }
   
-  .qty button {
+  .qtd button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -126,10 +71,10 @@ body > main {
     height: 100%;
   }
   
-  .qty button:hover {
+  .qtd button:hover {
     background: #CFB53B;
   }
-  
+
   .remove {
     background: #eee;
     border: 0;
@@ -138,7 +83,7 @@ body > main {
     border-radius: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display: inline;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -151,7 +96,11 @@ body > main {
   .remove:hover {
     background: #CFB53B;
   }
-  
+
+  aside> button:hover {
+    background: #B59D35;
+  }
+
   aside {
     margin-left: 20px;
     flex-direction: column;
@@ -226,20 +175,4 @@ body > main {
     letter-spacing: 1px;
     font-size: 16px;
   }
-  
-  aside > button:hover {
-    background: #B59D35;
-  }
-  
-  .background{
-    background-color: #CFB53B;
-  }
-  
-  .bg-css{
-    background-color: #D3D3D3;
-  }
-   
-  .cep :hover {
-    background-color: #eeeeee75;
-  }
-  
+

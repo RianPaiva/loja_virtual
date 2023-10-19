@@ -57,7 +57,7 @@ $(document).ready(function () {
                                             primeiro_nome: $("#firstname").val(),
                                             sobrenome: $("#lastname").val(),
                                             email: $("#email").val(),
-                                            telefone: $("#number").val(),
+                                            celular: $("#number").val(),
                                             senha: $("#password").val(),
                                             conf_senha: $("#password_conf").val(),
                                             genero: genero
@@ -68,9 +68,14 @@ $(document).ready(function () {
                                             
                                         }
                                     }).done(function(data) {
-                                        if(data){
-                                            alert(data);
+                                        console.log(data);
+                                        if(data !== "True"){
+
+                                            alert("Erro: " + data);
+                                    
                                             
+                                        }else{
+                                            alert("Cadastro efetuado com sucesso!")   
                                         }
                                     });
                                 }
