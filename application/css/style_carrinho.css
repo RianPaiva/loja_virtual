@@ -2,12 +2,14 @@
     background-color: #D3D3D3;
   }
   
-
   table {
     width: 100%;
     border-collapse: collapse;
   }
 
+.meucarrinho{
+  padding-top: 40px;
+}
 
   table thead tr th {
     padding-top: 15px;
