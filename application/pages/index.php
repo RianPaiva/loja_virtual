@@ -24,7 +24,7 @@ echo "INDEX.PHP";
 
 <body>
 
-    <div class="container">
+    <div class="container-expanded">
 
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
