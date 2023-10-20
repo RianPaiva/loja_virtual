@@ -9,12 +9,11 @@ include("header.php");
 
 <div class="clearfix"></div>
 
-<div class="container-fluid mt-3">
+<div class="container-fluid">
 
     <div class="container align-items-center">
 
         <div class="row justify-content-center">
-
 
             <!-- Coluna Imagem do Produto -->
 
@@ -25,18 +24,18 @@ include("header.php");
                         <div class="col-sm-12 ">
                             <div class="images p-3">
                                 <div class="text-center p-4">
-                                    <img id="main-image" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" width="400" height="350">
+                                    <img id="main-image" src="../imagens/tenis1.png" width="400" height="350">
                                 </div>
                                 <div class="row mt-8">
                                     <div class="col col-custom thumbnail mt-5">
-                                       <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis1.png" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
 
-                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis-wmns-nike-dunk-low-se-just-do-it-white.png" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis2.png" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
-                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis-air-jordan-1-low-se-gs-sky.png" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)" src="../imagens/tenis3.png" height="80" width="80">
                                     </div>
                                 </div>
                             </div>
@@ -50,101 +49,103 @@ include("header.php");
 
             <!-- Coluna Descrição do Produto -->
 
-            <div class="col-sm-4 mt-5 mb-5" style="border:1px solid black; border-radius: 10px;">
+            <div class="col-sm-4 mt-5 mb-5">
 
                 <!-- Descrição do Produto -->
 
-                <div class="row ms-2 mt-5 nome-produto">
-                    <p> Tênis Dunk Low Verde </p>
-                </div>
-                <div class="row ms-2 mt-1 valor-produto">
-                    <p>R$ 1.000,00</p>
-                </div>
+                <div class="col mt-5" style="border: 1px solid black; border-radius: 5px;">
 
-                <!-- Fim Descrição do Produto -->
+                    <div class="row ms-2 mt-5 nome-produto">
+                        <p> Tênis Dunk Low Verde </p>
+                    </div>
+                    <div class="row ms-2 mt-1 valor-produto">
+                        <p>R$ 1.000,00</p>
+                    </div>
 
-                <!-- Escolha de tamanho do Tênis -->
+                    <!-- Fim Descrição do Produto -->
 
-                <div class="row ms-2 mt-2">
-                    <p class="tamanho">Escolha o tamanho:</p>
-                </div>
+                    <!-- Escolha de tamanho do Tênis -->
 
-                <div class="row ms-2 d-flex flex-row">
+                    <div class="row ms-2 mt-2">
+                        <p class="tamanho">Escolha o tamanho:</p>
+                    </div>
 
-                    <div class="sizes mt-1 mb-3">
-                        <label class="radio">
-                            <input type="radio" name="size" value="36">
-                            <span>36</span>
-                        </label>
+                    <div class="row ms-2 d-flex flex-row">
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="37">
-                            <span>37</span>
-                        </label>
+                        <div class="sizes mt-1 mb-3">
+                            <label class="radio">
+                                <input type="radio" name="size" value="36">
+                                <span>36</span>
+                            </label>
 
-                        <label class="radio"> <input type="radio" name="size" value="38">
-                            <span>38</span>
-                        </label>
+                            <label class="radio">
+                                <input type="radio" name="size" value="37">
+                                <span>37</span>
+                            </label>
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="39">
-                            <span>39</span>
-                        </label>
+                            <label class="radio"> <input type="radio" name="size" value="38">
+                                <span>38</span>
+                            </label>
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="40">
-                            <span>40</span>
-                        </label>
+                            <label class="radio">
+                                <input type="radio" name="size" value="39">
+                                <span>39</span>
+                            </label>
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="41">
-                            <span>41</span>
-                        </label>
+                            <label class="radio">
+                                <input type="radio" name="size" value="40">
+                                <span>40</span>
+                            </label>
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="42">
-                            <span>42</span>
-                        </label>
+                            <label class="radio">
+                                <input type="radio" name="size" value="41">
+                                <span>41</span>
+                            </label>
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="43">
-                            <span>43</span>
-                        </label>
+                            <label class="radio">
+                                <input type="radio" name="size" value="42">
+                                <span>42</span>
+                            </label>
 
-                        <label class="radio">
-                            <input type="radio" name="size" value="44">
-                            <span>44</span>
-                        </label>
+                            <label class="radio">
+                                <input type="radio" name="size" value="43">
+                                <span>43</span>
+                            </label>
+
+                            <label class="radio">
+                                <input type="radio" name="size" value="44">
+                                <span>44</span>
+                            </label>
+
+                        </div>
 
                     </div>
 
-                </div>
+                    <!-- Fim Escolha de tamanho do Tênis -->
 
-                <!-- Fim Escolha de tamanho do Tênis -->
+                    <!-- Calcular Frete -->
 
-                <!-- Calcular Frete -->
+                    <div class="row">
 
-                <div class="row">
+                        <div class="form-group ms-3 col-md-5">
+                            <label for="inputCEP">Calcular Frete:</label>
+                            <input type="text" class="form-control" id="inputCEP" placeholder="CEP">
+                        </div>
 
-                    <div class="form-group ms-3 col-md-5">
-                        <label for="inputCEP">Calcular Frete:</label>
-                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP">
                     </div>
 
-                </div>
+                    <!-- Fim Calcular Frete -->
 
-                <!-- Fim Calcular Frete -->
+                    <!-- Botão Comprar -->
 
-                <!-- Botão Comprar -->
-
-                <div class="row">
-                    <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
-                        <input type="submit" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
+                    <div class="row">
+                        <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
+                            <input type="submit" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
+                        </div>
                     </div>
+
+                    <!-- Fim Botão Comprar -->
                 </div>
-
-                <!-- Fim Botão Comprar -->
-
             </div>
             <!-- Fim Coluna Descrição Do Produto-->
 

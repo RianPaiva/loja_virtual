@@ -12,6 +12,7 @@
     cursor: pointer !important;
     transition: all .2s ease !important;
     font-size: 25px !important;
+    background-color: #CFB53B !important;
 }
 
 .comprar:hover {
