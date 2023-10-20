@@ -42,6 +42,12 @@
     height: 430px;
 }
 
-.text-center {
-    color: #CFB53B;
+.card-img-top {
+    transition: all .2s ease !important;
+}
+
+.custom-card:hover {
+    border-color: #CFB53B !important;
+    color: #CFB53B !important;
+    border-width: 2px !important;
 }
