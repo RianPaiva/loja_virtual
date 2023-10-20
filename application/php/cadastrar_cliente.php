@@ -3,7 +3,7 @@ include("../conexoes/conexao_bd.php");
 
 $nome = mysqli_real_escape_string($conn, $_POST["primeiro_nome"]);
 $sobrenome = mysqli_real_escape_string($conn, $_POST["sobrenome"]);
-$cpf = "8";
+$cpf = "12345678902";
 $celular = mysqli_real_escape_string($conn, $_POST["celular"]);
 $email = mysqli_real_escape_string($conn, $_POST["email"]);
 $senha = mysqli_real_escape_string($conn, $_POST["senha"]);

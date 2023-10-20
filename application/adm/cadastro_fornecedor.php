@@ -23,13 +23,13 @@ include("../pages/header.php");
     <div class="row justify-content-start ">
 
         <div class="col-md-2">
-            <label for="inputRazaoSocial" class="form-label">Razão Social</label>
-            <input type="text" class="form-control form-border" id="inputRazaoSocial">
+            <label for="pesquisa_razao" class="form-label">Razão Social</label>
+            <input type="text" class="form-control form-border" id="pesquisa_razao">
         </div>
 
         <div class="col-md-2">
-            <label for="inputCnpj" class="form-label">CNPJ</label>
-            <input type="text" class="form-control form-border" id="inputCnpj">
+            <label for="pesquisa_cnpj" class="form-label">CNPJ</label>
+            <input type="text" class="form-control form-border" id="pesquisa_cnpj">
         </div>
 
         <div class="col-md-6 hstack gap-3 ms-5">
@@ -55,13 +55,29 @@ include("../pages/header.php");
             <div class="row justify-content-center">
 
                 <div class="col-md-3 ">
-                    <label for="inputRazaoSocial" class="form-label">Razão Social</label>
-                    <input type="text" class="form-control" id="inputRazaoSocial">
+                    <label for="razao_social" class="form-label">Razão Social</label>
+                    <input type="text" class="form-control" id="razao_social">
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="cnpj" class="form-label">CNPJ</label>
+                    <input type="text" class="form-control" id="cnpj">
+                </div>
+            </div>
+
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="">
                 </div>
 
                 <div class="col-md-3">
-                    <label for="inputCnpj" class="form-label">CNPJ</label>
-                    <input type="text" class="form-control" id="inputCnpj">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" placeholder="(xx) xxxxx-xxxx">
                 </div>
 
             </div>
@@ -69,23 +85,9 @@ include("../pages/header.php");
             <div class="row justify-content-center">
 
                 <div class="col-md-3">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="inputEmail" placeholder="">
-                </div>
-
-                <div class="col-md-3">
-                    <label for="inputTelefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" id="inputTelefone" placeholder="(xx) xxxxx-xxxx">
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center">
-
-                <div class="col-md-3">
-                    <label for="inputPais" class="form-label">País</label>
-                    <select class="form-select" id="inputPais" name="País">
-                        <option selected> Selecione </option>
+                    <label for="pais" class="form-label">País</label>
+                    <select class="form-select" id="pais" name="País">
+                        <option value = ""></option>
                         <option value="AR">Argentina</option>
                         <option value="BR">Brazil</option>
                         <option value="CL">Chile</option>
@@ -95,9 +97,9 @@ include("../pages/header.php");
                 </div>
 
                 <div class="col-md-3">
-                    <label for="inputState" class="form-label">Estado</label>
-                    <select id="inputState" class="form-select">
-                        <option selected> Selecione </option>
+                    <label for="estado" class="form-label">Estado</label>
+                    <select id="estado" class="form-select">
+                        <option selected> </option>
                         <option> AC </option>
                         <option> AL </option>
                         <option> AP </option>
@@ -133,13 +135,13 @@ include("../pages/header.php");
             <div class="row justify-content-center">
 
                 <div class="col-md-3">
-                    <label for="inputCidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="inputCidade">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade">
                 </div>
 
                 <div class="col-md-3">
-                    <label for="inputLogradouro" class="form-label">Logradouro</label>
-                    <input type="text" class="form-control" id="inputLogradouro">
+                    <label for="logradouro" class="form-label">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouro">
                 </div>
 
             </div>
@@ -147,19 +149,19 @@ include("../pages/header.php");
             <div class="row d-flex justify-content-center">
 
                 <div class="col-md-3">
-                    <label for="inputComplemento" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" id="inputComplemento">
+                    <label for="complemento" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complemento">
                 </div>
 
                 <div class="col-md-3">
                     <div class="col-md-6 justify-content-start">
-                        <label for="inputNumEndereco" class="form-label ">Número do Endereço</label>
-                        <input type="number" class="form-control " id="inputNumEndereco">
+                        <label for="numero" class="form-label ">Número do Endereço</label>
+                        <input type="number" class="form-control " id="numero">
                     </div>
                 </div>
 
             </div>
-           
+
         </form>
     </div>
 
@@ -169,6 +171,10 @@ include("../pages/header.php");
 
 </div>
 
+
+<!-- IMPORTAÇÃO JS -->
+
+<script src="../js/cadastro_fornecedor.js"></script>
 
 <?php
 
