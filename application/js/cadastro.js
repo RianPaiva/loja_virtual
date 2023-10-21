@@ -41,7 +41,7 @@ $(document).ready(function () {
 
                             if ($("#password_conf").val() === null || $("#password_conf").val().length < 2) {
                                 alert("Confirme Corretamente a SENHA!");
-                            } else{
+                            } else {
 
                                 if (genero === null || genero === "") {
                                     alert("Preencha corretamente o GÊNERO")
@@ -62,20 +62,20 @@ $(document).ready(function () {
                                             conf_senha: $("#password_conf").val(),
                                             genero: genero
 
-                                            
 
 
-                                            
+
+
                                         }
-                                    }).done(function(data) {
+                                    }).done(function (data) {
                                         console.log(data);
-                                        if(data !== "True"){
+                                        if (data !== "True") {
 
                                             alert("Erro: " + data);
-                                    
-                                            
-                                        }else{
-                                            alert("Cadastro efetuado com sucesso!")   
+
+
+                                        } else {
+                                            alert("Cadastro efetuado com sucesso!")
                                         }
                                     });
                                 }
@@ -96,3 +96,10 @@ $(document).ready(function () {
 
 
 });
+
+
+
+
+
+
+

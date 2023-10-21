@@ -12,6 +12,7 @@
     <title>Cadastro</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/cadastro.js"></script>
+    <script src="../js/masks.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
@@ -35,21 +36,21 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                        <input id="firstname" type="text" name="firstname" oninput="handleInput(event)" placeholder="Digite seu primeiro nome" required>
                     </div>
 
                     <div class="input-box">
                         <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                        <input id="lastname" type="text" name="lastname" oninput="handleInput(event)" placeholder="Digite seu sobrenome" required>
                     </div>
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input id="email" type="email" name="email" oninput="lowerInput(event)" placeholder="Digite seu e-mail" required>
                     </div>
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" name="number" onkeyup="handlePhone(event)" maxlength="15" placeholder="(xx) xxxx-xxxx" required>
                     </div>
 
                     <div class="input-box">
@@ -84,11 +85,6 @@
                         <div class="gender-input">
                             <input id="O" value="O" type="radio" name="gender">
                             <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="N" value="N" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>

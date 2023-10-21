@@ -87,13 +87,15 @@ $(document).ready(function () {
         e.preventDefault();
         $.ajax({
             metodo: "POST",
-            url: "../hp/pesquisar_fornecedor.php",
+            url: "../php/pesquisar_fornecedor.php",
             dataType: "HTML" ,
             data: {
                 metodo: "cad_fornecedor",
                 razao_social: $("#pesquisa_razao").val(),
                 cnpj: $("#pesquisa_cnpj").val()
             }
+        }).done(function(data){
+            //o que irá acontecer depois do processamento do backend vulgo php
         });
 
     });
