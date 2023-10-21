@@ -53,7 +53,7 @@ $(document).ready(function () {
                                             }).done(function (data) {
                                                 console.log(data);
                                                 if (data !== "True") {
-                                                    alert("Erro:" + data);
+                                                    alert("Erro: " + data);
                                                 } else {
                                                     alert("Cadastro realizado com sucesso!");
                                                 }
@@ -86,16 +86,38 @@ $(document).ready(function () {
     $("#btn_pesquisar").on('click', function (e) {
         e.preventDefault();
         $.ajax({
-            metodo: "POST",
-            url: "../php/pesquisar_fornecedor.php",
+            method: "POST",
+            url: "../php/pesquisa_fornecedor.php",
             dataType: "HTML" ,
             data: {
                 metodo: "cad_fornecedor",
+                id_fornecedor: $("#id_fornecedor").val(),
                 razao_social: $("#pesquisa_razao").val(),
                 cnpj: $("#pesquisa_cnpj").val()
             }
         }).done(function(data){
-            //o que irá acontecer depois do processamento do backend vulgo php
+            vetor = data.split("##");
+
+            if(vetor[0] === "Sucesso"){
+            
+                $("#id_fornecedor").val(vetor[1]);
+                $("#pesquisa_razao").val(vetor[2]);
+                $("#pesquisa_cnpj").val(vetor[3]);
+                $("razao_social").val(vetor[4]);
+                $("cnpj").val(vetor[5]);
+                $("email").val(vetor[6]);
+                $("telefone").val(vetor[7]);
+                $("pais").val(vetor[8]);
+                $("estado").val(vetor[9]);
+                $("cidade").val(vetor[10]);
+                $("logradouro").val(vetor[11]);
+                $("complemento").val(vetor[12]);
+                $("numero").val(vetor[13]);
+
+            }else{
+                alert(vetor[0]);
+            }
+
         });
 
     });
@@ -105,6 +127,7 @@ $(document).ready(function () {
 function limpar() {
     $("#pesquisa_razao").val('');
     $("#pesquisa_cnpj").val('');
+    $("#id_fornecedor").val('');
     $("#razao_social").val('');
     $("#cnpj").val('');
     $("#email").val('');

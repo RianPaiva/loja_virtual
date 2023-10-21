@@ -1,6 +1,6 @@
-$('#busca_razao').keyup(function(){
+$('#pesquisa_razao').keyup(function(){
            
-    $('#busca_cnpj').val('');
+    $('#pesquisa_cnpj').val('');
    var query = $(this).val();
   
    
@@ -9,14 +9,15 @@ $('#busca_razao').keyup(function(){
  
    if(query !== '' && caractere > 1){
        $.ajax({
-           url:'./php/busca_fornecedor.php',
+           url:'../php/autocomplete_fornecedor.php',
            method:"POST",
            data:{
-               'query':query
+               'query':query,
+               'metodo': "cad_fornecedor"
            },
            success:function(data)
            {
-              vetor = data.split("##");
+            console.log(data);
              $('#listaRazao').fadeIn();
              $('#listaRazao').html(data);
             
@@ -32,7 +33,7 @@ $('#busca_razao').keyup(function(){
 $('#listaRazao').on('click', 'li', function(){
  
      
-     $('#busca_razao').val($(this).text());
+     $('#pesquisa_razao').val($(this).text());
      $('#id_fornecedor').val($(this).val());
      $('#listaRazao').fadeOut();
      
