@@ -61,21 +61,13 @@ $(document).ready(function () {
                                             senha: $("#password").val(),
                                             conf_senha: $("#password_conf").val(),
                                             genero: genero
-
-
-
-
-
                                         }
                                     }).done(function (data) {
-                                        console.log(data);
-                                        if (data !== "True") {
-
+                                        if (data !== "Sucesso") {
                                             alert("Erro: " + data);
-
-
                                         } else {
-                                            alert("Cadastro efetuado com sucesso!")
+                                            alert("Cadastro efetuado com sucesso!\nVocê receberá um EMAIL para ATIVAR sua CONTA.");
+                                            window.location.href = "../pages/index.php";
                                         }
                                     });
                                 }
@@ -96,8 +88,6 @@ $(document).ready(function () {
 
 
 });
-
-
 
 
 
