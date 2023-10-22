@@ -1,9 +1,16 @@
 <?php
 
+$login_feito = "N";
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
+if(isset($_SESSION['id_cliente'])){
+    $login_feito = "S";
+}
 
 include("../conexoes/conexao_bd.php"); 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +66,19 @@ include("../conexoes/conexao_bd.php");
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#"> Sair </a></li>
+                        <?php
+                            if($login_feito == "S"){
+                        ?>
+                            <li><a class="dropdown-item" href="../php/logout.php"> Sair </a></li>
+                        <?php
+                            }else{
+                        ?>                        
+                            <li><a class="dropdown-item" href="login.php">Login</a></li>
+                        <?php
+                            }
+                        ?>
+                       
+
                     </ul>
                 </div>
             </nav>

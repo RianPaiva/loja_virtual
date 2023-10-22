@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 19-Out-2023 às 01:55
+-- Tempo de geração: 20-Out-2023 às 23:18
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -43,22 +43,14 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
   PRIMARY KEY (`id_cliente`),
   UNIQUE KEY `cpf` (`cpf`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_cliente`
 --
 
 INSERT INTO `tb_cliente` (`id_cliente`, `nome`, `sobrenome`, `cpf`, `genero`, `celular`, `email`, `senha`, `status`) VALUES
-(1, 'RIAN', 'PAIVA DA SILVA', '49043588806', '', '119863183463', 'paiva.dev@outlook.com', '$2y$10$NalUbyPlv.4dYOihhYkjPOc.ece3yjbVuIgWY6WxMEl4SONZ8kts6', 1),
-(2, 'aaaaaaa', 'aaaaaaaa', '11111111111', 'M', '11111111', 'aaaaaaa', 'aaaaa', 1),
-(24, 'aaaa', 'dddddd', '22222222222', 'M', '333333', 'ddddddd', 'cccc', 1),
-(25, 'aaaa', 'dddddd', '3', 'M', '333333', 'tttt', 'cccc', 1),
-(26, 'aaaa', 'aaaaaa', '4', 'M', '11111', 'tttttttt', 'aaaaa', 1),
-(27, 'aaaaaa', 'aaaaaa', '5', 'M', '1111', 'eeeeee', 'aaaaaa', 1),
-(29, 'aaaa', 'aaaaa', '6', 'M', '11111', 'aasss', '3333', 1),
-(36, 'aaaaa', 'aaaaaa', '7', 'M', 'eetttttttt', 'eeeeeef', 'aaaaaaa', 1),
-(38, 'gabriel', 'silva', '8', 'M', '11111111', 'g@gmail.com', 'aaaaaa', 1);
+(1, 'RIAN', 'PAIVA DA SILVA', '49043588806', '', '119863183463', 'paiva.dev@outlook.com', '$2y$10$NalUbyPlv.4dYOihhYkjPOc.ece3yjbVuIgWY6WxMEl4SONZ8kts6', 1);
 
 -- --------------------------------------------------------
 
@@ -142,6 +134,11 @@ CREATE TABLE IF NOT EXISTS `tb_produto` (
   `id_produto` int NOT NULL AUTO_INCREMENT,
   `descricao` varchar(100) NOT NULL,
   `id_fornecedor` int NOT NULL,
+  `nome_produto` varchar(80) NOT NULL,
+  `categoria` int NOT NULL,
+  `genero` char(1) NOT NULL,
+  `imagem` longblob NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_produto`),
   KEY `id_fornecedor` (`id_fornecedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

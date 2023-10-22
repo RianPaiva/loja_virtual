@@ -34,7 +34,7 @@ include("../pages/header.php");
         </div>
 
         <div class="col-md-6 hstack gap-3 ms-5">
-            <input type="hidden" id="id_fornecedor" value="">
+            <input type="hidden" id="id_fornecedor">
             <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
             <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
             <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
@@ -176,7 +176,7 @@ include("../pages/header.php");
 <!-- IMPORTAÇÃO JS -->
 
 <script src="../js/cadastro_fornecedor.js"></script>
-<script src="../js/busca_fornecedor.js"></script>
+<script src="../js/autocomplete_fornecedor.js"></script>
 <?php
 
 include("../pages/footer.php");

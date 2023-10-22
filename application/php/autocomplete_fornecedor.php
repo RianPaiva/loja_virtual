@@ -1,13 +1,12 @@
 <?php
 include("../conexoes/conexao_bd.php");
 
-$razao_social = mysqli_real_escape_string($conn, $_POST["razao_social"]); 
-$cnpj = mysqli_real_escape_string($conn, $_POST["cnpj"]);
+
 
 if (isset($_POST["query"])) {
     $output = '';
 
-    if ($_POST["metodo"] == "timesheet") {
+    if ($_POST["metodo"] == "cad_fornecedor") {
 
 
         $query = "SELECT * FROM tb_fornecedor WHERE razao_social LIKE '%" .
@@ -19,14 +18,16 @@ if (isset($_POST["query"])) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
 
-                $output .= "<li style='color:blue' value=" . $row[" id_fornecedor"] . ">" .
+                $output .= "<li style='color:blue' value=" . $row["id_fornecedor"] . ">" .
                     $row["razao_social"] . "</li>";
             }
         } else {
-            $output .= '<li>Cliente não encontrado </li>';
+            $output .= '<li>Cliente não encontrado</li>';
         }
         $output .= '</ul>';
     }
+
+    echo $output;
 }
 
 
