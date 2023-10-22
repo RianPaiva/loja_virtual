@@ -39,17 +39,6 @@
 
 .bg-custom {
     background-color: #2E2E2E;
-    height: 430px;
-}
-
-.card-img-top {
-    transition: all .2s ease !important;
-}
-
-.custom-card:hover {
-    border-color: #CFB53B !important;
-    color: #CFB53B !important;
-    border-width: 2px !important;
 }
 
 .color-gold {

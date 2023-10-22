@@ -1,0 +1,73 @@
+.text-container {
+    font-size: 50px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    transform: translate3d(0px, 22px, 0px);
+    /* distancia entre menu e btn */
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+}
+
+.dropdown {
+    display: inline-block;
+    /* deixa o LO do "tamanho do próprio texto" e não da largura inteira da tela*/
+    list-style: none;
+    /* rita a "bolinha" do LI*/
+}
+
+.bg-custom {
+    background-color: #CFB53B;
+    height: 70px;
+    width: 100% !important;
+    padding: 0;
+    margin: 0;
+}
+
+.card-img-top {
+    transition: all .2s ease !important;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1) !important;
+}
+
+
+.custom-card:hover {
+    border-color: #CFB53B !important;
+    color: #CFB53B !important;
+    border-width: 2px !important;
+}
+
+.custom-card {
+    background-color: #2E2E2E !important;
+    color: white !important;
+    border-color: #2E2E2E !important;
+    width: 240px !important;
+    height: 270px !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+}
+
+.col-custom {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.filter-container {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.content-container {
+    margin-top: 0;
+    z-index: 1;
+    padding-top: 280px;
+}
