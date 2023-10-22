@@ -6,6 +6,7 @@ include("header.php");
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Meu Carrinho </title>
@@ -17,16 +18,20 @@ include("header.php");
 
 <body>
 
-    <main class="container-fluid" style="border: 2px solid black">
-        <div class="row meucarrinho" style="border: 2px solid blue">
+    <main class="container-fluid mb-5">
+        <div class="row meucarrinho">
 
-            <div class="p-2 ms-3 row mt-3" style="border: 2px solid blue">
-                <h2> MEU CARRINHO </h2>
+            <div class="col">
+                <p>
+                <div class="text-container" style="font-weight:500">
+                    CARRINHO
+                </div>
+                </p>
             </div>
 
             <div class="row text-center d-flex justify-content-around">
 
-                <div class="col-lg-8 ms-4" style="border: 2px solid black">
+                <div class="col-lg-8 ms-4">
 
                     <table>
                         <thead>
@@ -123,18 +128,12 @@ include("header.php");
                     </table>
                 </div>
 
-                <aside class="col-lg-3 ms-4" style="border: 2px solid black">
+                <aside class="col-lg-3 ms-4">
                     <div class="box rounded">
                         <header class="text-center">Resumo da compra</header>
                         <div class="info">
                             <div><span>Sub-total</span><span>R$ 418</span></div>
                             <div><span>Frete</span><span>Gratuito</span></div>
-                            <div>
-                                <button>
-                                    Adicionar cupom de desconto
-                                    <i class="bx bx-right-arrow-alt"></i>
-                                </button>
-                            </div>
 
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="CEP">

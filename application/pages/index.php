@@ -45,7 +45,7 @@ echo "INDEX.PHP";
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-            </button> 
+            </button>
         </div>
     </div>
 
@@ -136,19 +136,22 @@ echo "INDEX.PHP";
 
         <div class="row">
             <div class="col mt-5">
-                <h1 class="text-center"> MARCAS </h1>
+                <h1 class="text-center color-gold"> MARCAS </h1>
             </div>
         </div>
 
-        <div class="row justify-content-around">
+        <div class="row justify-content-center mt-5">
 
-            <div class="col-md-6 justify-content-around hstack gap-3 mt-5">
-
+            <div class="col-sm-2 text-center">
                 <img class="justify-content-center" src="../imagens/nike.png" alt="Nike" height="150px" width="150px">
-                <img class="justify-content-center" src="../imagens/adidas.png" alt="Adidas" height="150px" width="150px">
-                <img class="justify-content-center" src="../imagens/oakley.png" alt="Oakley" height="150px" width="150px">
-
             </div>
+            <div class="col-sm-2 text-center">
+                <img class="justify-content-center" src="../imagens/adidas.png" alt="Adidas" height="150px" width="150px">
+            </div>
+            <div class="col-sm-2 text-center">
+                <img class="justify-content-center" src="../imagens/oakley.png" alt="Oakley" height="150px" width="150px">
+            </div>
+
         </div>
 
     </div>
@@ -178,3 +181,5 @@ echo "INDEX.PHP";
 <?php
 include("footer.php");
 ?>
+
+<!-- <div class="col-md-6 justify-content-around hstack gap-3 mt-5"> </div>-->
