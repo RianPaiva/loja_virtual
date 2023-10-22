@@ -103,16 +103,16 @@ $(document).ready(function () {
                 $("#id_fornecedor").val(vetor[1]);
                 $("#pesquisa_razao").val(vetor[2]);
                 $("#pesquisa_cnpj").val(vetor[3]);
-                $("razao_social").val(vetor[4]);
-                $("cnpj").val(vetor[5]);
-                $("email").val(vetor[6]);
-                $("telefone").val(vetor[7]);
-                $("pais").val(vetor[8]);
-                $("estado").val(vetor[9]);
-                $("cidade").val(vetor[10]);
-                $("logradouro").val(vetor[11]);
-                $("complemento").val(vetor[12]);
-                $("numero").val(vetor[13]);
+                $("#razao_social").val(vetor[4]);
+                $("#cnpj").val(vetor[5]);
+                $("#email").val(vetor[6]);
+                $("#telefone").val(vetor[7]);
+                $("#pais").val(vetor[8]);
+                $("#estado").val(vetor[9]);
+                $("#cidade").val(vetor[10]);
+                $("#logradouro").val(vetor[11]);
+                $("#complemento").val(vetor[12]);
+                $("#numero").val(vetor[13]);
 
             }else{
                 alert(vetor[0]);
