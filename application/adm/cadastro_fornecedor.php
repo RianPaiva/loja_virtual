@@ -30,7 +30,7 @@ include("../pages/header.php");
 
         <div class="col-md-2">
             <label for="pesquisa_cnpj" class="form-label">CNPJ</label>
-            <input type="text" class="form-control form-border" id="pesquisa_cnpj">
+            <input type="text" class="form-control form-border" onkeyup="mascara_cpf_cnpj(event)" maxlength="18" id="pesquisa_cnpj">
         </div>
 
         <div class="col-md-6 hstack gap-3 ms-5">
@@ -57,13 +57,13 @@ include("../pages/header.php");
 
                 <div class="col-md-3 ">
                     <label for="razao_social" class="form-label">Razão Social</label>
-                    <input type="text" class="form-control" id="razao_social">
+                    <input type="text" class="form-control" oninput="handleInput(event)"  id="razao_social">
                 </div>
 
 
                 <div class="col-md-3">
                     <label for="cnpj" class="form-label">CNPJ</label>
-                    <input type="text" class="form-control" id="cnpj">
+                    <input type="text" onkeyup="mascara_cpf_cnpj(event)" maxlength="18" class="form-control" id="cnpj">
                 </div>
             </div>
 
@@ -73,12 +73,12 @@ include("../pages/header.php");
 
                 <div class="col-md-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="">
+                    <input type="text" class="form-control" oninput="lowerInput(event)" id="email" placeholder="">
                 </div>
 
                 <div class="col-md-3">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" id="telefone" placeholder="(xx) xxxxx-xxxx">
+                    <input type="tel" class="form-control" onkeyup="handlePhone(event)" id="telefone" placeholder="(xx) xxxxx-xxxx">
                 </div>
 
             </div>
@@ -89,11 +89,15 @@ include("../pages/header.php");
                     <label for="pais" class="form-label">País</label>
                     <select class="form-select" id="pais" name="País">
                         <option value = ""></option>
-                        <option value="AR">Argentina</option>
-                        <option value="BR">Brazil</option>
-                        <option value="CL">Chile</option>
-                        <option value="CO">Colombia</option>
-                        <option value="UY">Uruguay</option>
+                        <?php
+                            $query_pais = "SELECT * FROM tb_pais;";
+                            $result_pais = mysqli_query($conn,$query_pais);
+                            if($result_pais->num_rows > 0){
+                                while($tbl_pais = $result_pais->fetch_assoc()){
+                                    echo "<option value = '".$tbl_pais["id_pais"]."'>".$tbl_pais["nome_pt"]."<option>";
+                                }
+                            }      
+                        ?>
                     </select>
                 </div>
 
@@ -101,33 +105,15 @@ include("../pages/header.php");
                     <label for="estado" class="form-label">Estado</label>
                     <select id="estado" class="form-select">
                         <option selected> </option>
-                        <option> AC </option>
-                        <option> AL </option>
-                        <option> AP </option>
-                        <option> AM </option>
-                        <option> BA </option>
-                        <option> CE </option>
-                        <option> ES </option>
-                        <option> GO </option>
-                        <option> MA </option>
-                        <option> MT </option>
-                        <option> MS </option>
-                        <option> MG </option>
-                        <option> PA </option>
-                        <option> PB </option>
-                        <option> PR </option>
-                        <option> PE </option>
-                        <option> PI </option>
-                        <option> RJ </option>
-                        <option> RN </option>
-                        <option> RS </option>
-                        <option> RO </option>
-                        <option> RR </option>
-                        <option> SC </option>
-                        <option> SP </option>
-                        <option> SE </option>
-                        <option> TO </option>
-                        <option> DF </option>
+                        <?php
+                            $sql_estado = "SELECT * FROM tb_estado_br;";
+                            $res_estado = mysqli_query($conn, $sql_estado);
+                            if($res_estado->num_rows > 0){
+                                while($tbl_estado = $res_estado->fetch_assoc()){
+                                    echo "<option value='".$tbl_estado["id_estado"]."'>".$tbl_estado["nome"]."</option>";
+                                }
+                            }
+                        ?>
                     </select>
                 </div>
 
@@ -137,12 +123,12 @@ include("../pages/header.php");
 
                 <div class="col-md-3">
                     <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="cidade">
+                    <input type="text" oninput="handleInput(event)" class="form-control" id="cidade">
                 </div>
 
                 <div class="col-md-3">
                     <label for="logradouro" class="form-label">Logradouro</label>
-                    <input type="text" class="form-control" id="logradouro">
+                    <input type="text" oninput="handleInput(event)" class="form-control" id="logradouro">
                 </div>
 
             </div>
@@ -151,7 +137,7 @@ include("../pages/header.php");
 
                 <div class="col-md-3">
                     <label for="complemento" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" id="complemento">
+                    <input type="text" oninput="handleInput(event)" class="form-control" id="complemento">
                 </div>
 
                 <div class="col-md-3">
@@ -177,6 +163,7 @@ include("../pages/header.php");
 
 <script src="../js/cadastro_fornecedor.js"></script>
 <script src="../js/autocomplete_fornecedor.js"></script>
+<script src="../js/masks.js"></script>
 <?php
 
 include("../pages/footer.php");

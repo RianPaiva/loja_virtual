@@ -27,3 +27,77 @@ function lowerInput(e) {
 }
 
 
+
+//CPF CNPJ
+
+function mascara_cpf_cnpj(e) {
+
+
+
+
+    cpf = e.target.value;
+
+    //Remove tudo o que não é dígito
+
+    cpf = cpf.replace(/\D/g, "");
+
+    if ((cpf.length) > 11) {
+        //console.log("cnpj");
+
+        //Coloca ponto entre o segundo e o terceiro dígitos
+        v = cpf.replace(/^(\d{2})(\d)/, "$1.$2");
+
+
+
+        //Coloca ponto entre o quinto e o sexto dígitos
+
+        v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+
+
+
+        //Coloca uma barra entre o oitavo e o nono dígitos
+
+        v = v.replace(/\.(\d{3})(\d)/, ".$1/$2");
+
+
+
+        //Coloca um hífen depois do bloco de quatro dígitos
+
+        v = v.replace(/(\d{4})(\d)/, "$1-$2");
+
+        //console.log(v);
+        e.target.value = v;
+
+    } else {
+        //console.log("cpf");
+
+        //Coloca um ponto entre o terceiro e o quarto dígitos
+
+        v = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+
+
+
+        //Coloca um ponto entre o terceiro e o quarto dígitos
+
+        //de novo (para o segundo bloco de números)
+
+        v = v.replace(/(\d{3})(\d)/, "$1.$2");
+
+
+
+        //Coloca um hífen entre o terceiro e o quarto dígitos
+
+        v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+        //console.log(v);
+        e.target.value = v;
+
+    }
+
+
+
+
+
+}
+
+

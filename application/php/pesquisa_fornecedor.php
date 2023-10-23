@@ -1,8 +1,10 @@
 <?php
 include("../conexoes/conexao_bd.php");
+include("clean_string.php");
+
 $id_fornecedor = $_POST["id_fornecedor"];
 $razao_social = $_POST["razao_social"];
-$cnpj = $_POST["cnpj"];
+$cnpj = RemoveSpecialChar($_POST["cnpj"]);
 
 
 $sucesso = "S";
@@ -65,5 +67,5 @@ if($sucesso == "S"){
     echo "Sucesso" . "##";
     echo $return;
 }else{
-    echo "Falha" . "##";
+    echo "Insira a RAZAO SOCIAL para pesquisar" . "##";
 }

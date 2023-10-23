@@ -1,10 +1,11 @@
 <?php
 include("../conexoes/conexao_bd.php");
 include("./envia_email_novo_usuario.php");
+include("../php/clean_string.php");
 
 $nome = mysqli_real_escape_string($conn, $_POST["primeiro_nome"]);
 $sobrenome = mysqli_real_escape_string($conn, $_POST["sobrenome"]);
-$celular = mysqli_real_escape_string($conn, $_POST["celular"]);
+$celular = RemoveSpecialChar(mysqli_real_escape_string($conn, $_POST["celular"]));
 $email = mysqli_real_escape_string($conn, $_POST["email"]);
 $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
 $conf_senha = mysqli_real_escape_string($conn, $_POST["conf_senha"]);

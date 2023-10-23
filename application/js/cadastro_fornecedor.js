@@ -16,10 +16,10 @@ $(document).ready(function () {
                     if ($("#telefone").val() === null || $("#telefone").val().length < 2) {
                         alert("Preencha o TELEFONE");
                     } else {
-                        if ($("#pais").val() === null || $("#pais").val().length < 2) {
+                        if ($("#pais").val() === null) {
                             alert("Preencha o PAÍS");
                         } else {
-                            if ($("#estado").val() === null || $("#estado").val().length < 2) {
+                            if ($("#estado").val() === null) {
                                 alert("Preencha o ESTADO");
                             } else {
                                 if ($("#cidade").val() === 2 || $("#cidade").val().length < 2) {
@@ -103,16 +103,16 @@ $(document).ready(function () {
                 $("#id_fornecedor").val(vetor[1]);
                 $("#pesquisa_razao").val(vetor[2]);
                 $("#pesquisa_cnpj").val(vetor[3]);
-                $("#razao_social").val(vetor[4]);
-                $("#cnpj").val(vetor[5]);
-                $("#email").val(vetor[6]);
-                $("#telefone").val(vetor[7]);
-                $("#pais").val(vetor[8]);
-                $("#estado").val(vetor[9]);
-                $("#cidade").val(vetor[10]);
-                $("#logradouro").val(vetor[11]);
-                $("#complemento").val(vetor[12]);
-                $("#numero").val(vetor[13]);
+                $("#razao_social").val(vetor[2]);
+                $("#cnpj").val(vetor[3]);
+                $("#email").val(vetor[4]);
+                $("#telefone").val(vetor[5]);
+                $("#pais").val(vetor[6]);
+                $("#estado").val(vetor[7]);
+                $("#cidade").val(vetor[7]);
+                $("#logradouro").val(vetor[8]);
+                $("#complemento").val(vetor[10]);
+                $("#numero").val(vetor[11]);
 
             }else{
                 alert(vetor[0]);
