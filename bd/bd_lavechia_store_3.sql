@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 23-Out-2023 às 00:36
+-- Tempo de geração: 24-Out-2023 às 21:51
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -129,14 +129,15 @@ CREATE TABLE IF NOT EXISTS `tb_fornecedor` (
   UNIQUE KEY `cnpj` (`cnpj`),
   KEY `id_estado` (`id_estado`),
   KEY `id_pais` (`id_pais`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_fornecedor`
 --
 
 INSERT INTO `tb_fornecedor` (`id_fornecedor`, `razao_social`, `cnpj`, `email`, `telefone`, `id_pais`, `cidade`, `logradouro`, `id_estado`, `complemento`, `num_endereco`, `status`) VALUES
-(15, 'PAIVA', '111', 'paiva2gmail.com', '912345678', 1, 'Fracis Mor', 'Jardim Tristeza', 26, 'Calvo', 123, 1);
+(15, 'PAIVA', '111', 'paiva2gmail.com', '912345678', 1, 'Fracis Mor', 'Jardim Tristeza', 26, 'Calvo', 123, 1),
+(16, 'URUGA', '22.222.222/222', 'uru@ga', '(11) 91234 56', 1, 'FRANCO DA ROCHA', 'RUA 2', 26, 'PRÉDIO', 111, 0);
 
 -- --------------------------------------------------------
 
