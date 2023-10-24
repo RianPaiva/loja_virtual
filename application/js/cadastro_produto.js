@@ -73,7 +73,7 @@ function limpar() {
     $("#descricao").val('');
     $("#fornecedor").val('');
     $("#categoria").val('');
-    $("#genero").val('');
+    $("#id_genero").val('');
     $("#imagem").val('');
 
 }
