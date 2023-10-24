@@ -3,8 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Login </title>
     <link rel="stylesheet" href="../css/style_login_adm.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/login.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Oswald', sans-serif;">
     <div class="container">
         <div class="form-image">
             <img src="../imagens/logo_principal.png">
@@ -21,7 +20,7 @@
 
             <div class="form-header">
                 <div class="title">
-                    <h1> Área do ADM </h1>
+                    <h1> ÁREA DO ADM </h1>
                 </div>
             </div>
 
@@ -34,17 +33,12 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Senha</label>
+                        <label for="password"> Senha </label>
                         <input id="password" type="password" name="password" id="password" placeholder="Digite sua senha" required>
                     </div>
 
-
-                    <div class="esquecisenha">
-                        <h6><a href="">Esqueci Senha</a></h6>
-                    </div>
-
                     <div class="continue-button">
-                        <input type="submit" class="btn btn-warning continue"  id="btn_login" value="Continue">
+                        <input type="submit" class="btn btn-warning continue" id="btn_login" value="Login">
                     </div>
                 </div>
             </form>
