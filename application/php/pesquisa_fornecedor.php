@@ -50,10 +50,10 @@ if($result_query = mysqli_query($conn, $query)){
     $return .= $tbl["cnpj"] . "##";
     $return .= $tbl["email"] . "##";
     $return .= $tbl["telefone"]. "##";
-    $return .= $tbl["pais"]. "##";
+    $return .= $tbl["id_pais"]. "##";
     $return .= $tbl["cidade"]. "##";
     $return .= $tbl["logradouro"]. "##";
-    $return .= $tbl["estado"]. "##";
+    $return .= $tbl["id_estado"]. "##";
     $return .= $tbl["complemento"]. "##";
     $return .= $tbl["num_endereco"];
 }else{

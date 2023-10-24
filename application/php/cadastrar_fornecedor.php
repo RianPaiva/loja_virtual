@@ -10,7 +10,7 @@ $telefone = RemoveSpecialChar(mysqli_real_escape_string($conn, $_POST["telefone"
 $pais = mysqli_real_escape_string($conn, $_POST["pais"]);
 $estado = mysqli_real_escape_string($conn, $_POST["estado"]);
 $cidade = mysqli_real_escape_string($conn, $_POST["cidade"]);
-$logradouro = CleanString(mysqli_real_escape_string($conn, $_POST["cidade"]));
+$logradouro = CleanString(mysqli_real_escape_string($conn, $_POST["logradouro"]));
 $complemento = CleanString(mysqli_real_escape_string($conn, $_POST["complemento"]));
 $numero = mysqli_real_escape_string($conn, $_POST["numero"]);
 
@@ -50,8 +50,8 @@ if($conf_cnpj == "S" && $conf_razao == "S"){
             echo("CNPJ já cadastrado!");
             die();
         }else{
-            $query_fornecedor = "INSERT INTO tb_fornecedor(razao_social, cnpj, email, telefone, pais, cidade, logradouro, complemento ,num_endereco) 
-            VALUES('". $razao_social . "', '". $cnpj. "', '". $email. "', '". $telefone. "', '". $pais. "', '". $cidade. "', '". $logradouro. "', '". $complemento. "', '". $numero. "');";
+            $query_fornecedor = "INSERT INTO tb_fornecedor(razao_social, cnpj, email, telefone, id_pais, cidade, logradouro, id_estado, complemento ,num_endereco) 
+            VALUES('". $razao_social . "', '". $cnpj. "', '". $email. "', '". $telefone. "', '". $pais. "', '". $cidade. "', '". $logradouro. "', '". $estado. "', '". $complemento. "', '". $numero. "');";
         
             // EXECUÇÃO DA CONSULTA
             if(mysqli_query($conn,$query_fornecedor)){

@@ -22,7 +22,7 @@ if (isset($_POST["query"])) {
                     $row["razao_social"] . "</li>";
             }
         } else {
-            $output .= '<li>Cliente não encontrado</li>';
+            $output .= '<li>Fornecedor não encontrado</li>';
         }
         $output .= '</ul>';
     } elseif ($_POST["metodo"] == "cad_produto") {
@@ -40,7 +40,7 @@ if (isset($_POST["query"])) {
                     $row["razao_social"] . "</li>";
             }
         } else {
-            $output .= '<li>Cliente não encontrado</li>';
+            $output .= '<li>Fornecedor não encontrado</li>';
         }
         $output .= '</ul>';
     }
