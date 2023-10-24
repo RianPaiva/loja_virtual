@@ -108,9 +108,9 @@ $(document).ready(function () {
                 $("#email").val(vetor[4]);
                 $("#telefone").val(vetor[5]);
                 $("#pais").val(vetor[6]);
-                $("#estado").val(vetor[7]);
                 $("#cidade").val(vetor[7]);
                 $("#logradouro").val(vetor[8]);
+                $("#estado").val(vetor[9]);
                 $("#complemento").val(vetor[10]);
                 $("#numero").val(vetor[11]);
 

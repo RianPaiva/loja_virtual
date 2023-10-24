@@ -78,7 +78,7 @@ include("../pages/header.php");
 
                 <div class="col-md-3">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" onkeyup="handlePhone(event)" id="telefone" placeholder="(xx) xxxxx-xxxx">
+                    <input type="tel" class="form-control" onkeyup="handlePhone(event)" maxlength="15" id="telefone" placeholder="(xx) xxxxx-xxxx">
                 </div>
 
             </div>

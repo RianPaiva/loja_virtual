@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             //PEGAR CAMPOS DO FORM
             $nomeProduto = $_POST["nome_produto"];
             $descricao = $_POST["descricao"];
-            $fornecedor = $_POST["fornecedor"];
+            $fornecedor = $_POST["id_fornecedor"];
             $categoria = $_POST["categoria"];
-            $genero = $_POST["genero"];
+            $genero = $_POST["id_genero"];
             $imagem = $_POST["imagem"];
             
 
