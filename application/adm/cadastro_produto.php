@@ -4,7 +4,7 @@ include("../pages/header.php");
 
 ?>
 
-<link rel="stylesheet" href="../css/style_cadastro_fornecedor.css">
+<link rel="stylesheet" href="../css/style_cadastro_produto.css">
 
 <div class="container-fluid mt-5">
 
