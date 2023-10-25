@@ -46,6 +46,6 @@
 
         </div>
 
-
+<script src="../js/login_adm.js"></script>
 
 </body>
