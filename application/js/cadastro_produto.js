@@ -64,6 +64,29 @@ $(document).ready(function () {
         limpar();
     });
 
+    $("btn_pesquisar").on("click", function(e){
+        e.preventDefault();
+        $.ajax({
+
+            method: "POST",
+            url: "../php/pesquisar_produto.php",
+            dataType: HTML,
+            data:{
+                metodo: "cad_produto",
+                id_produto: $("#id_produto"),
+                nome_produto:$("#nome_produto").val(),
+                descricao: $("#descricao"),
+                fornecedor: $("#fornecedor"),
+                categoria: $("#categoria"),
+                genero: $("#id_genero"),
+                imagem: $("#imagem")
+
+            }
+        })
+
+
+    })
+
 });
 
 
