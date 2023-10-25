@@ -25,7 +25,7 @@ body {
     text-decoration: none;
     display: block;
     color: black;
-    font-size: 15px;
+    font-size: 23px;
     font-weight: 400;
     line-height: 1.5;
     transition: all .4s ease;
@@ -33,4 +33,27 @@ body {
 
 .offcanvas-body ul li a:hover {
     color: #CFB53B;
+}
+
+.dropdown-menu {
+    transform: translate3d(-70px, 10px, 0px);
+}
+
+.offcanvas ul li a {
+    position: relative;
+}
+
+.offcanvas ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Altura da linha inferior */
+    background-color: #D9D9D9; /* Cor da linha inferior */
+    transition: all 0.5s; /* Adicione uma transição para suavizar a animação */
+}
+
+/* Quando você passa o mouse sobre o link, expande a linha para destacar o texto */
+.offcanvas ul li a:hover::before {
+    width: 60%;
 }

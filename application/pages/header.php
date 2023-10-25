@@ -61,7 +61,7 @@ include("../conexoes/conexao_bd.php");
 
                 <div class="side-nave-button p-2 me-5 nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="menu" src="../imagens/usuario.png" alt="menu"> </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-lg-start">
                         <li><a class="dropdown-item" href="#"> Configurações </a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -86,7 +86,7 @@ include("../conexoes/conexao_bd.php");
             <!-- Off canvas -->
             <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu</h5>
+                    <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Menu</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">

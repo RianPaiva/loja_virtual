@@ -5,7 +5,7 @@
 .dropdown:hover .dropdown-menu {
     display: block;
     position: absolute;
-    transform: translate3d(0px, 22px, 0px);
+    transform: translate3d(-35px, 22px, 0px);
     /* distancia entre menu e btn */
     top: 0px;
     left: 0px;
@@ -20,8 +20,8 @@
 }
 
 .bg-custom {
-    background-color: #CFB53B;
-    height: 70px;
+    background-color: black;
+    height: 4px;
     width: 100% !important;
     padding: 0;
     margin: 0;
@@ -70,4 +70,20 @@
     margin-top: 0;
     z-index: 1;
     padding-top: 280px;
+}
+
+.dropdown-toggle {
+    transition: all .2s ease;
+}
+
+.dropdown-toggle:hover {
+    color: white;
+}
+
+.bg-pagination {
+    background-color: white !important;   
+}
+
+.page-link {
+    color: black !important;
 }

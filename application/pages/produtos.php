@@ -8,7 +8,7 @@ include("header.php");
 
 <body>
     <div class="container-fluid filter-container position-fixed mt-1">
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
             <div class="row">
 
                 <div class="col">
@@ -23,7 +23,7 @@ include("header.php");
         </div>
 
 
-        <div class="container-expanded">
+        <div class="container-expanded" style="background-color: #cfb53b">
 
             <div class="row justify-content-start ms-2">
 
@@ -62,9 +62,16 @@ include("header.php");
                             TAMANHO
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Tênis</a>
-                            <a class="dropdown-item" href="#" target="_blank">Camisetas</a>
-                            <a class="dropdown-item" href="#" target="_blank">Bonés</a>
+                            <a class="dropdown-item" href="#"> 35 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 36 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 37 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 38 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 39 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 40 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 41 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 42 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 43 </a>
+                            <a class="dropdown-item" href="#" target="_blank"> 44 </a>
                         </div>
                     </li>
                 </div>
@@ -261,6 +268,26 @@ include("header.php");
                     </div>
                 </div>
 
+            </div>
+
+            <div class="row d-flex">
+                <nav class="bg-pagination" aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

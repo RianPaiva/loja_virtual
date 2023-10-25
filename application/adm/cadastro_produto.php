@@ -55,29 +55,23 @@ include("../pages/header.php");
                     </div>
 
                     <div class="col-md-3">
-                        <label for="descricao" class="form-label"> Descrição </label>
-                        <input type="text" class="form-control" id="descricao" name="descricao">
-                    </div>
-
-                </div>
-
-                <div class="row justify-content-center">
-
-                    <div class="col-md-3">
                         <label for="fornecedor" class="form-label"> Fornecedor </label>
                         <input type="text" class="form-control" id="fornecedor" placeholder="" name="id_fornecedor">
                         <div id="listaRazao"></div>
                         <input type="hidden" id="id_fornecedor">
                     </div>
 
-                    <div class="col-md-3">
-                        <label for="categoria" class="form-label"> Categoria </label>
-                        <input type="text" class="form-control" id="categoria" name="categoria">
-                    </div>
-
                 </div>
 
                 <div class="row justify-content-center">
+
+                    <div class="col-md-3">
+                        <label for="tipo" class="form-label"> Categoria </label>
+                        <select name="tipo" id="tipo" class="form-select" required>
+                            <option value="tenis">Tênis</option>
+                            <option value="roupa">Roupa</option>
+                        </select>
+                    </div>
 
                     <div class="col-md-3">
                         <label for="genero" class="form-label"> Gênero </label>
@@ -95,9 +89,22 @@ include("../pages/header.php");
                         </select>
                     </div>
 
-                    <div class="col-md-3 mb-3">
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6">
                         <label for="imagem" class="form-label"> Escolha Uma Imagem </label>
                         <input class="form-control" type="file" id="imagem" name="imagem">
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="descricao" class="form-label">Descrição:</label>
+                        <textarea name="descricao" id="descricao" class="form-control" rows="3"></textarea>
                     </div>
 
                 </div>

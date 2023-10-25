@@ -23,12 +23,12 @@ include("../pages/header.php");
     <div class="row justify-content-start ">
 
         <div class="col-md-2">
-            <label for="produto" class="form-label"> Produto </label>
+            <label for="produto" class="form-label"> Nome Do Produto </label>
             <input type="text" class="form-control form-border" id="produto">
         </div>
 
         <div class="col-md-2">
-            <label for="produto" class="form-label"> Codigo do Produto </label>
+            <label for="produto" class="form-label"> Código do Produto </label>
             <input type="text" class="form-control form-border" id="produto">
         </div>
 
@@ -54,39 +54,22 @@ include("../pages/header.php");
             <div class="row justify-content-center">
 
                 <div class="col-md-3 ">
-                    <label for="tipo" class="form-label"> Tipo de Produto </label>
-                    <select name="tipo" id="tipo" class="form-select" required>
-                        <option value="tenis">Tênis</option>
-                        <option value="roupa">Roupa</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3 ">
-                    <label for="modelo" class="form-label"> Produto </label>
+                    <label for="modelo" class="form-label"> Nome Do Produto </label>
                     <input type="text" name="modelo" id="modelo" class="form-control" required>
                 </div>
-
-            </div>
-
-            <div class="row justify-content-center">
 
                 <div class="col-md-3">
                     <label for="preco" class="form-label"> Preço </label>
                     <input type="number" name="preco" id="preco" class="form-control" step="0.01" required>
                 </div>
 
-                <div class="col-md-3">
-                    <label for="dt_adicao" class="form-label"> Data de Adição </label>
-                    <input type="date" name="data adição" id="dt_adicao" class="form-control" required>
-                </div>
-
             </div>
 
             <div class="row justify-content-center">
 
                 <div class="col-md-3">
-                    <label for="tamanhos_quantidades" class="form-label"> Tamanhos e Quantidades (JSON) </label>
-                    <input type="text" name="tamanhos_quantidades" id="tamanhos_quantidades" class="form-control" placeholder="Exemplo: {'35': 10, '36': 20, '37': 15}" required>
+                    <label for="dt_adicao" class="form-label"> Data de Adição </label>
+                    <input type="date" name="data adição" id="dt_adicao" class="form-control" required>
                 </div>
 
                 <div class="col-md-3">
@@ -101,13 +84,13 @@ include("../pages/header.php");
 
             <div class="row justify-content-center">
 
-                <div class="col-md-6 mb-3">
-                    <label for="descricao" class="form-label">Descrição:</label>
-                    <textarea name="descricao" id="descricao" class="form-control" rows="3"></textarea>
+                <div class="col-md-6">
+                    <label for="tamanhos_quantidades" class="form-label"> Tamanhos e Quantidades (JSON) </label>
+                    <input type="text" name="tamanhos_quantidades" id="tamanhos_quantidades" class="form-control" required>
+                    <small class="form-text text-muted">Exemplo: {"35": 10, "36": 20, "37": 15}</small>
                 </div>
 
             </div>
-
 
         </form>
     </div>
