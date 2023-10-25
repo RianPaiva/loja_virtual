@@ -1,18 +1,11 @@
 footer {
-    position: relative;
+    position: relative !important;
     bottom: 0px !important;
     width: 100% !important;
-    background-color: black;
-    max-height: 100%;
+    background-color: black !important;
+    max-height: 100% !important;
 }
  
-.nome-loja {
+.nome-loja, p {
     font-size: 20px;
 }
-
-p {
-    font-size: 20px;
-}
- body {
-    font-family: 'Oswald', sans-serif;;
- }

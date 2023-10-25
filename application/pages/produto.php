@@ -9,7 +9,7 @@ include("header.php");
 
 <div class="clearfix"></div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="border: 1px solid blue; width: 100%;">
 
     <div class="container align-items-center">
 
@@ -19,12 +19,14 @@ include("header.php");
 
             <div class="col-xxl-8">
 
-                <div class="card card-produto ms-5 me-5">
+                <div class="card card-produto ms-5 me-5 mt-5 pt-5">
                     <div class="row">
-                        <div class="col-sm-12 ">
-                            <div class="images p-3">
-                                <div class="text-center p-4">
-                                    <img id="main-image" src="../imagens/tenis1.png" width="400" height="350">
+                        <div class="col-sm-12 text-center">
+                            <div class="images p-5">
+                                <div class="row">
+                                    <div class="col col-custom">
+                                        <img class="img-responsive" id="main-image" src="../imagens/tenis1.png" width="260" height="250">
+                                    </div>
                                 </div>
                                 <div class="row mt-8">
                                     <div class="col col-custom thumbnail mt-5">
@@ -125,10 +127,10 @@ include("header.php");
 
                     <!-- Calcular Frete -->
 
-                    <div class="row">
+                    <div class="row-sm-1">
 
-                        <div class="form-group ms-3 col-md-5">
-                            <label for="inputCEP">Calcular Frete:</label>
+                        <div class="form-group ms-3 me-1 col-md-5">
+                            <label for="inputCEP"> Calcular Frete: </label>
                             <input type="text" class="form-control" id="inputCEP" placeholder="CEP">
                         </div>
 

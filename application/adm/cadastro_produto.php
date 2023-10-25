@@ -27,11 +27,18 @@ include("../pages/header.php");
             <input type="text" class="form-control form-border" id="produto">
         </div>
 
-        <div class="col-md-6 hstack gap-3 ">
-
-            <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
-            <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
-            <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
+        <div class="col-md-7 hstack gap-3 ">
+            
+            <input type="hidden" id="id_fornecedor">
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-danger" id="btn_limpar" value="  Limpar  ">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
+            </div>
 
         </div>
 

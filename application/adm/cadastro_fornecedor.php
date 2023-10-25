@@ -33,11 +33,17 @@ include("../pages/header.php");
             <input type="text" class="form-control form-border" onkeyup="mascara_cpf_cnpj(event)" maxlength="18" id="pesquisa_cnpj">
         </div>
 
-        <div class="col-md-6 hstack gap-3 ms-5">
+        <div class="col-md-7 hstack gap-3 ms-3">
             <input type="hidden" id="id_fornecedor">
-            <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
-            <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
-            <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-danger" id="btn_limpar" value="  Limpar  ">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
+            </div>
 
         </div>
 
@@ -57,7 +63,7 @@ include("../pages/header.php");
 
                 <div class="col-md-3 ">
                     <label for="razao_social" class="form-label">Razão Social</label>
-                    <input type="text" class="form-control" oninput="handleInput(event)"  id="razao_social">
+                    <input type="text" class="form-control" oninput="handleInput(event)" id="razao_social">
                 </div>
 
 
@@ -88,15 +94,15 @@ include("../pages/header.php");
                 <div class="col-md-3">
                     <label for="pais" class="form-label">País</label>
                     <select class="form-select" id="pais" name="País">
-                        <option value = ""></option>
+                        <option value=""></option>
                         <?php
-                            $query_pais = "SELECT * FROM tb_pais;";
-                            $result_pais = mysqli_query($conn,$query_pais);
-                            if($result_pais->num_rows > 0){
-                                while($tbl_pais = $result_pais->fetch_assoc()){
-                                    echo "<option value = '".$tbl_pais["id_pais"]."'>".$tbl_pais["nome_pt"]."<option>";
-                                }
-                            }      
+                        $query_pais = "SELECT * FROM tb_pais;";
+                        $result_pais = mysqli_query($conn, $query_pais);
+                        if ($result_pais->num_rows > 0) {
+                            while ($tbl_pais = $result_pais->fetch_assoc()) {
+                                echo "<option value = '" . $tbl_pais["id_pais"] . "'>" . $tbl_pais["nome_pt"] . "<option>";
+                            }
+                        }
                         ?>
                     </select>
                 </div>
@@ -106,13 +112,13 @@ include("../pages/header.php");
                     <select id="estado" class="form-select">
                         <option selected> </option>
                         <?php
-                            $sql_estado = "SELECT * FROM tb_estado_br;";
-                            $res_estado = mysqli_query($conn, $sql_estado);
-                            if($res_estado->num_rows > 0){
-                                while($tbl_estado = $res_estado->fetch_assoc()){
-                                    echo "<option value='".$tbl_estado["id_estado"]."'>".$tbl_estado["nome"]."</option>";
-                                }
+                        $sql_estado = "SELECT * FROM tb_estado_br;";
+                        $res_estado = mysqli_query($conn, $sql_estado);
+                        if ($res_estado->num_rows > 0) {
+                            while ($tbl_estado = $res_estado->fetch_assoc()) {
+                                echo "<option value='" . $tbl_estado["id_estado"] . "'>" . $tbl_estado["nome"] . "</option>";
                             }
+                        }
                         ?>
                     </select>
                 </div>

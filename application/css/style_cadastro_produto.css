@@ -9,7 +9,7 @@ hr.hr-gold {
 }
 
 .btn-primary, .btn-danger, .btn-success {
-    width: 18% !important;
+    width: 100% !important;
     margin-top: 2.0rem !important;
     border: none !important;
     border-radius: 5px !important;

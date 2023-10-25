@@ -1,17 +1,17 @@
-    <link rel="stylesheet" href="../css/style_footer.css">
+<link rel="stylesheet" href="../css/style_footer.css">
 
+<body>
 
-<body class="bottom-0" >
-    <footer class="pt-4 pb-4 text-white position-relative bottom-0">
+    <footer class="pt-4 pb-4 text-white position-relative fixed-bottom bottom-0">
 
         <div class="container-fluid">
 
-            <div class="row">
+            <div class="row-lg-12">
 
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-2">
-                            <img class="img-fluid mb-5 ms-3" width="150%" src="../imagens/lavechiastore.png" alt="Logo Lavechia Store">
+                        <div class="col-md-2 mb-5 ms-3 me-3">
+                            <img class="img-fluid " width="120%" src="../imagens/lavechiastore.png" alt="Logo Lavechia Store">
                         </div>
                     </div>
                     <div class="row">
@@ -67,5 +67,5 @@
         </div>
 
     </footer>
-</body>
 
+</body>

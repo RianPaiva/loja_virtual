@@ -35,7 +35,7 @@ include("../conexoes/conexao_bd.php");
 
 <body>
     <header>
-        <div class="container">
+        <div class="container-fluid">
 
             <!-- navbar -->
             <nav class="navbar navbar-expand fixed-top">
