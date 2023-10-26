@@ -73,8 +73,9 @@ include("../pages/header.php");
                 <div class="row justify-content-center">
 
                     <div class="col-md-3">
-                        <label for="tipo" class="form-label"> Categoria </label>
-                        <select name="tipo" id="tipo" class="form-select" required>
+                        <label for="categoria" class="form-label"> Categoria </label>
+                        <select name="tipo" id="categoria" class="form-select" required>
+                            <option selected></option>
                             <option value="tenis">Tênis</option>
                             <option value="roupa">Roupa</option>
                         </select>

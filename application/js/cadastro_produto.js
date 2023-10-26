@@ -4,23 +4,23 @@ $(document).ready(function () {
         e.preventDefault();
 
         if ($("#nome_produto").val() === null || $("#nome_produto").val().length < 3) {
-            alert("Preencha o NOME DO PRODUTO");
+            alert("Preencha o NOME DO PRODUTO!");
         } else {
-            if ($("#descricao").val() === null || $("#descricao").val().length < 2) {
-                alert("Preencha a DESCRIÇÃO");
+            if ($("#id_fornecedor").val() === null || $("#id_fornecedor").val().length < 2) {
+                alert("Preencha o FORNECEDOR!");
             } else {
-                if ($("#id_fornecedor").val() === null || $("#id_fornecedor").val() == "") {
-                    alert("Preencha o FORNECEDOR");
+                if ($("#id_categoria").val() === null || $("#categoria").val() == "") {
+                    alert("Preencha a CATEGORIA");
                 } else {
-                    if ($("#categoria").val() === null || $("#categoria").val().length < 2) {
-                        alert("Preencha a CATEGORIA");
+                    if ($("#genero").val() === null ) {
+                        alert("Preencha o GÊNERO");
                     } else {
-                        if ($("#genero").val() === null) {
-                            alert("Preencha o GÊNERO");
+                        if ($("#descricao").val() === null || $("#descricao").val().length < 2) {
+                            alert("Preencha a DESCRIÇÃO");
                         } else {
                             var campo_img = document.getElementById("imagem");
                             if (campo_img.files.length < 1) {
-                                alert("Escolha uma IMAGEM");
+                                alert("Escolha uma IMAGEM!");
                             } else {
 
 
@@ -73,15 +73,17 @@ $(document).ready(function () {
             dataType: HTML,
             data:{
                 metodo: "cad_produto",
-                id_produto: $("#id_produto"),
-                nome_produto:$("#nome_produto").val(),
-                descricao: $("#descricao"),
-                fornecedor: $("#fornecedor"),
-                categoria: $("#categoria"),
-                genero: $("#id_genero"),
-                imagem: $("#imagem")
+                nome_produto:$("#nome_produto").val(),               
+                fornecedor: $("#fornecedor").val(),
+                categoria: $("#categoria").val(),
+                genero: $("#id_genero").val(),
+                descricao: $("#descricao").val(),
+                imagem: $("#imagem").val()
 
             }
+        }).done(function(data){
+            vetor = data.split("##")
+            
         })
 
 
@@ -91,6 +93,7 @@ $(document).ready(function () {
 
 
 function limpar() {
+    $("#produto").val('');
     $("#id_fornecedor").val('');
     $("#nome_produto").val('');
     $("#descricao").val('');
