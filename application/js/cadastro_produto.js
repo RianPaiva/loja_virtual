@@ -41,7 +41,7 @@ $(document).ready(function () {
                                     processData: false, 
                                 }).done(function (data) {
                                     console.log(data);
-                                    if (data !== "True") {
+                                    if (data !== 'True') {
                                         alert("Erro: " + data);
                                     } else {
                                         alert("Cadastro realizado com sucesso!");
@@ -82,7 +82,16 @@ $(document).ready(function () {
 
             }
         }).done(function(data){
-            vetor = data.split("##")
+            vetor = data.split("##");
+
+            if(vetor[0] === 'Sucesso'){
+
+                $("#nome_produto").val(vetor[2]);
+
+            }else{
+
+                alert(vetor[0]);
+            }
             
         })
 
