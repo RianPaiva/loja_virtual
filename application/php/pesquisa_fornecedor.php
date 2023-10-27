@@ -12,7 +12,7 @@ $return = "";
 
 //COMEÇANDO QUERY
 
-$query = "SELECT * FROM tb_fornecedor WHERE ";
+$query = "SELECT * FROM tb_fornecedor WHERE ;";
 
 
 //TESTAR SE TEM ID

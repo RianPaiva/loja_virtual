@@ -10,56 +10,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //caminho imagem
         $caminhoCompleto = "../imagens_produto/" . $nomeArquivo;
 
-        
+
         if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $caminhoCompleto)) {
-          
+
             //PEGAR CAMPOS DO FORM
             $nome_produto = $_POST["nome_produto"];
-            $descricao = $_POST["descricao"];
             $fornecedor = $_POST["id_fornecedor"];
             $categoria = $_POST["categoria"];
             $genero = $_POST["id_genero"];
             $imagem = $caminhoCompleto;
-            
-            $query_nome = "SELECT * FROM tb_produto WHERE nome_produto = '".$nome_produto."';";
+            $descricao = $_POST["descricao"];
+
+
+
+
+            $query_nome = "SELECT * FROM tb_produto WHERE nome_produto = '" . $nome_produto . "' LIMIT 1;";
 
             $conf_nome = "N";
 
             $result_nome = mysqli_query($conn, $query_nome);
 
-            if($result_nome->num_rows > 0){
+            if ($result_nome->num_rows > 0) {
                 $conf_nome = "S";
 
-                if($conf_nome == "True"){
+                if ($conf_nome == "True") {
                     echo "PRODUTO já cadastrado!";
                     die();
-                }else{
-                    query_produto: "INSERT INTO tb_produto(nome_produto, descricao, fornecedor,categoria, genero, imagem) 
-                    VALUES('".$nome_produto."', '".$descricao."', '".$fornecedor."', '".$categoria."','".$genero."','".$imagem."') ;";
+                } else {
+                    $query_produto = "INSERT INTO tb_produto(nome_produto, id_fornecedor,categoria, genero, local_img, descricao) 
+                    VALUES('" . $nome_produto . "', '" . $fornecedor . "', '" . $categoria . "', '" . $genero . "','" . $imagem . "','" . $descricao . "') ;";
 
-                    if(mysqli_query($conn, $query_produto)){
+                    if (mysqli_query($conn, $query_produto)) {
                         echo "True";
+                    } else {
+                        mysqli_error($conn);
                     }
-                } 
-
+                }
             }
-
-            //CRIAR A QUERY
-            $query_produto = "INSERT INTO tb_produto(nome_produto, descricao, id_fornecedor, categoria, if_genero, local_img) 
-            VALUES('".$nome_produto."','".$descricao."', '".$fornecedor."', '".$categoria."', '".$genero."', '".$imagem."');";
-
-            // FAZER CONFERENCIA E DEPOIS O INSERT NO BANCO
-            if (mysqli_query($conn, $query_produto)){
-                echo "True";
-            }else{
-                mysqli_error($conn);
-            }
-
-            
-        } else {            
+        } else {
             echo "Erro ao salvar a imagem.";
         }
-    } else {       
+    } else {
         echo "Erro: Nenhuma imagem foi enviada.";
     }
 } else {
