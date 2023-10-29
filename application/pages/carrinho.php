@@ -141,7 +141,7 @@ include("header.php");
 
                         </div>
 
-                        <footer class="rounded">
+                        <footer class="rounded bg-color">
                             <span>Total</span>
                             <span>R$ 418</span>
                         </footer>

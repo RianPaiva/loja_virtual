@@ -14,7 +14,7 @@ include("header.php");
                 <div class="col">
                     <p>
                     <div class="text-container mb-4 mt-5 ms-5" style="font-weight:500 ">
-                        CATEGORIA
+                        TÊNIS
                     </div>
                     </p>
                 </div>

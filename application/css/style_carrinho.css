@@ -183,3 +183,8 @@ aside>button {
   margin-bottom: 40px;
   font-size: 50px;
 }
+
+.bg-color {
+  background-color: #D9D9D9 !important;
+  color: black;
+}
