@@ -2,15 +2,15 @@
 
 $login_feito = "N";
 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 
-if(isset($_SESSION['id_cliente'])){
+if (isset($_SESSION['id_cliente'])) {
     $login_feito = "S";
 }
 
-include("../conexoes/conexao_bd.php"); 
+include("../conexoes/conexao_bd.php");
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ include("../conexoes/conexao_bd.php");
                 <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../imagens/menu.png" alt="">
                 </button>
 
-                <a class="navbar-brand justify-content-start" href="#"><img class="img_logo" src="..\imagens\lavechiastoresemfundo.png" alt="Lavechia Store" width="250" height="40"></a>
+                <a class="navbar-brand justify-content-start" href="index.php"><img class="img_logo" src="..\imagens\lavechiastoresemfundo.png" alt="Lavechia Store" width="250" height="40"></a>
 
                 <div class="navbar-collapse">
                 </div>
@@ -54,7 +54,7 @@ include("../conexoes/conexao_bd.php");
 
                 <div class="side-nave-button p-2 me-3">
 
-                    <a href="">
+                    <a href="carrinho.php">
                         <img class="menu" src="../imagens/carrinho.png" alt="menu">
                     </a>
                 </div>
@@ -62,22 +62,22 @@ include("../conexoes/conexao_bd.php");
                 <div class="side-nave-button p-2 me-5 nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="menu" src="../imagens/usuario.png" alt="menu"> </a>
                     <ul class="dropdown-menu dropdown-menu-lg-start">
-                        <li><a class="dropdown-item" href="#"> Configurações </a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
                         <?php
-                            if($login_feito == "S"){
+                        if ($login_feito == "S") {
                         ?>
+                            <li><a class="dropdown-item" href="perfil_cliente.php"> Perfil </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="../php/logout.php"> Sair </a></li>
                         <?php
-                            }else{
-                        ?>                        
+                        } else {
+                        ?>
                             <li><a class="dropdown-item" href="login.php">Login</a></li>
                         <?php
-                            }
+                        }
                         ?>
-                       
+
 
                     </ul>
                 </div>
@@ -91,15 +91,15 @@ include("../conexoes/conexao_bd.php");
                 </div>
                 <div class="offcanvas-body">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Masculino</a></li>
-                        <li><a href="#">Feminino</a></li>
-                        <li><a href="#">Bonés</a></li>
-                        <li><a href="#">Camisas</a></li>
-                        <li><a href="#">Tênis</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="produtos.php?categoria=MASCULINO">Masculino</a></li>
+                        <li><a href="produtos.php?categoria=FEMININO">Feminino</a></li>
+                        <li><a href="produtos.php?categoria=BONÉS">Bonés</a></li>
+                        <li><a href="produtos.php?categoria=CAMISAS">Camisas</a></li>
+                        <li><a href="produtos.php?categoria=TÊNIS">Tênis</a></li>
                     </ul>
                 </div>
-            </div>    
+            </div>
 
         </div>
     </header>

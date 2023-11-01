@@ -77,36 +77,82 @@ include("header.php");
 
             </div>
 
-        </form>
+            <div class="container">
 
-        <div class="container">
+                <div class="row justify-content-center">
 
-            <div class="row justify-content-center">
+                    <div class="col-md-1">
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-gold" id="btn_pesquisar" value="Salvar">
+                        </div>
+                    </div>
 
-                <div class="col-md-3 justify-content-center">
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-gold" id="btn_pesquisar" value="Salvar">
+                    <div class="col-md-1">
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary" id="btn_cadastrar" value="Editar">
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-md-3 justify-content-center">
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-primary" id="btn_cadastrar" value="Editar">
+            </div>
+
+            <div class="container mt-3">
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <hr class="text-center hr-gold-2 mb-4">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="text-start">
+                        <h4> Redefinir Senha </h4>
                     </div>
                 </div>
             </div>
 
-        </div>
 
+            <div class="row justify-content-center">
+
+                <div class="col-md-2">
+                    <div>
+                        <label for="senha" class="form-label"> Senha </label>
+                        <input type="password" class="form-control" id="senha">
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div>
+                        <label for="Confirmacao" class="form-label"> Confirmação </label>
+                        <input type="password" class="form-control" id="Confirmacao">
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-pr-2 btn-primary" id="btn_cadastrar" value="Editar">
+                    </div>
+                </div>
+
+            </div>
+        </form>
     </div>
 
-    <!-- Faixa Dourada -->
 
-    <hr class="hr-gold mt-4 mb-4">
 
-    <div class="row">
-        <hr class="opacity-0" style="border: 21px solid transparent">
-    </div>
+
+
+</div>
+
+<!-- Faixa Dourada -->
+
+<hr class="hr-gold mt-4 mb-4">
+
+<div class="row">
+    <hr class="opacity-0" style="border: 21px solid transparent">
+</div>
 
 </div>
 

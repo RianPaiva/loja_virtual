@@ -3,6 +3,12 @@ hr.hr-gold {
     opacity: 100% !important;
 }
 
+hr.hr-gold-2 {
+    opacity: 100% !important;
+    border: 2px solid #CFB53B !important;
+    width: 100%;
+}
+
 
 .text-container {
     font-size: 50px;
@@ -22,7 +28,18 @@ hr.hr-gold {
 }
 
 .btn-primary, .btn-gold {
-    width: 50% !important;
+    width: 100% !important;
+    margin-top: 2.0rem !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: all .2s ease !important;
+    font-size: 18px !important;
+    color: black !important;
+}
+
+.btn-pr-2 {
+    width: 90% !important;
     margin-top: 2.0rem !important;
     border: none !important;
     border-radius: 5px !important;

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mercadopago/adb-payment": "^1.5"
+    }
+}
