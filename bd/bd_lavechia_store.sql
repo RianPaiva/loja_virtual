@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 24-Out-2023 às 21:51
+-- Tempo de geração: 04-Nov-2023 às 19:03
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `tb_fornecedor` (
   UNIQUE KEY `cnpj` (`cnpj`),
   KEY `id_estado` (`id_estado`),
   KEY `id_pais` (`id_pais`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_fornecedor`
@@ -137,7 +137,9 @@ CREATE TABLE IF NOT EXISTS `tb_fornecedor` (
 
 INSERT INTO `tb_fornecedor` (`id_fornecedor`, `razao_social`, `cnpj`, `email`, `telefone`, `id_pais`, `cidade`, `logradouro`, `id_estado`, `complemento`, `num_endereco`, `status`) VALUES
 (15, 'PAIVA', '111', 'paiva2gmail.com', '912345678', 1, 'Fracis Mor', 'Jardim Tristeza', 26, 'Calvo', 123, 1),
-(16, 'URUGA', '22.222.222/222', 'uru@ga', '(11) 91234 56', 1, 'FRANCO DA ROCHA', 'RUA 2', 26, 'PRÉDIO', 111, 0);
+(16, 'URUGA', '22.222.222/222', 'uru@ga', '(11) 91234 56', 1, 'FRANCO DA ROCHA', 'RUA 2', 26, 'PRÉDIO', 111, 0),
+(17, 'TESTE', '11.111.111/111', 'exemplo@gmail.com', '(11) 91111 11', 1, 'RANDOM', 'RANDOM2', 8, 'RANDOM3', 78, 0),
+(18, 'TESTE2', '111.111.111 12', 'exemplo@gmail.com', '(11) 91111 11', 6, 'RANDOM', 'RANDOM2', 99, 'RANDOM3', 78, 0);
 
 -- --------------------------------------------------------
 
@@ -494,16 +496,23 @@ CREATE TABLE IF NOT EXISTS `tb_pedido` (
 DROP TABLE IF EXISTS `tb_produto`;
 CREATE TABLE IF NOT EXISTS `tb_produto` (
   `id_produto` int NOT NULL AUTO_INCREMENT,
-  `nome_produto` int NOT NULL,
-  `descricao` varchar(100) NOT NULL,
+  `nome_produto` varchar(50) NOT NULL DEFAULT '',
   `id_fornecedor` int NOT NULL,
   `categoria` int NOT NULL DEFAULT '0',
   `id_genero` int NOT NULL,
-  `local_img` varchar(300) NOT NULL,
+  `local_img` varchar(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `descricao` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id_produto`),
   KEY `id_fornecedor` (`id_fornecedor`),
   KEY `Index 3` (`id_genero`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_produto`
+--
+
+INSERT INTO `tb_produto` (`id_produto`, `nome_produto`, `id_fornecedor`, `categoria`, `id_genero`, `local_img`, `descricao`) VALUES
+(12, 'Nike', 16, 0, 1, '', 'Foto Teste');
 
 -- --------------------------------------------------------
 
