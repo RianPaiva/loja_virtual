@@ -25,11 +25,12 @@ include("../pages/header.php");
         <div class="col-md-2">
             <label for="produto" class="form-label"> Nome do Produto </label>
             <input type="text" class="form-control form-border" id="produto">
+            <div id="listaProduto"></div>
         </div>
 
         <div class="col-md-7 hstack gap-3 ">
             
-            <input type="hidden" id="id_fornecedor">
+            <input type="hidden" id="id_produto">
             <div class="col-md-2">
                 <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
             </div>
@@ -64,7 +65,7 @@ include("../pages/header.php");
                     <div class="col-md-3">
                         <label for="fornecedor" class="form-label"> Fornecedor </label>
                         <input type="text" class="form-control" id="fornecedor" placeholder="" name="id_fornecedor">
-                        <div id="listaRazao"></div>
+                        <div id="listaFornecedor"></div>
                         <input type="hidden" id="id_fornecedor">
                     </div>
 

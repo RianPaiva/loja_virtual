@@ -140,19 +140,26 @@ include("../pages/header.php");
             </div>
 
             <div class="row d-flex justify-content-center">
-
+                        
                 <div class="col-md-3">
                     <label for="complemento" class="form-label">Complemento</label>
                     <input type="text" oninput="handleInput(event)" class="form-control" id="complemento">
                 </div>
 
-                <div class="col-md-3">
-                    <div class="col-md-6 justify-content-start">
-                        <label for="numero" class="form-label ">Número do Endereço</label>
-                        <input type="number" class="form-control " id="numero">
-                    </div>
+                <div class="col-md-1">
+                    <label for="numero" class="form-label ">Número do Endereço</label>
+                    <input type="number" class="form-control " id="numero">
                 </div>
 
+
+                <div class="col-md-2">
+                    <label for="status" class="form-label ">Status</label>
+                    <select class="form-control" id="status">
+                        <option></option>
+                        <option value="1">ATIVO</option>
+                        <option value="0">INATIVO</option>
+                    </select>
+                </div>
             </div>
 
         </form>

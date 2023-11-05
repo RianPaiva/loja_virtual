@@ -1,37 +1,37 @@
 $(document).ready(function () {
     //CADASTRO FORNECEDORES
     $("#btn_cadastrar").on('click', function (e) {
-        e.preventDefault();
 
-        // CONFERE CAMPOS PREENCHIDOS
-        if ($("#razao_social").val() === null || $("#razao_social").val().length < 2) {
-            alert("Preencha a RAZÃO SOCIAL");
-        } else {
-            if ($("#cnpj").val() === null || $("#cnpj").val().length < 2) {
-                alert("Preencha o CNPJ");
+
+        e.preventDefault();
+        if ($("#btn_cadastrar").val() == "Cadastrar") {
+
+            // CONFERE CAMPOS PREENCHIDOS
+            if ($("#razao_social").val() === null || $("#razao_social").val().length < 2) {
+                alert("Preencha a RAZÃO SOCIAL");
             } else {
-                if ($("#email").val() === null || $("#email").val().length < 2) {
-                    alert("Preencha o EMAIL");
+                if ($("#cnpj").val() === null || $("#cnpj").val().length < 2) {
+                    alert("Preencha o CNPJ");
                 } else {
-                    if ($("#telefone").val() === null || $("#telefone").val().length < 2) {
-                        alert("Preencha o TELEFONE");
+                    if ($("#email").val() === null || $("#email").val().length < 2) {
+                        alert("Preencha o EMAIL");
                     } else {
-                        if ($("#pais").val() === null) {
-                            alert("Preencha o PAÍS");
+                        if ($("#telefone").val() === null || $("#telefone").val().length < 2) {
+                            alert("Preencha o TELEFONE");
                         } else {
-                            if ($("#estado").val() === null) {
-                                alert("Preencha o ESTADO");
+                            if ($("#pais").val() === null) {
+                                alert("Preencha o PAÍS");
                             } else {
-                                if ($("#cidade").val() === 2 || $("#cidade").val().length < 2) {
-                                    alert("Preencha a CIDADE");
+                                if ($("#estado").val() === null) {
+                                    alert("Preencha o ESTADO");
                                 } else {
-                                    if ($("#logradouro").val() === null || $("#logradouro").val().length < 2) {
-                                        alert("Preencha o LOGRADOURO");
+                                    if ($("#cidade").val() === 2 || $("#cidade").val().length < 2) {
+                                        alert("Preencha a CIDADE");
                                     } else {
-                                        if ($("#complemento").val() === null || $("#complemento").val().length < 2) {
-                                            alert("Preencha o COMPLEMENTO");
-                                        }
-                                        else {
+                                        if ($("#logradouro").val() === null || $("#logradouro").val().length < 2) {
+                                            alert("Preencha o LOGRADOURO");
+                                        } else {
+
                                             // VALIDAÇÃO COM AJAX
                                             $.ajax({
                                                 method: "POST",
@@ -48,7 +48,8 @@ $(document).ready(function () {
                                                     cidade: $("#cidade").val(),
                                                     logradouro: $("#logradouro").val(),
                                                     complemento: $("#complemento").val(),
-                                                    numero: $("#numero").val()
+                                                    numero: $("#numero").val(),
+                                                    status: $("#status").val()
                                                 }
                                             }).done(function (data) {
                                                 console.log(data);
@@ -56,21 +57,99 @@ $(document).ready(function () {
                                                     alert("Erro: " + data);
                                                 } else {
                                                     alert("Cadastro realizado com sucesso!");
+                                                    limpar();
                                                 }
                                             });
+
 
 
                                         }
                                     }
                                 }
+
                             }
 
                         }
 
+
                     }
-
-
                 }
+
+            }
+
+        } else if ($("#btn_cadastrar").val() == "Alterar") {
+            alert("Alterando");
+
+            // CONFERE CAMPOS PREENCHIDOS
+            if ($("#razao_social").val() === null || $("#razao_social").val().length < 2) {
+                alert("Preencha a RAZÃO SOCIAL");
+            } else {
+                if ($("#cnpj").val() === null || $("#cnpj").val().length < 2) {
+                    alert("Preencha o CNPJ");
+                } else {
+                    if ($("#email").val() === null || $("#email").val().length < 2) {
+                        alert("Preencha o EMAIL");
+                    } else {
+                        if ($("#telefone").val() === null || $("#telefone").val().length < 2) {
+                            alert("Preencha o TELEFONE");
+                        } else {
+                            if ($("#pais").val() === null) {
+                                alert("Preencha o PAÍS");
+                            } else {
+                                if ($("#estado").val() === null) {
+                                    alert("Preencha o ESTADO");
+                                } else {
+                                    if ($("#cidade").val() === 2 || $("#cidade").val().length < 2) {
+                                        alert("Preencha a CIDADE");
+                                    } else {
+                                        if ($("#logradouro").val() === null || $("#logradouro").val().length < 2) {
+                                            alert("Preencha o LOGRADOURO");
+                                        } else {
+
+                                            // VALIDAÇÃO COM AJAX
+                                            $.ajax({
+                                                method: "POST",
+                                                url: "../php/cadastrar_fornecedor.php",
+                                                dataType: "HTML",
+                                                data: {
+                                                    metodo: "alt_fornecedor",
+                                                    id_fornecedor: $("#id_fornecedor").val(),
+                                                    razao_social: $("#razao_social").val(),
+                                                    cnpj: $("#cnpj").val(),
+                                                    email: $("#email").val(),
+                                                    telefone: $("#telefone").val(),
+                                                    pais: $("#pais").val(),
+                                                    estado: $("#estado").val(),
+                                                    cidade: $("#cidade").val(),
+                                                    logradouro: $("#logradouro").val(),
+                                                    complemento: $("#complemento").val(),
+                                                    numero: $("#numero").val(),
+                                                    status: $("#status").val()
+                                                }
+                                            }).done(function (data) {
+                                                console.log(data);
+                                                if (data !== "True") {
+                                                    alert("Erro: " + data);
+                                                } else {
+                                                    alert("Alteração realizada com sucesso!");
+                                                    limpar();
+                                                }
+                                            });
+
+
+
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }
+
+
+                    }
+                }
+
             }
 
         }
@@ -88,18 +167,18 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             url: "../php/pesquisa_fornecedor.php",
-            dataType: "HTML" ,
+            dataType: "HTML",
             data: {
                 metodo: "cad_fornecedor",
                 id_fornecedor: $("#id_fornecedor").val(),
                 razao_social: $("#pesquisa_razao").val(),
                 cnpj: $("#pesquisa_cnpj").val()
             }
-        }).done(function(data){
+        }).done(function (data) {
             vetor = data.split("##");
 
-            if(vetor[0] === "Sucesso"){
-            
+            if (vetor[0] === "Sucesso") {
+                $("#btn_cadastrar").val("Alterar");
                 $("#id_fornecedor").val(vetor[1]);
                 $("#pesquisa_razao").val(vetor[2]);
                 $("#pesquisa_cnpj").val(vetor[3]);
@@ -113,8 +192,9 @@ $(document).ready(function () {
                 $("#estado").val(vetor[9]);
                 $("#complemento").val(vetor[10]);
                 $("#numero").val(vetor[11]);
+                $("#status").val(vetor[12]);
 
-            }else{
+            } else {
                 alert(vetor[0]);
             }
 
@@ -125,6 +205,7 @@ $(document).ready(function () {
 });
 
 function limpar() {
+    $("#btn_cadastrar").val("Cadastrar");
     $("#pesquisa_razao").val('');
     $("#pesquisa_cnpj").val('');
     $("#id_fornecedor").val('');
@@ -138,4 +219,6 @@ function limpar() {
     $("#logradouro").val('');
     $("#complemento").val('');
     $("#numero").val('');
+    $("#status").val('');
+
 }

@@ -73,6 +73,7 @@ $(document).ready(function () {
             dataType: HTML,
             data:{
                 metodo: "cad_produto",
+                id_produto:$("#id_produto").val() ,
                 nome_produto:$("#nome_produto").val(),               
                 fornecedor: $("#fornecedor").val(),
                 categoria: $("#categoria").val(),
@@ -86,11 +87,19 @@ $(document).ready(function () {
 
             if(vetor[0] === 'Sucesso'){
 
-                $("#nome_produto").val(vetor[2]);
+                $("#btn_cadastrar").val("Alterar");
+                $("#id_produto").val(vetor[1])
+                $("#produto").val(vetor[2]);
+                $("#id_fornecedor").val(vetor[3]);
+                $("#fornecedor").val(vetor[4])
+                $("#categoria").val(vetor[5]);
+                $("#id_genero").val(vetor[6]);
+                $("#imagem").val(vetor[7]);
+                $("#descricao").val(vetor[8]);
+
 
             }else{
-
-                alert(vetor[0]);
+                alert('Erro');
             }
             
         })
@@ -102,6 +111,7 @@ $(document).ready(function () {
 
 
 function limpar() {
+    $("#id_produto").val('');
     $("#produto").val('');
     $("#id_fornecedor").val('');
     $("#nome_produto").val('');
@@ -113,8 +123,8 @@ function limpar() {
 
 }
 
-//AUTOCOMPLETE FORNECEDOR
-$('#fornecedor').keyup(function () {
+//AUTOCOMPLETE PRODUTO
+$('#produto').keyup(function () {
 
 
     var query = $(this).val();
@@ -125,7 +135,7 @@ $('#fornecedor').keyup(function () {
 
     if (query !== '' && caractere > 1) {
         $.ajax({
-            url: '../php/autocomplete_fornecedor.php',
+            url: '../php/autocomplete_produto.php',
             method: "POST",
             data: {
                 'query': query,
@@ -133,25 +143,70 @@ $('#fornecedor').keyup(function () {
             },
             success: function (data) {
                 console.log(data);
-                $('#listaRazao').fadeIn();
-                $('#listaRazao').html(data);
+                $('#listaProduto').fadeIn();
+                $('#listaProduto').html(data);
 
             }
         });
     } else {
 
-        $('#listaRazao').fadeOut();
+        $('#listaProduto').fadeOut();
     }
 
 });
 
-$('#listaRazao').on('click', 'li', function () {
+$('#listaProduto').on('click', 'li', function () {
 
 
-    $('#fornecedor').val($(this).text());
-    $('#id_fornecedor').val($(this).val());
-    $('#listaRazao').fadeOut();
+    $('#produto').val($(this).text());
+    $('#id_produto').val($(this).val());
+    $('#listaProduto').fadeOut();
 
+});
+
+
+
+
+// AUTOCOMPLETE FORNECEDOR
+$('#pesquisa_razao').keyup(function(){
+           
+    $('#pesquisa_cnpj').val('');
+   var query = $(this).val();
+  
+   
+
+   var caractere = query.length;
+ 
+   if(query !== '' && caractere > 1){
+       $.ajax({
+           url:'../php/autocomplete_fornecedor.php',
+           method:"POST",
+           data:{
+               'query':query,
+               'metodo': "cad_fornecedor"
+           },
+           success:function(data)
+           {
+            console.log(data);
+             $('#listaRazao').fadeIn();
+             $('#listaRazao').html(data);
+            
+           }
+       });
+   }else{
+       
+       $('#listaRazao').fadeOut();
+   }
+   
+});
+
+$('#listaRazao').on('click', 'li', function(){
+ 
+     
+     $('#pesquisa_razao').val($(this).text());
+     $('#id_fornecedor').val($(this).val());
+     $('#listaRazao').fadeOut();
+     
 });
 
 

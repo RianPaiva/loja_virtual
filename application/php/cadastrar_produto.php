@@ -25,26 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
             $query_nome = "SELECT * FROM tb_produto WHERE nome_produto = '" . $nome_produto . "' LIMIT 1;";
-
-            $conf_nome = "N";
-
             $result_nome = mysqli_query($conn, $query_nome);
 
             if ($result_nome->num_rows > 0) {
-                $conf_nome = "S";
+                echo "PRODUTO já cadastrado!";
+                die();
+            } else {
+                $query_produto = "INSERT INTO tb_produto(nome_produto, id_fornecedor,categoria, id_genero, local_img, descricao) 
+                VALUES('" . $nome_produto . "','" . $fornecedor . "','" . $categoria . "','" . $genero . "','" . $imagem . "','" . $descricao . "');";
 
-                if ($conf_nome == "True") {
-                    echo "PRODUTO já cadastrado!";
-                    die();
+                if (mysqli_query($conn, $query_produto)) {
+                    echo "True";
                 } else {
-                    $query_produto = "INSERT INTO tb_produto(nome_produto, id_fornecedor,categoria, genero, local_img, descricao) 
-                    VALUES('" . $nome_produto . "', '" . $fornecedor . "', '" . $categoria . "', '" . $genero . "','" . $imagem . "','" . $descricao . "') ;";
-
-                    if (mysqli_query($conn, $query_produto)) {
-                        echo "True";
-                    } else {
-                        mysqli_error($conn);
-                    }
+                    echo mysqli_error($conn);
                 }
             }
         } else {
@@ -53,6 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo "Erro: Nenhuma imagem foi enviada.";
     }
-} else {
-    echo "Erro: Solicitação inválida.";
 }
