@@ -30,6 +30,14 @@ include("../conexoes/conexao_bd.php");
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google charts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {
+            packages: ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+    </script>
 
 </head>
 
@@ -54,7 +62,7 @@ include("../conexoes/conexao_bd.php");
 
                 <div class="side-nave-button p-2 me-3">
 
-                    <a href="carrinho.php">
+                    <a href="../pages/carrinho.php">
                         <img class="menu" src="../imagens/carrinho.png" alt="menu">
                     </a>
                 </div>
@@ -91,12 +99,12 @@ include("../conexoes/conexao_bd.php");
                 </div>
                 <div class="offcanvas-body">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="produtos.php?categoria=MASCULINO">Masculino</a></li>
-                        <li><a href="produtos.php?categoria=FEMININO">Feminino</a></li>
-                        <li><a href="produtos.php?categoria=BONÉS">Bonés</a></li>
-                        <li><a href="produtos.php?categoria=CAMISAS">Camisas</a></li>
-                        <li><a href="produtos.php?categoria=TÊNIS">Tênis</a></li>
+                        <li><a href="../pages/index.php">Home</a></li>
+                        <li><a href="../pages/produtos.php?categoria=MASCULINO">Masculino</a></li>
+                        <li><a href="../pages/produtos.php?categoria=FEMININO">Feminino</a></li>
+                        <li><a href="../pages/produtos.php?categoria=BONÉS">Bonés</a></li>
+                        <li><a href="../pages/produtos.php?categoria=CAMISAS">Camisas</a></li>
+                        <li><a href="../pages/produtos.php?categoria=TÊNIS">Tênis</a></li>
                     </ul>
                 </div>
             </div>

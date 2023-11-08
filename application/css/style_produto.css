@@ -102,12 +102,13 @@ label.radio input:checked+span {
     color: #fff
 }
 
-.line-check {
+.line-check.radio {
     border-bottom: 1px solid black !important;
     transition: all .2s ease !important;
     border-spacing: 10px !important;
 }
 
-.line-check:checked {
-    border-bottom: #CFB53B !important;
+.line-check.radio.thumbnail-active {
+    border-bottom: 1px solid #CFB53B !important;
+    /* Outros estilos desejados */
 }

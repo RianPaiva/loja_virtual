@@ -1,18 +1,11 @@
-function change_image(image){
+function change_image(img) {
+    var allImages = document.querySelectorAll('.line-check.radio');
+    allImages.forEach(function (image) {
+        image.classList.remove('thumbnail-active');
+    });
+
+    img.classList.add('thumbnail-active');
 
     var container = document.getElementById("main-image");
-
-   container.src = image.src;
+    container.src = img.src;
 }
-
-
-
-document.addEventListener("DOMContentLoaded", function(event) {
-
-
-
-
-
-
-
-});

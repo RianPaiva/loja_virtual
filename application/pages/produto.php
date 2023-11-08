@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("../header_footer/header.php");
 
 
 ?>
@@ -58,10 +58,10 @@ include("header.php");
                 <div class="col mt-5" style="border: 1px solid black; border-radius: 5px;">
 
                     <div class="row ms-2 mt-5 nome-produto">
-                        <p> Tênis Dunk Low Verde </p>
+                        <p> Tênis Dunk Low </p>
                     </div>
                     <div class="row ms-2 mt-1 valor-produto">
-                        <p>R$ 1.000,00</p>
+                        <p>R$ 1.200,00</p>
                     </div>
 
                     <!-- Fim Descrição do Produto -->
@@ -207,6 +207,6 @@ include("header.php");
 
 <?php
 
-include("footer.php");
+include("../header_footer/footer.php");
 
 ?>

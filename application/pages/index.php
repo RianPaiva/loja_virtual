@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("../header_footer/header.php");
 
 
 echo "INDEX.PHP";
@@ -17,7 +17,7 @@ echo "INDEX.PHP";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="../css/style_index.css">
+    <link rel="stylesheet" href="../css/style_home_page.css">
 
 
 </head>
@@ -180,7 +180,7 @@ echo "INDEX.PHP";
 </html>
 
 <?php
-include("footer.php");
+include("../header_footer/footer.php");
 ?>
 
 <!-- <div class="col-md-6 justify-content-around hstack gap-3 mt-5"> </div>-->

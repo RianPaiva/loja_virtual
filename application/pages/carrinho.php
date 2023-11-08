@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("../header_footer/header.php");
 ?>
 
 <!doctype html>
@@ -160,5 +160,5 @@ include("header.php");
 </html>
 
 <?php
-include("../pages/footer.php");
+include("../header_footer/footer.php");
 ?>

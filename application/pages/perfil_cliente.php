@@ -1,6 +1,6 @@
 <?php
 
-include("header.php");
+include("../header_footer/header.php");
 
 ?>
 
@@ -158,6 +158,6 @@ include("header.php");
 
 <?php
 
-include("footer.php");
+include("../header_footer/footer.php");
 
 ?>

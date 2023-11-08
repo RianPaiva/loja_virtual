@@ -1,0 +1,19 @@
+.text-container {
+    font-size: 50px;
+}
+
+.cadastro {
+    width: 50% !important;
+    border: none !important;
+    padding: 0.62rem !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: all .2s ease !important;
+    font-size: 25px !important;
+    background-color: #CFB53B !important;
+}
+
+.cadastro:hover {
+    background-color: #B59D35 !important;
+    color: white !important;
+}
