@@ -8,6 +8,8 @@ $('document').ready(function () {
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawBasic);
 google.charts.setOnLoadCallback(drawBasic2);
+google.charts.setOnLoadCallback(drawBasic3);
+google.charts.setOnLoadCallback(drawBasic4);
 
 function drawBasic() {
 
@@ -69,6 +71,70 @@ function drawBasic2() {
 
     var chart = new google.visualization.ColumnChart(
         document.getElementById('div_vendas_mes'));
+
+    chart.draw(data, options);
+}
+
+function drawBasic3() {
+
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Produto');
+    data.addColumn('number', 'Vendas');
+
+    data.addRows([
+        ['Air Max', 15],
+        ['Air Force', 6],
+        ['Dunk Low', 3],
+    ]);
+
+    var options = {
+        title: 'Produtos Mais Vendidos',
+        hAxis: {
+            title: 'Produtos',
+            viewWindow: {
+                min: [7, 30, 0],
+                max: [17, 30, 0]
+            }
+        },
+        vAxis: {
+            title: 'Quantidade'
+        }
+    };
+
+    var chart = new google.visualization.ColumnChart(
+        document.getElementById('div_taxa_conversao'));
+
+    chart.draw(data, options);
+}
+
+function drawBasic4() {
+
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Produto');
+    data.addColumn('number', 'Vendas');
+
+    data.addRows([
+        ['Air Max', 15],
+        ['Air Force', 6],
+        ['Dunk Low', 3],
+    ]);
+
+    var options = {
+        title: 'Produtos Mais Vendidos',
+        hAxis: {
+            title: 'Produtos',
+            viewWindow: {
+                min: [7, 30, 0],
+                max: [17, 30, 0]
+            }
+        },
+        vAxis: {
+            title: 'Quantidade'
+        }
+    };
+
+    var chart = new google.visualization.ColumnChart(
+        document.getElementById('div_vendas_ano'));
 
     chart.draw(data, options);
 }

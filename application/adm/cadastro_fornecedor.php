@@ -44,6 +44,9 @@ include("../header_footer/header.php");
             <div class="col-md-2">
                 <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
             </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+            </div>
 
         </div>
 
@@ -140,7 +143,7 @@ include("../header_footer/header.php");
             </div>
 
             <div class="row d-flex justify-content-center">
-                        
+
                 <div class="col-md-3">
                     <label for="complemento" class="form-label">Complemento</label>
                     <input type="text" oninput="handleInput(event)" class="form-control" id="complemento">
@@ -169,7 +172,14 @@ include("../header_footer/header.php");
 
     <hr class="hr-gold mt-4 mb-4">
 
+    <div class="row">
+        <hr class="opacity-0" style="border: 21px solid transparent">
+    </div>
+
 </div>
+
+
+
 
 
 <!-- IMPORTAÇÃO JS -->

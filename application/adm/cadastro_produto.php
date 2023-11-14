@@ -40,6 +40,9 @@ include("../header_footer/header.php");
             <div class="col-md-2">
                 <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
             </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+            </div>
 
         </div>
 

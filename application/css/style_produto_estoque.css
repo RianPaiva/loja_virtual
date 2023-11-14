@@ -8,7 +8,7 @@ hr.hr-gold {
     font-size: 50px;
 }
 
-.btn-primary, .btn-danger, .btn-success {
+.btn-primary, .btn-danger, .btn-success, .btn-info {
     width: 100% !important;
     margin-top: 2.0rem !important;
     border: none !important;
@@ -16,6 +16,7 @@ hr.hr-gold {
     cursor: pointer !important;
     transition: all .2s ease !important;
     font-size: 18px !important;
+    color: white !important;
 }
 
 .bg-custom {

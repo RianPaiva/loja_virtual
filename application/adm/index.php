@@ -28,30 +28,60 @@ include("../header_footer/header.php");
         <div class="row justify-content-center">
             <div class="col-md-3">
                 <div class="text-center mb-4 mt-4">
-                    <input type="submit" class="cadastro" id="btn_cad_fornecedor" value="Fornecedores">
+                    <a href="cadastro_fornecedor.php">
+                        <input type="button" class="cadastro" id="btn_cad_fornecedor" value="Fornecedores">
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="text-center mb-4 mt-4">
-                    <input type="submit" class="cadastro" id="btn_cad_produto" value="Produto">
+                    <a href="cadastro_produto.php">
+                        <input type="button" class="cadastro" id="btn_cad_produto" value="Produto">
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="text-center mb-4 mt-4">
-                    <input type="submit" class="cadastro" id="btn_cad_estoque" value="Estoque">
+                    <a href="produto_estoque.php">
+                        <input type="button" class="cadastro" id="btn_cad_estoque" value="Estoque">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="text-center mb-4 mt-4">
+                    <a href="cadastro_usuario.php">
+                        <input type="button" class="cadastro" id="btn_cad_usuario" value="Usuário">
+                    </a>
                 </div>
             </div>
 
         </div>
 
-        <div class="col-md-5">
-            <div id="div_vendas"></div>
+        <div class="row mt-5">
+
+            <div class="col-md-6">
+                <div id="div_vendas"></div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="div_vendas_mes"></div>
+            </div>
+
         </div>
 
-        <div class="col-md-5">
-            <div id="div_vendas_mes"></div>
+        <div class="row mt-5">
+
+            <div class="col-md-6">
+                <div id="div_taxa_conversao"></div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="div_vendas_ano"></div>
+            </div>
+
         </div>
 
     </div>
