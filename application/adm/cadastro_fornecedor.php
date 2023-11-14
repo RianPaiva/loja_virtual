@@ -147,7 +147,7 @@ include("../header_footer/header.php");
                 </div>
 
                 <div class="col-md-1">
-                    <label for="numero" class="form-label ">Número do Endereço</label>
+                    <label for="numero" class="form-label ">Número</label>
                     <input type="number" class="form-control " id="numero">
                 </div>
 

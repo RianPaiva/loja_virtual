@@ -1,3 +1,50 @@
+<?php
+include("../conexoes/conexao_bd.php");
+
+
+if (isset($_POST["email"]) || isset($_POST["password"])) {
+
+    if (strlen($_POST["email"]) == 0) {
+        echo "<script> alert('Prencha seu email corretamente!') </script>";
+    } else if (strlen($_POST["password"]) == 0) {
+        echo "<script> alert('Prencha sua senha corretamente!') </script>";
+    } else {
+
+        $email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $password = mysqli_real_escape_string($conn, $_POST["password"]);
+
+
+
+        $sql = "SELECT * FROM tb_cliente WHERE email = '" . $email . "' LIMIT 1";
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows  == 1) {
+
+            $tbl = $result->fetch_assoc();
+
+            if (password_verify($password, $tbl['senha'])) {
+
+                $id_cliente =  $tbl['id_cliente'];
+                $nome_cliente = $tbl['nome'];
+
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+
+                $_SESSION['id_cliente'] = $id_cliente;
+                $_SESSION['nome_cliente'] = $nome_cliente;
+
+                header("Location: index.php");
+            } else {
+                echo "<script> alert('Senha incorreta!') </script>";
+            }
+        } else {
+            echo "<script> alert('Email ou senha incorretos!') </script>";
+        }
+    }
+}
+?>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

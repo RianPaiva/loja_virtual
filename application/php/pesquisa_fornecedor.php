@@ -59,5 +59,5 @@ if($sucesso == "S"){
     echo "Sucesso" . "##";
     echo $return;
 }else{
-    echo "Erro ao pesquisar" . "##";
+    echo "Erro ao pesquisar" . "##";   
 }
