@@ -1,9 +1,9 @@
 <?php
-include("./php/conecta_bd.php");
-$rotulo_relatorio = "Relatório Colaboradores";	
+include("../../conexoes/conexao_bd.php");
+$rotulo_relatorio = "Relatório Clientes ";	
 
 //SELECT CAD_USUARIOS
-$sql = "SELECT * FROM cad_usuarios;";
+$sql = "SELECT * FROM tb_cliente;";
 
 //Definir cabeçalhos das colunas
             //DADOS BASE
@@ -25,7 +25,7 @@ $result = mysqli_query($conn,$sql);
 if ($result->num_rows > 0) {
 
 // Definir o nome do arquivo
-$arquivo = 'relatorio_colaboradores.xls';
+$arquivo = 'relatorio_cliente.xls';
 
 // Iniciar a saída do arquivo Excel
 header('Content-Type: application/vnd.ms-excel');
@@ -41,7 +41,7 @@ $conteudo = '<?xml version="1.0" encoding="UTF-8"?>
             <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
         </Style>
     </Styles>
-    <Worksheet ss:Name="COLABORADORES">
+    <Worksheet ss:Name="CLIENTES">
         <Table>';
         
         //TITULO DA PLANILHA
