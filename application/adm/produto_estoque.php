@@ -45,7 +45,9 @@ include("../header_footer/header.php");
                 <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
             </div>
             <div class="col-md-2">
+                <a href="./relatorios/rel_estoque.php">
                 <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+                </a>
             </div>
 
 

@@ -15,7 +15,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
 
 
-        $sql = "SELECT * FROM tb_cliente WHERE email = '" . $email . "' LIMIT 1";
+        $sql = "SELECT * FROM tb_usuario WHERE email = '" . $email . "' LIMIT 1";
         $result = mysqli_query($conn, $sql);
         if ($result->num_rows  == 1) {
 
@@ -23,15 +23,15 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
             if (password_verify($password, $tbl['senha'])) {
 
-                $id_cliente =  $tbl['id_cliente'];
-                $nome_cliente = $tbl['nome'];
+                $id_cliente =  $tbl['id_usuario'];
+                $nome_usuario = $tbl['nome'];
 
                 if (!isset($_SESSION)) {
                     session_start();
                 }
 
-                $_SESSION['id_cliente'] = $id_cliente;
-                $_SESSION['nome_cliente'] = $nome_cliente;
+                $_SESSION['id_usuario'] = $id_usuario;
+                $_SESSION['nome'] = $nome_usuario;
 
                 header("Location: index.php");
             } else {
