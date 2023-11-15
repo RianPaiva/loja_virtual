@@ -139,43 +139,16 @@ include("../header_footer/header.php");
                     </div>
                 </div>
 
-                <!-- Botão para acionar modal -->
-                <div class="d-grid gap-2 d-md-block">
-                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#enderecos">
-                        Meus Endereços Salvos
+
+                <div class="d-grid gap-2 d-md-block ">
+
+                    <button type="button" class="btn btn-primary mt-3" data-toggle="" data-target="#enderecos">
+                        Novo Cadastro
+                    </button>
+                    <button type="button" class="btn btn-primary mt-3" data-toggle="" data-target="#enderecos">
+                        Avançar
                     </button>
                 </div>
-
-                <div id="enderecos" class="modal">
-
-                    <div class="modal-dialog">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-                                <h3 class="modal-title fs-5" id="enderecos">Endereços</h3>
-                                <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-
-                        </div>
-
-                        <div class="modal-body">
-                            <p> blabla </p>
-                            <p> blabla </p>
-                            <p> blabla </p>
-                            <p> blabla </p>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Salvar mudanças</button>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
 
             </div>
 
@@ -190,7 +163,7 @@ include("../header_footer/header.php");
                 <div class="row">
                     <form class="row justify-content-center">
 
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center mt-3">
                             <div class="col-md-6">
                                 <label for="rua" class="form-label">Rua</label>
                                 <input type="text" class="form-control" id="rua">
