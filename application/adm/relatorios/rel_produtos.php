@@ -97,8 +97,6 @@ $conteudo = '<?xml version="1.0" encoding="UTF-8"?>
                 
                 }
                 $conteudo .= '<Cell><Data ss:Type="String">'.$genero.'</Data></Cell>';
-
-
                 $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['descricao'].'</Data></Cell>'; 
                 $conteudo .= '</Row>';
             }
