@@ -27,3 +27,84 @@ label.radio input:checked+span {
     background-color: #2E2E2E;
     color: #fff
 }
+
+
+aside>button:hover {
+    background: #B59D35;
+    color: white;
+}
+
+aside {
+    margin-left: 20px;
+    flex-direction: column;
+}
+
+aside .box {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    background: #eee;
+    color: #222;
+}
+
+aside .box header {
+    padding: 15px 20px;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+    padding: 20px;
+    font-size: 16px;
+}
+
+aside .box .info>div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+aside .box .info>div:last-child {
+    margin: 0;
+}
+
+aside .box .info button {
+    color: #B59D35;
+    background: transparent;
+    border: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+aside .box footer {
+    padding: 15px 20px;
+    background: #ddd;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+aside>button {
+    border: 0;
+    padding: 15px 0;
+    color: black;
+    background: #CFB53B;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
