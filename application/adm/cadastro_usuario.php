@@ -66,7 +66,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-3 ">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" oninput="handleInput(event)" id="nome">
+                    <input type="text" class="form-control" id="nome">
                 </div>
 
 
