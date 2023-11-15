@@ -87,6 +87,10 @@ if ($result->num_rows > 0) {
     $conteudo .= '</Table>
     </Worksheet>
 </Workbook>';
+}else{
+    $conteudo = "Nenhum registro encontrado";
 }
 
 echo $conteudo;
+
+?>

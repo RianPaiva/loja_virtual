@@ -76,7 +76,7 @@ $conteudo = '<?xml version="1.0" encoding="UTF-8"?>
                 }
                 $conteudo .= '<Cell><Data ss:Type="String">'.$fornecedor.'</Data></Cell>';
 
-                $query_categoria = "SELECT categoria FROM tb_produto WHERE categoria = ".$tbl['categoria']."";
+                $query_categoria = "SELECT categoria FROM tb_categoria WHERE id_categoria = ".$tbl['id_categoria']."";
                 $result_categoria = mysqli_query($conn,$query_categoria);
                 if($result_categoria->num_rows > 0){
                     $tbl_categoria = $result_categoria->fetch_assoc();
@@ -87,16 +87,7 @@ $conteudo = '<?xml version="1.0" encoding="UTF-8"?>
                 }
                 $conteudo .= '<Cell><Data ss:Type="String">'.$categoria.'</Data></Cell>';
 
-                $query_genero = "SELECT genero FROM tb_genero WHERE id_genero = ".$tbl['id_genero']."";
-                $result_genero = mysqli_query($conn,$query_genero);
-                if($result_genero->num_rows > 0){
-                    $tbl_genero = $result_genero->fetch_assoc();
-                    $genero = $tbl_genero['genero'];
-                }else{
-                    $genero = "";
-                
-                }
-                $conteudo .= '<Cell><Data ss:Type="String">'.$genero.'</Data></Cell>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['genero'].'</Data></Cell>';
                 $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['descricao'].'</Data></Cell>'; 
                 $conteudo .= '</Row>';
             }
@@ -107,6 +98,8 @@ $conteudo = '<?xml version="1.0" encoding="UTF-8"?>
     </Worksheet>
 </Workbook>';
     
+}else{
+    $conteudo = "Nenhum registro encontrado";
 }
 
 echo $conteudo;
