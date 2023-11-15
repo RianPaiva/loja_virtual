@@ -23,25 +23,34 @@ include("../header_footer/header.php");
             <h2> Endereços Salvos </h2>
 
             <div class="row mt-5">
-                <div class="col-md-6">
-                    <label for="acesso" class="form-label"> Selecionar Endereço </label>
-                    <select class="form-select" id="acesso">
-                        <option></option>
-                        <option value="1"> Rua 1 </option>
-                        <option value="2"> Rua 2 </option>
-                        <option value="3"> Rua 3 </option>
-                    </select>
+                <div class="col-lg-12">
+
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <label class="radio">
+                                    <input type="radio" name="endereco">
+                                    <div class="col-md-12">
+                                        <div class="row text-start">
+                                            <h4>Rua SLA das Quantas</H4>
+                                        </div>
+                                        <div class="row text-start">
+                                            <div class="col-md-3">
+                                                <H6>CEP : 1894572389575903089</h6>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <H6>numero : 29</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-md-6">
-                    <label for="acesso" class="form-label"> Selecionar Frete </label>
-                    <select class="form-select" id="acesso">
-                        <option></option>
-                        <option value="1"> Rua 1 </option>
-                        <option value="2"> Rua 2 </option>
-                        <option value="3"> Rua 3 </option>
-                    </select>
-                </div>
             </div>
 
             <div class="row">
@@ -94,10 +103,10 @@ include("../header_footer/header.php");
             </div>
         </div>
 
-        
-    <div class="col-md-3" style="border:1px solid black">
-        <h1> kkkk </h1>
-    </div>
+
+        <div class="col-md-3" style="border:1px solid black">
+            <h1> kkkk </h1>
+        </div>
 
     </div>
 
