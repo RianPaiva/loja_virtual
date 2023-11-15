@@ -140,9 +140,11 @@ include("../header_footer/header.php");
                 </div>
 
                 <!-- Botão para acionar modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enderecos">
-                    Meus Endereços Salvos
-                </button>
+                <div class="d-grid gap-2 d-md-block">
+                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#enderecos">
+                        Meus Endereços Salvos
+                    </button>
+                </div>
 
                 <div id="enderecos" class="modal">
 
@@ -231,7 +233,7 @@ include("../header_footer/header.php");
         </div>
 
 
-        <aside class="col-md-3" style="border:1px solid black">
+        <aside class="col-md-3 text-center" style="border:1px solid black">
             <div class="box rounded">
                 <header class="text-center">Resumo da compra</header>
 
