@@ -2,12 +2,13 @@
 include("../conexoes/conexao_bd.php");
 
 $id_produto = $_POST["id_produto"];
-$nome_produto = $_POST("nome_produto");
+$nome_produto = $_POST["nome_produto"];
 
 $sucesso = "S";
 $return ="";
 
-$query = "SELECT * FROM tb_produto WHERE ";
+$query = "SELECT a.*, b.razao_social FROM tb_produto AS a  
+INNER JOIN tb_fornecedor AS B ON a.id_fornecedor = b.id_fornecedor WHERE ";
 
 
 
@@ -32,11 +33,13 @@ if ($result_query = mysqli_query($conn, $query) ){
 
     $return .= $tbl["id_produto"]. "##";
     $return .= $tbl["nome_produto"] . "##";
-    $return .= $tbl["fornecedor"] . "##";
-    $return .= $tbl["categoria"] . "##";
+    $return .= $tbl["razao_social"] . "##";
+    $return .= $tbl["id_fornecedor"] . "##";    
+    $return .= $tbl["id_categoria"] . "##";
     $return .= $tbl["genero"] . "##";
-    $return .= $tbl["imagem"] . "##";
     $return .= $tbl["descricao"] . "##";
+    $return .= $tbl["local_img"] . "##";
+    
 }else{
     $sucesso = "N";
 }

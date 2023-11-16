@@ -23,13 +23,13 @@ include("../header_footer/header.php");
     <div class="row justify-content-start ">
 
         <div class="col-md-2">
-            <label for="produto" class="form-label"> Nome Do Produto </label>
-            <input type="text" class="form-control form-border" id="produto">
+            <label for="pesq_prod_est" class="form-label"> Nome Do Produto </label>
+            <input type="text" class="form-control form-border" id="pesq_pro_est">
         </div>
 
         <div class="col-md-2">
-            <label for="produto" class="form-label"> Código do Produto </label>
-            <input type="text" class="form-control form-border" id="produto">
+            <label for="cod_produto" class="form-label"> Código do Produto </label>
+            <input type="text" class="form-control form-border" id="cod_produto">
         </div>
 
         <div class="col-md-6 hstack gap-3 ">
@@ -67,8 +67,10 @@ include("../header_footer/header.php");
             <div class="row justify-content-center">
 
                 <div class="col-md-3 ">
-                    <label for="modelo" class="form-label"> Nome Do Produto </label>
-                    <input type="text" name="modelo" id="modelo" class="form-control" required>
+                    <label for="Produto" class="form-label"> Produto </label>
+                    <input type="text" name="produto" id="produto" class="form-control" required>
+                    <input type="hidden" id="id_produto" value="">
+                    <div id="listaProduto"></div>
                 </div>
 
                 <div class="col-md-3">
@@ -116,6 +118,7 @@ include("../header_footer/header.php");
     </div>
 
 </div>
+<script src="../js/produto_estoque.js"></script>
 
 <?php
 

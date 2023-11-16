@@ -87,6 +87,8 @@ if ($result->num_rows > 0) {
     $conteudo .= '</Table>
     </Worksheet>
 </Workbook>';
+}else{
+    $conteudo = "Sem registros!!";
 }
 
 echo $conteudo;

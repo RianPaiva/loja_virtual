@@ -32,17 +32,17 @@ include("../header_footer/header.php");
             
             <input type="hidden" id="id_produto">
             <div class="col-md-2">
-                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
+                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-danger" id="btn_limpar" value="  Limpar  ">
+                <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
+                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
             </div>
             <div class="col-md-2">
                 <a href="./relatorios/rel_produtos.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+                <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
                 </a>
             </div>
 
@@ -69,7 +69,7 @@ include("../header_footer/header.php");
 
                     <div class="col-md-3">
                         <label for="fornecedor" class="form-label"> Fornecedor </label>
-                        <input type="text" class="form-control" id="fornecedor" placeholder="" name="id_fornecedor">
+                        <input type="text" class="form-control" id="fornecedor" placeholder="" name="fornecedor">
                         <div id="listaFornecedor"></div>
                         <input type="hidden" id="id_fornecedor">
                     </div>
@@ -82,24 +82,27 @@ include("../header_footer/header.php");
                         <label for="categoria" class="form-label"> Categoria </label>
                         <select name="tipo" id="categoria" class="form-select" required>
                             <option selected></option>
-                            <option value="tenis">Tênis</option>
-                            <option value="roupa">Roupa</option>
+                            <?php
+                                $sql_categoria="SELECT * FROM tb_categoria WHERE status = 1";
+                                $result_categoria = mysqli_query($conn, $sql_categoria);
+                                if($result_categoria->num_rows > 0){
+                                    while($tbl_categoria = $result_categoria->fetch_assoc()){
+                                        echo "<option value='".$tbl_categoria['id_categoria']."'>".$tbl_categoria["categoria"]."</option>";
+                                    }
+                                }else{
+
+                                }
+                            ?>
                         </select>
                     </div>
 
                     <div class="col-md-3">
                         <label for="genero" class="form-label"> Gênero </label>
-                        <select class="form-select" id="id_genero" name="id_genero">
+                        <select class="form-select" id="genero" name="genero">
                             <option selected></option>
-                            <?php
-                            $query_genero = "SELECT * FROM tb_genero;";
-                            $result_genero = mysqli_query($conn, $query_genero);
-                            if ($result_genero->num_rows > 0) {
-                                while ($tbl_genero = $result_genero->fetch_assoc()) {
-                                    echo "<option value='" . $tbl_genero["id_genero"] . "'>" . $tbl_genero["genero"] . "</option>";
-                                }
-                            }
-                            ?>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="U">Unissex</option>
                         </select>
                     </div>
 
@@ -125,6 +128,7 @@ include("../header_footer/header.php");
 
             </form>
         </div>
+        <img src="" id="img_prod">
     </form>
     <!-- Faixa Dourada -->
 
