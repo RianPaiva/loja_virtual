@@ -8,9 +8,14 @@ $sql = "SELECT * FROM tb_cliente;";
 //Definir cabeçalhos das colunas
             //DADOS BASE
             $colunas = array(
+            'ID',
             'NOME',
+            'SOBRENOME',
             'CPF',
-            'EMAIL'
+            'GENERO',
+            'EMAIL',
+            'CELULAR',
+            'STATUS'
            // 'CUSTO HORA',
            // 'DEPARTAMENTO',
             //'NIVEL HIERARQUICO',
@@ -59,9 +64,14 @@ $conteudo = '<?xml version="1.0" encoding="UTF-8"?>
           
             while ($tbl = $result->fetch_assoc()) {
                 $conteudo .= '<Row>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['id_cliente'].'</Data></Cell>'; 
                 $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['nome'].'</Data></Cell>'; 
-                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['cpf'].'</Data></Cell>'; 
-                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['email'].'</Data></Cell>'; 
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['sobrenome'].'</Data></Cell>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['cpf'].'</Data></Cell>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['genero'].'</Data></Cell>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['email'].'</Data></Cell>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['celular'].'</Data></Cell>';
+                $conteudo .= '<Cell><Data ss:Type="String">'.$tbl['status'].'</Data></Cell>'; 
                 $conteudo .= '</Row>';
             }
 
