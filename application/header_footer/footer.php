@@ -11,7 +11,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-2 mb-5 ms-3 me-3">
-                            <img class="img-fluid " width="120%" src="../imagens/lavechiastore.png" alt="Logo Lavechia Store">
+                            <img class="img-fluid " width="120%" src="../imagens/logo-new.png" alt="Logo Lavechia Store">
                         </div>
                     </div>
                     <div class="row">

@@ -17,115 +17,33 @@ include("../header_footer/header.php");
     </div>
 
 
+
     <div class="row text-center justify-content-around">
 
-        <div class="col-md-7">
+        <div class="col-md-7 mt-4">
             <h2> Endereços Salvos </h2>
 
             <div class="row row-custom overflow-y-scroll">
-                <div class="row mt-5">
+
+                <div class="row mt-4">
                     <div class="col-lg-12">
 
-                        <div class="card text-start">
-                            <div class="card-body">
-
-                                <div class="row mx-auto">
-                                    <label class="radio">
-                                        <div class="col">
-                                            <input type="radio" name="endereco">
-                                        </div>
-                                        <div class="col-md-10">
-
-
-                                            <div class="row text-start">
-                                                <h4>Rua 1</H4>
-                                            </div>
-
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-lg-12">
-
-                        <div class="card text-start">
-                            <div class="card-body">
-                                <div class="row mx-auto">
-                                    <label class="radio">
-                                        <input type="radio" name="endereco">
-                                        <div class="col-md-12">
-                                            <div class="row text-start">
-                                                <h4>Rua 2</H4>
-                                            </div>
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row mt-3">
-                    <div class="col-lg-12">
-
-                        <div class="card text-start">
-                            <div class="card-body">
-                                <div class="row mx-auto">
-                                    <label class="radio">
-                                        <input type="radio" name="endereco">
-                                        <div class="col-md-12">
-                                            <div class="row text-start">
-                                                <h4>Rua 3</H4>
-                                            </div>
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row mt-3 text-start">
-                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row mx-auto">
-                                    <label class="radio">
-                                        <input type="radio" name="endereco">
-                                        <div class="col-md-12">
+
+                                <div class="row mt-3">
+
+                                    <label class="">
+                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
+                                            <input type="radio" name="endereco">
+                                        </div>
+
+                                        <div class="col-md-10 ms-5">
+
                                             <div class="row text-start">
-                                                <h4>Rua 4</H4>
+                                                <h4>Rua 1*******</H4>
                                             </div>
+
                                             <div class="row text-start">
                                                 <div class="col-md-3">
                                                     <H6>CEP : 12345-678</h6>
@@ -136,18 +54,130 @@ include("../header_footer/header.php");
                                             </div>
                                         </div>
                                     </label>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="row mt-3">
+
+                                    <label class="">
+                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
+                                            <input type="radio" name="endereco">
+                                        </div>
+
+                                        <div class="col-md-10 ms-5">
+
+                                            <div class="row text-start">
+                                                <h4>Rua 2*******</H4>
+                                            </div>
+
+                                            <div class="row text-start">
+                                                <div class="col-md-3">
+                                                    <H6>CEP : 12345-678</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <H6> Numero: 1</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="row mt-3">
+
+                                    <label class="">
+                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
+                                            <input type="radio" name="endereco">
+                                        </div>
+
+                                        <div class="col-md-10 ms-5">
+
+                                            <div class="row text-start">
+                                                <h4>Rua 3*******</H4>
+                                            </div>
+
+                                            <div class="row text-start">
+                                                <div class="col-md-3">
+                                                    <H6>CEP : 12345-678</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <H6> Numero: 1</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="row mt-3">
+
+                                    <label class="">
+                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
+                                            <input type="radio" name="endereco">
+                                        </div>
+
+                                        <div class="col-md-10 ms-5">
+
+                                            <div class="row text-start">
+                                                <h4>Rua 4*******</H4>
+                                            </div>
+
+                                            <div class="row text-start">
+                                                <div class="col-md-3">
+                                                    <H6>CEP : 12345-678</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <H6> Numero: 1</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
-            <div class="row mt-5 mb-5">
+            <div class="row mt-4 mb-2 text-center justify-content-around">
 
                 <div class="col-md-4">
                     <p class="">
-                        <a class="btn btn-primary new-cad" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Novo Endereço</a>
+                        <a class="btn btn-warning avancar" data-bs-toggle="collapse" href="#multiCollapseExample1"
+                            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Novo Endereço</a>
                     </p>
                 </div>
 
@@ -161,7 +191,7 @@ include("../header_footer/header.php");
                                     </div>
 
                                     <div class="row">
-                                        <form class="row justify-content-center">
+                                        <form class="row ms-3 justify-content-center">
 
                                             <div class="row justify-content-center mt-3">
                                                 <div class="col-md-6 text-start">
@@ -192,7 +222,8 @@ include("../header_footer/header.php");
 
                                                 <div class="col-md-6 text-start">
                                                     <label for="complemento" class="form-label">Complemento</label>
-                                                    <input type="text" class="form-control" id="complemento" placeholder="">
+                                                    <input type="text" class="form-control" id="complemento"
+                                                        placeholder="">
                                                 </div>
 
                                                 <div class="col-md-6 text-start">
@@ -203,7 +234,8 @@ include("../header_footer/header.php");
 
                                             <div class="row">
                                                 <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
-                                                    <input type="submit" class="btn btn-warning cadastrar" id="btn_comprar" value="Cadastrar">
+                                                    <input type="submit" class="btn btn-warning cadastrar"
+                                                        id="btn_comprar" value="Cadastrar">
                                                 </div>
                                             </div>
                                     </div>
@@ -218,22 +250,22 @@ include("../header_footer/header.php");
 
 
         <aside class="col-md-3 text-center">
-            <div class="box rounded">
-                <header class="text-center">Resumo da compra</header>>
+            <div class="box rounded" style="border: 1px solid black">
+                <header class="text-center">Resumo da compra</header>
 
                 <div class="info">
                     <div><span>Sub-total</span><span>R$418,00</span></div>
                     <div><span>Frete</span><span>R$0,00</span></div>
-
                 </div>
 
-                <footer class="rounded bg-color">
+                <footer class="rounded bg-transparent" style="border: 1px solid black">
                     <span>Total</span>
                     <span>R$ 418</span>
                 </footer>
             </div>
+
             <div class="row">
-                <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
+                <div class="comprar-button d-flex justify-content-center mb-4 mt-1">
                     <input type="submit" class="btn btn-warning avancar" id="btn_avancar" value="Avançar">
                 </div>
             </div>

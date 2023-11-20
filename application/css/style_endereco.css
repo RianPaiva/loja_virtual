@@ -29,7 +29,7 @@
 }
 
 .cadastrar  {
-    width: 20% !important;
+    width: 40% !important;
     border: none !important;
     padding: 0.62rem !important;
     border-radius: 5px !important;
@@ -53,10 +53,7 @@ aside>button:hover {
     color: white;
 }
 
-aside {
-    margin-left: 20px;
-    flex-direction: column;
-}
+
 
 aside .box {
     margin-bottom: 20px;
@@ -126,4 +123,8 @@ aside>button {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 16px;
+}
+
+.bg-color {
+    background-color: #D9D9D9 !important;
 }

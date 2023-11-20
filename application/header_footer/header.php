@@ -48,10 +48,10 @@ include("../conexoes/conexao_bd.php");
             <!-- navbar -->
             <nav class="navbar navbar-expand fixed-top">
 
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../imagens/menu.png" alt="">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../imagens/menu.png" alt="" width="" height="40">
                 </button>
 
-                <a class="navbar-brand justify-content-start" href="index.php"><img class="img_logo" src="..\imagens\lavechiastoresemfundo.png" alt="Lavechia Store" width="250" height="40"></a>
+                <a class="navbar-brand justify-content-start ms-2" href="index.php"><img class="img_logo" src="..\imagens\logo-new.png" alt="Lavechia Store" width="200" height=""></a>
 
                 <div class="navbar-collapse">
                 </div>
