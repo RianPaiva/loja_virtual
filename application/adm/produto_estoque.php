@@ -85,7 +85,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-3">
                     <label for="dt_adicao" class="form-label"> Data de Adição </label>
-                    <input type="date" name="data adição" id="dt_adicao" class="form-control" required>
+                    <input type="datetime-local" name="data adição" id="dt_adicao" class="form-control" required>
                 </div>
 
                 <div class="col-md-3">

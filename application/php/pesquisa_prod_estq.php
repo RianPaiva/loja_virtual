@@ -39,6 +39,7 @@ if($result_query = mysqli_query($conn, $query)){
     $return .= $tbl["nome_produto"] . "##";
     $return .= $tbl["valor_venda"] . "##";
     $return .= $tbl["dt_hr_entrada"] . "##";
+    $return .= $tbl["disponivel"] . "##";
     $return .= $tbl["lista_tamanhos"]. "##";
 }else{
     $sucesso = "N";
