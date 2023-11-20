@@ -24,29 +24,30 @@ include("../header_footer/header.php");
 
         <div class="col-md-2">
             <label for="pesq_prod_est" class="form-label"> Nome Do Produto </label>
-            <input type="text" class="form-control form-border" id="pesq_pro_est">
+            <input type="text" class="form-control form-border" id="pesq_prod_est">
+            <div id="lista_prod_est"></div>
         </div>
 
         <div class="col-md-2">
             <label for="cod_produto" class="form-label"> Código do Produto </label>
-            <input type="text" class="form-control form-border" id="cod_produto">
+            <input type="text" class="form-control form-border" id="pesq_cod_produto">
         </div>
 
         <div class="col-md-6 hstack gap-3 ">
 
             <input type="hidden" id="id_fornecedor">
             <div class="col-md-2">
-                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
+                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-danger" id="btn_limpar" value="  Limpar  ">
+                <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
+                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
             </div>
             <div class="col-md-2">
                 <a href="./relatorios/rel_estoque.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+                <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
                 </a>
             </div>
 
@@ -90,6 +91,7 @@ include("../header_footer/header.php");
                 <div class="col-md-3">
                     <label for="disponivel" class="form-label"> Disponível </label>
                     <select name="disponivel" id="disponivel" class="form-select" required>
+                        <option selected></option>
                         <option value="1">Sim</option>
                         <option value="0">Não</option>
                     </select>

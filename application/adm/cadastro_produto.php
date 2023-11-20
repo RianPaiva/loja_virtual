@@ -64,12 +64,12 @@ include("../header_footer/header.php");
 
                     <div class="col-md-3 ">
                         <label for="nome_produto" class="form-label"> Nome Do Produto</label>
-                        <input type="text" class="form-control" id="nome_produto" nome="nome_produto">
+                        <input type="text" class="form-control" id="nome_produto" oninput="handleInput(event)" nome="nome_produto">
                     </div>
 
                     <div class="col-md-3">
                         <label for="fornecedor" class="form-label"> Fornecedor </label>
-                        <input type="text" class="form-control" id="fornecedor" placeholder="" name="fornecedor">
+                        <input type="text" class="form-control" id="fornecedor"  oninput="handleInput(event)" placeholder="" name="fornecedor">
                         <div id="listaFornecedor"></div>
                         <input type="hidden" id="id_fornecedor">
                     </div>
@@ -141,6 +141,7 @@ include("../header_footer/header.php");
 </div>
 
 <script src="../js/cadastro_produto.js"></script>
+<script src="../js/masks.js"></script>
 
 <?php
 
