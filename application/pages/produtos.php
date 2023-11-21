@@ -106,196 +106,42 @@ include("../header_footer/header.php");
 
             <div class="row justify-content-around mb-4">
 
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <!-- <img class="card-img-top" src="..\imagens_produto\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250"> -->
-                        <img class="card-img-top" src="<?php
-                                                        $sql_produto = "SELECT id_produto, local_img FROM tb_produto WHERE id_produto = 15;";
-                                                        $res_produto = mysqli_query($conn, $sql_produto);
-                                                        if ($res_produto->num_rows > 0) {
-                                                            while ($tbl_produto = $res_produto->fetch_assoc()) {
-                                                                echo "<option value='" . $tbl_produto["id_produto"] . "'>" . $tbl_produto["local_img"] . "</option>";
-                                                            }
-                                                        }
-                                                        ?>"alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center">
-                                <?php
-                                $sql_produto = "SELECT id_produto, nome_produto FROM tb_produto WHERE id_produto = 15;";
-                                $res_produto = mysqli_query($conn, $sql_produto);
-                                if ($res_produto->num_rows > 0) {
-                                    while ($tbl_produto = $res_produto->fetch_assoc()) {
-                                        echo "<option value='" . $tbl_produto["id_produto"] . "'>" . $tbl_produto["nome_produto"] . "</option>";
-                                    }
-                                } ?> </h5>
-                            <p class="card-text text-center">
-                                <?php
-                                $sql_preco = "SELECT id_produto, valor_compra FROM tb_item_estoque WHERE id_produto = 15;";
-                                $res_preco = mysqli_query($conn, $sql_preco);
-                                if ($res_preco->num_rows > 0) {
-                                    while ($tbl_preco = $res_preco->fetch_assoc()) {
-                                        echo "<option value= '" . $tbl_preco["id_produto"] . "'> R$ " . $tbl_preco["valor_compra"] . "</option>";
-                                    }
-                                }
-                                ?> </p>
-                        </div>
-                    </div>
-                </div>
+                
+                    <?php
+                    $sql_produto = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+                    INNER JOIN tb_produto AS b 
+                    ON a.id_produto = b.id_produto 
+                    WHERE a.disponivel = 1";
 
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
+                    $res_produto = mysqli_query($conn, $sql_produto);
+                    if ($res_produto->num_rows > 0) {
+                        $num_prod = 0;
 
-                        <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                            <p class="card-text text-center">R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
+                        while ($tbl_produto = $res_produto->fetch_assoc()) {
+                            if($num_prod == 0 ){
+                                echo '<div class="row justify-content-around mb-4">';
+                            }
+                           echo '<div class="col col-custom mb-3">
+                           <div class="card custom-card">
+                               <img class="card-img-top" src="'.$tbl_produto['local_img'].'" alt="Imagem de capa do card">
+                               <div class="card-body">
+                                   <h5 style="font-size: 16px;" class="card-title text-center">'.$tbl_produto['nome_produto'].'</h5>
+                                   <p class="card-text text-center">'.$tbl_produto['valor_venda'].'</p>
+                               </div>
+                           </div>
+                       </div>';
+                       $num_prod += 1;
 
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
+                       if($num_prod == 3 ){
+                            echo '</div>';
+                            $num_prod = 0;
+                       }
 
-            </div>
 
-            <div class="row justify-content-around mb-4">
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                            <p class="card-text text-center">R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-around mb-4">
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                            <p class="card-text text-center">R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row justify-content-around mb-4">
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                            <p class="card-text text-center">R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-around mb-4">
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                            <p class="card-text text-center">R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-custom mb-3">
-                    <div class="card custom-card">
-                        <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                        <div class="card-body">
-                            <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                            <p class="card-text text-center"> R$200,00 </p>
-                        </div>
-                    </div>
-                </div>
+                      
+                        }
+                    }
+                    ?>
 
             </div>
 

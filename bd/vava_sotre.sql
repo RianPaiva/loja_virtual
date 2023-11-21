@@ -19,6 +19,20 @@
 CREATE DATABASE IF NOT EXISTS `bd_lavechia_store` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `bd_lavechia_store`;
 
+-- Copiando estrutura para tabela bd_lavechia_store.tb_categoria
+CREATE TABLE IF NOT EXISTS `tb_categoria` (
+  `id_categoria` int NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_lavechia_store.tb_categoria: ~3 rows (aproximadamente)
+INSERT INTO `tb_categoria` (`id_categoria`, `categoria`, `status`) VALUES
+	(1, 'Tenis', 1),
+	(2, 'Camisa', 1),
+	(3, 'Boné', 1);
+
 -- Copiando estrutura para tabela bd_lavechia_store.tb_cliente
 CREATE TABLE IF NOT EXISTS `tb_cliente` (
   `id_cliente` int NOT NULL AUTO_INCREMENT,
@@ -33,13 +47,14 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
   PRIMARY KEY (`id_cliente`),
   UNIQUE KEY `cpf` (`cpf`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_lavechia_store.tb_cliente: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela bd_lavechia_store.tb_cliente: ~4 rows (aproximadamente)
 INSERT INTO `tb_cliente` (`id_cliente`, `nome`, `sobrenome`, `cpf`, `genero`, `celular`, `email`, `senha`, `status`) VALUES
 	(1, 'RIAN', 'PAIVA DA SILVA', '49043588806', '', '119863183463', 'paiva.dev@outlook.com', '$2y$10$NalUbyPlv.4dYOihhYkjPOc.ece3yjbVuIgWY6WxMEl4SONZ8kts6', 1),
-	(43, 'Lucas', 'da Rosa', '964.382.015', '', '5511941352560', 'l.rosa@hotmail.com', '', 1),
-	(44, 'Isabel', 'das Neves', '327.068.951', 'F', '5584939894719', 'isa.neves_23@yahoo.com.br', '1234', 1);
+	(43, 'Lucas', 'da Rosa', '964.382.015', '', '5511941352560', 'l.rosa@hotmail.com', '123456', 1),
+	(44, 'Isabel', 'das Neves', '327.068.951', 'F', '5584939894719', 'isa.neves_23@yahoo.com.br', '1234', 1),
+	(45, 'GABRIEL', 'SILVA', '', 'M', '(11) 91234-56', 'gabriel.silva@outlook.com', '$2y$10$PdC6hIYo78dkMt0JihaaUetoqlRSaddIUx.3Zi18xOSEc9A/WqfQa', 1);
 
 -- Copiando estrutura para tabela bd_lavechia_store.tb_estado_br
 CREATE TABLE IF NOT EXISTS `tb_estado_br` (
@@ -94,33 +109,41 @@ CREATE TABLE IF NOT EXISTS `tb_fornecedor` (
   `cidade` varchar(80) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `logradouro` varchar(80) NOT NULL,
   `id_estado` int NOT NULL,
-  `complemento` varchar(80) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `num_endereco` int DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `complemento` varchar(80) NOT NULL,
+  `num_endereco` int NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_fornecedor`),
   UNIQUE KEY `cnpj` (`cnpj`),
   KEY `id_estado` (`id_estado`),
   KEY `id_pais` (`id_pais`),
   CONSTRAINT `id_estado` FOREIGN KEY (`id_estado`) REFERENCES `tb_estado_br` (`id_estado`),
   CONSTRAINT `id_pais` FOREIGN KEY (`id_pais`) REFERENCES `tb_pais` (`id_pais`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_lavechia_store.tb_fornecedor: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela bd_lavechia_store.tb_fornecedor: ~5 rows (aproximadamente)
 INSERT INTO `tb_fornecedor` (`id_fornecedor`, `razao_social`, `cnpj`, `email`, `telefone`, `id_pais`, `cidade`, `logradouro`, `id_estado`, `complemento`, `num_endereco`, `status`) VALUES
 	(15, 'PAIVA', '111', 'paiva2gmail.com', '912345678', 1, 'Fracis Mor', 'Jardim Tristeza', 26, 'Calvo', 123, 1),
-	(16, 'URUGA', '22222222222', 'uru@ga', '(11) 91234 56', 1, 'FRANCO DA ROCHA', 'RUA 2', 26, 'PRÉDIO', 111, 1),
-	(23, 'PAIVA DEVELOPMENT & SOLUTIONS', '51975017000103', 'paiva.dev@outlook.com', '(11) 96318-34', 1, 'FRANCISCO MORATO', 'AVENIDA CONGONHAS', 26, 'SEM COMPLEMENTO', 129, 1);
+	(16, 'URUGA', '22.222.222/222', 'uru@ga', '(11) 91234 56', 1, 'FRANCO DA ROCHA', 'RUA 2', 26, 'PRÉDIO', 111, 0),
+	(17, 'TESTE', '11.111.111/111', 'exemplo@gmail.com', '(11) 91111 11', 1, 'RANDOM', 'RANDOM2', 8, 'RANDOM3', 78, 0),
+	(18, 'TESTE2', '111.111.111 12', 'exemplo@gmail.com', '(11) 91111 11', 6, 'RANDOM', 'RANDOM2', 99, 'RANDOM3', 78, 0),
+	(19, 'VINI LTDA', '23.655.451/364', 'vini.ltd@gmail.com', '(11) 95062 55', 1, 'CAMPO LARGO', 'RUA 15', 9, 'NENHUM', 160, 0);
 
 -- Copiando estrutura para tabela bd_lavechia_store.tb_item_estoque
 CREATE TABLE IF NOT EXISTS `tb_item_estoque` (
   `id_produto` int NOT NULL AUTO_INCREMENT,
-  `valor_compra` double(10,2) NOT NULL,
+  `valor_venda` double(10,2) NOT NULL,
   `dt_hr_entrada` timestamp NOT NULL,
-  `qtd_disponivel` int NOT NULL DEFAULT '0',
+  `disponivel` tinyint(1) NOT NULL DEFAULT (0),
+  `lista_tamanhos` json DEFAULT NULL,
   PRIMARY KEY (`id_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_lavechia_store.tb_item_estoque: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela bd_lavechia_store.tb_item_estoque: ~4 rows (aproximadamente)
+INSERT INTO `tb_item_estoque` (`id_produto`, `valor_venda`, `dt_hr_entrada`, `disponivel`, `lista_tamanhos`) VALUES
+	(12, 300.00, '2023-11-15 02:33:37', 1, '{"35": "2", "40": "4"}'),
+	(13, 399.00, '0000-00-00 00:00:00', 1, '{"35": 10, "36": 20, "37": 15}'),
+	(14, 450.00, '2023-11-21 16:39:57', 1, '{"35": 10, "36": 20, "37": 15}'),
+	(23, 700.00, '2023-11-21 16:46:26', 1, '{"35": 10, "36": 20, "37": 15}');
 
 -- Copiando estrutura para tabela bd_lavechia_store.tb_item_pedido
 CREATE TABLE IF NOT EXISTS `tb_item_pedido` (
@@ -134,6 +157,18 @@ CREATE TABLE IF NOT EXISTS `tb_item_pedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela bd_lavechia_store.tb_item_pedido: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela bd_lavechia_store.tb_marca
+CREATE TABLE IF NOT EXISTS `tb_marca` (
+  `id_marca` int NOT NULL AUTO_INCREMENT,
+  `marca` varchar(50) NOT NULL,
+  `status_marca` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id_marca`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Copiando dados para a tabela bd_lavechia_store.tb_marca: ~0 rows (aproximadamente)
+INSERT INTO `tb_marca` (`id_marca`, `marca`, `status_marca`) VALUES
+	(1, 'NIKE', 1);
 
 -- Copiando estrutura para tabela bd_lavechia_store.tb_pais
 CREATE TABLE IF NOT EXISTS `tb_pais` (
@@ -421,24 +456,29 @@ CREATE TABLE IF NOT EXISTS `tb_produto` (
   `id_produto` int NOT NULL AUTO_INCREMENT,
   `nome_produto` varchar(50) NOT NULL DEFAULT '',
   `id_fornecedor` int NOT NULL,
-  `categoria` int NOT NULL DEFAULT '0',
-  `id_genero` int NOT NULL,
+  `id_categoria` int NOT NULL,
+  `genero` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `local_img` varchar(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `descricao` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `id_marca` int NOT NULL,
   PRIMARY KEY (`id_produto`),
   KEY `id_fornecedor` (`id_fornecedor`),
-  KEY `Index 3` (`id_genero`),
-  CONSTRAINT `id_genero` FOREIGN KEY (`id_genero`) REFERENCES `tb_genero` (`id_genero`),
-  CONSTRAINT `tb_produto_ibfk_1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor` (`id_fornecedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  KEY `Index 3` (`id_categoria`),
+  KEY `FK_tb_produto_tb_marca` (`id_marca`),
+  CONSTRAINT `FK_tb_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `tb_categoria` (`id_categoria`),
+  CONSTRAINT `FK_tb_produto_tb_fornecedor` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor` (`id_fornecedor`),
+  CONSTRAINT `FK_tb_produto_tb_marca` FOREIGN KEY (`id_marca`) REFERENCES `tb_marca` (`id_marca`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_lavechia_store.tb_produto: ~2 rows (aproximadamente)
-INSERT INTO `tb_produto` (`id_produto`, `nome_produto`, `id_fornecedor`, `categoria`, `id_genero`, `local_img`, `descricao`) VALUES
-	(12, 'Nike', 16, 0, 1, '', 'Foto Teste'),
-	(13, 'Air Max 90', 23, 0, 1, '../imagens_produto/air_max_90.webp', 'Tênis');
+-- Copiando dados para a tabela bd_lavechia_store.tb_produto: ~4 rows (aproximadamente)
+INSERT INTO `tb_produto` (`id_produto`, `nome_produto`, `id_fornecedor`, `id_categoria`, `genero`, `local_img`, `descricao`, `id_marca`) VALUES
+	(12, 'NIKE DUNK LOW RETRÔ', 16, 1, 'M', '../imagens_produto/dunk_low_retro.png', 'Foto Teste', 1),
+	(13, 'AF01 RAINBOW', 15, 1, 'U', '../imagens_produto/air_force_colorido.png', 'Air Force One, Super Estiloso e confortável!', 1),
+	(14, 'AIR JORDAN ', 15, 1, 'U', '../imagens_produto/air-jordan.png', 'Tênis casual e luxuoso', 1),
+	(23, 'AIR MAX 95', 15, 1, 'M', '../imagens_produto/airmax_cinza.png', 'O melhor da linha Air Max', 1);
 
--- Copiando estrutura para tabela bd_lavechia_store.tb_usuarios
-CREATE TABLE IF NOT EXISTS `tb_usuarios` (
+-- Copiando estrutura para tabela bd_lavechia_store.tb_usuario
+CREATE TABLE IF NOT EXISTS `tb_usuario` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `sobrenome` varchar(80) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -450,11 +490,11 @@ CREATE TABLE IF NOT EXISTS `tb_usuarios` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_lavechia_store.tb_usuarios: 1 rows
-/*!40000 ALTER TABLE `tb_usuarios` DISABLE KEYS */;
-INSERT INTO `tb_usuarios` (`id_usuario`, `nome`, `sobrenome`, `email`, `senha`, `status`, `nivel_acesso`) VALUES
+-- Copiando dados para a tabela bd_lavechia_store.tb_usuario: 1 rows
+/*!40000 ALTER TABLE `tb_usuario` DISABLE KEYS */;
+INSERT INTO `tb_usuario` (`id_usuario`, `nome`, `sobrenome`, `email`, `senha`, `status`, `nivel_acesso`) VALUES
 	(1, 'RIAN', ' PAIVA DA SILVA', 'paiva.dev@outlook.com', '123', 1, 1);
-/*!40000 ALTER TABLE `tb_usuarios` ENABLE KEYS */;
+/*!40000 ALTER TABLE `tb_usuario` ENABLE KEYS */;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

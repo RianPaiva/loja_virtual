@@ -29,6 +29,7 @@
 
 .card-img-top {
     transition: all .2s ease !important;
+    max-width: 100px !important;
 }
 
 .card-img-top:hover {
