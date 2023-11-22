@@ -176,8 +176,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-4">
                     <p class="">
-                        <a class="btn btn-warning avancar" data-bs-toggle="collapse" href="#multiCollapseExample1"
-                            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Novo Endereço</a>
+                        <a class="btn btn-warning avancar" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Novo Endereço</a>
                     </p>
                 </div>
 
@@ -222,8 +221,7 @@ include("../header_footer/header.php");
 
                                                 <div class="col-md-6 text-start">
                                                     <label for="complemento" class="form-label">Complemento</label>
-                                                    <input type="text" class="form-control" id="complemento"
-                                                        placeholder="">
+                                                    <input type="text" class="form-control" id="complemento" placeholder="">
                                                 </div>
 
                                                 <div class="col-md-6 text-start">
@@ -234,8 +232,7 @@ include("../header_footer/header.php");
 
                                             <div class="row">
                                                 <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
-                                                    <input type="submit" class="btn btn-warning cadastrar"
-                                                        id="btn_comprar" value="Cadastrar">
+                                                    <input type="submit" class="btn btn-warning cadastrar" id="btn_comprar" value="Cadastrar">
                                                 </div>
                                             </div>
                                     </div>
@@ -278,14 +275,7 @@ include("../header_footer/header.php");
         <hr class="opacity-0" style="border: 45px solid transparent">
     </div>
 
-
-
-
 </div>
-
-
-</div>
-
 
 </html>
 

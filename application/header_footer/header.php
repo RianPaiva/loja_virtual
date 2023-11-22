@@ -57,9 +57,17 @@ include("../conexoes/conexao_bd.php");
                     <div class="navbar-collapse">
                     </div>
 
-                    <form class="d-flex me-5">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    </form>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="..\imagens\lupa.png" alt="Lupa de Pesquisar">
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <form class="d-flex me-5">
+                                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                            </form>
+                        </div>
+                    </div>
+
 
                     <div class="side-nave-button p-2 me-3">
 
