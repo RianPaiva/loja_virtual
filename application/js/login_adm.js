@@ -19,22 +19,22 @@ $(document).ready(function () {
 
 
                     method: "POST",
-                    url: "../php/logar_adm.php",
+                    url: "../php/login_adm.php",
                     datatype: "HTML",
                     data: {
                         metodo: "cad_adm",
-                        email: $("#email"),
-                        senha: $("#password"),
+                        email: $("#email").val(),
+                        senha: $("#password").val(),
 
                     }
 
-                }).done(function(data){
+                }).done(function (data) {
 
                     console.log(data);
-                    if(data !== 'True'){
+                    if (data === 'False') {
                         alert("Erro: " + data)
-                    }else{
-                        alert("ADM");
+                    } else {
+                        window.location.href='../adm/index.php';
                     }
                 })
             }
