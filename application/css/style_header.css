@@ -1,11 +1,33 @@
-nav {
+.navbar {
     height: 63px;
     background-color: rgb(0, 0, 0) !important;
 }
 
 .menu {
     height: 30px;
-    width: 30px;
+    width: 32px;
+    min-width: 25px;
+    min-height: auto;
+}
+
+.usuario {
+    height: 25px;
+    width: 25px;
+    min-width: 17px;
+    min-height: 17px;
+}
+
+.carrinho {
+    height: 31px;
+    width: 31px;
+    min-width: 26px;
+    min-height: 20px;
+}
+
+.img-logo {
+    width: 200px !important;
+    min-height: 31px;
+    min-width: 110px !important;
 }
 
 body {

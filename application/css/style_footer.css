@@ -5,7 +5,42 @@ footer {
     background-color: black !important;
     max-height: 100% !important;
 }
+
+.img-logo {
+    width: 120%;
+    min-width: 100%;
+}
  
 .nome-loja, p {
     font-size: 20px;
+}
+
+.visa {
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.pix {
+    min-width: 20px;
+    min-height: 20px; 
+}
+
+.master-card {
+    min-width: 20px;
+    min-height: 20px; 
+}
+
+.facebook {
+    min-width: 20px;
+    min-height: 20px; 
+}
+
+.instagram {
+    min-width: 20px;
+    min-height: 20px; 
+}
+
+.whatsapp {
+    min-width: 20px;
+    min-height: 20px; 
 }

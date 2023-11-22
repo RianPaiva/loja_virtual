@@ -29,7 +29,10 @@
 
 .card-img-top {
     transition: all .2s ease !important;
-    max-width: 100px !important;
+    max-width: 230px !important;
+    min-width: 230px !important;
+    max-height: 190px !important;
+    min-height: 190px !important;
 }
 
 .card-img-top:hover {

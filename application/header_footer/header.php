@@ -44,71 +44,72 @@ include("../conexoes/conexao_bd.php");
 <body>
     <header>
         <div class="container-fluid">
+            <div class="row">
 
-            <!-- navbar -->
-            <nav class="navbar navbar-expand fixed-top">
+                <!-- navbar -->
+                <div class="navbar navbar-expand fixed-top">
 
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../imagens/menu.png" alt="" width="" height="40">
-                </button>
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../imagens/menu.png" class="menu img-fluid">
+                    </button>
 
-                <a class="navbar-brand justify-content-start ms-2" href="index.php"><img class="img_logo" src="..\imagens\logo-new.png" alt="Lavechia Store" width="200" height=""></a>
+                    <a class="navbar-brand justify-content-start ms-2" href="index.php"><img class="img-logo img-fluid" src="..\imagens\logo-new.png" alt="Lavechia Store" height=""></a>
 
-                <div class="navbar-collapse">
+                    <div class="navbar-collapse">
+                    </div>
+
+                    <form class="d-flex me-5">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                    </form>
+
+                    <div class="side-nave-button p-2 me-3">
+
+                        <a href="../pages/carrinho.php">
+                            <img class="carrinho img-fluid" src="../imagens/carrinho.png" alt="menu">
+                        </a>
+                    </div>
+
+                    <div class="side-nave-button p-2 me-5 nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="usuario img-fluid" src="../imagens/usuario.png" alt="menu"> </a>
+                        <ul class="dropdown-menu dropdown-menu-lg-start">
+                            <?php
+                            if ($login_feito == "S") {
+                            ?>
+                                <li><a class="dropdown-item" href="perfil_cliente.php"> Perfil </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="../php/logout.php"> Sair </a></li>
+                            <?php
+                            } else {
+                            ?>
+                                <li><a class="dropdown-item" href="login.php">Login</a></li>
+                            <?php
+                            }
+                            ?>
+
+
+                        </ul>
+                    </div>
                 </div>
 
-                <form class="d-flex me-5">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                </form>
-
-                <div class="side-nave-button p-2 me-3">
-
-                    <a href="../pages/carrinho.php">
-                        <img class="menu" src="../imagens/carrinho.png" alt="menu">
-                    </a>
-                </div>
-
-                <div class="side-nave-button p-2 me-5 nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="menu" src="../imagens/usuario.png" alt="menu"> </a>
-                    <ul class="dropdown-menu dropdown-menu-lg-start">
-                        <?php
-                        if ($login_feito == "S") {
-                        ?>
-                            <li><a class="dropdown-item" href="perfil_cliente.php"> Perfil </a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="../php/logout.php"> Sair </a></li>
-                        <?php
-                        } else {
-                        ?>
-                            <li><a class="dropdown-item" href="login.php">Login</a></li>
-                        <?php
-                        }
-                        ?>
-
-
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Off canvas -->
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                <div class="offcanvas-header">
-                    <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Menu</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul>
-                        <li><a href="../pages/index.php">Home</a></li>
-                        <li><a href="../pages/produtos.php?categoria=MASCULINO">Masculino</a></li>
-                        <li><a href="../pages/produtos.php?categoria=FEMININO">Feminino</a></li>
-                        <li><a href="../pages/produtos.php?categoria=BONÉS">Bonés</a></li>
-                        <li><a href="../pages/produtos.php?categoria=CAMISAS">Camisas</a></li>
-                        <li><a href="../pages/produtos.php?categoria=TÊNIS">Tênis</a></li>
-                    </ul>
+                <!-- Off canvas -->
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div class="offcanvas-header">
+                        <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Menu</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li><a href="../pages/index.php">Home</a></li>
+                            <li><a href="../pages/produtos.php?categoria=MASCULINO">Masculino</a></li>
+                            <li><a href="../pages/produtos.php?categoria=FEMININO">Feminino</a></li>
+                            <li><a href="../pages/produtos.php?categoria=BONÉS">Bonés</a></li>
+                            <li><a href="../pages/produtos.php?categoria=CAMISAS">Camisas</a></li>
+                            <li><a href="../pages/produtos.php?categoria=TÊNIS">Tênis</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </div>
     </header>
 

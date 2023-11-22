@@ -123,7 +123,7 @@ include("../header_footer/header.php");
                             }
                            echo '<div class="col col-custom mb-3">
                            <div class="card custom-card">
-                               <img class="card-img-top" src="'.$tbl_produto['local_img'].'" alt="Imagem de capa do card">
+                                <img class="card-img-top" src="'.$tbl_produto['local_img'].'" alt="Imagem de capa do card">
                                <div class="card-body">
                                    <h5 style="font-size: 16px;" class="card-title text-center">'.$tbl_produto['nome_produto'].'</h5>
                                    <p class="card-text text-center">'.$tbl_produto['valor_venda'].'</p>
