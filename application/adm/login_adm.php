@@ -1,7 +1,6 @@
 <?php
 include("../conexoes/conexao_bd.php");
 
-
 if (isset($_POST["email"]) || isset($_POST["password"])) {
 
     if (strlen($_POST["email"]) == 0) {
@@ -15,18 +14,18 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
 
 
-        $sql = "SELECT * FROM tb_usuario WHERE email = '" . $email . "' LIMIT 1";
+        $sql = "SELECT * FROM tb_usuario WHERE email = '".$email."' LIMIT 1;";
         $result = mysqli_query($conn, $sql);
-        if ($result->num_rows  == 1) {
+        if ($result->num_rows == 1) {
 
             $tbl = $result->fetch_assoc();
 
-            if (password_verify($password, $tbl['senha'])) {
+            if(password_verify($password, $tbl["senha"])){
 
-                $id_cliente =  $tbl['id_usuario'];
+                $id_usuario =  $tbl['id_usuario'];
                 $nome_usuario = $tbl['nome'];
 
-                if (!isset($_SESSION)) {
+                if(!isset($_SESSION)){
                     session_start();
                 }
 
@@ -35,10 +34,10 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
                 header("Location: index.php");
             } else {
-                echo "<script> alert('Senha incorreta!') </script>";
+                echo "<script> alert('Senha incorreta! FILHA DA PUTA A SENHA É ESSA: ".$password."') </script>";
             }
-        } else {
-            echo "<script> alert('Email ou senha incorretos!') </script>";
+        }else{
+            echo "<script> alert('Erro! ". mysqli_error($conn) ."')</script>";
         }
     }
 }
@@ -93,6 +92,6 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
         </div>
 
-<script src="../js/login_adm.js"></script>
+        <!-- <script src="../js/login_adm.js"></script> -->
 
 </body>
