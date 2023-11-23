@@ -79,3 +79,24 @@ body {
 .offcanvas ul li a:hover::before {
     width: 60%;
 }
+
+.pesquisar {
+    width: 50% !important;
+    border: none !important;
+    padding: 0.62rem !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: all .2s ease !important;
+    font-size: 18px !important;
+    background-color: #CFB53B !important;
+    margin-bottom: 30px;
+}
+
+.pesquisar:hover {
+    background-color: #B59D35 !important;
+    color: white !important;
+}
+
+.form-control {
+    margin-bottom: 30px !important;
+}

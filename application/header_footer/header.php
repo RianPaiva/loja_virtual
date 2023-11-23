@@ -57,17 +57,7 @@ include("../conexoes/conexao_bd.php");
                     <div class="navbar-collapse">
                     </div>
 
-                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        <img src="..\imagens\lupa.png" alt="Lupa de Pesquisar">
-                    </a>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <form class="d-flex me-5">
-                                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                            </form>
-                        </div>
-                    </div>
-
+                    <!-- antiga barra de Pesquisar -->
 
                     <div class="side-nave-button p-2 me-3">
 
@@ -95,7 +85,6 @@ include("../conexoes/conexao_bd.php");
                             }
                             ?>
 
-
                         </ul>
                     </div>
                 </div>
@@ -107,6 +96,10 @@ include("../conexoes/conexao_bd.php");
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
+                        <form class="d-flex me-5">
+                            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                            <input type="submit" class="btn pesquisar" id="btn_comprar" value="Pesquisar">
+                        </form>
                         <ul>
                             <li><a href="../pages/index.php">Home</a></li>
                             <li><a href="../pages/produtos.php?categoria=MASCULINO">Masculino</a></li>

@@ -32,10 +32,12 @@ body {
     cursor: pointer !important;
     transition: all .2s ease !important;
     font-size: 15px !important;
+    color: black !important;
 }
 
 .continue:hover {
     background-color: #B59D35 !important;
+    color: white !important;
 }
 
 .continue {
