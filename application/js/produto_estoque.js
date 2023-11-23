@@ -103,7 +103,28 @@ $("#btn_cadastrar").on("click", function (e) {
                         if(isJSON($("#tamanhos_quantidades").val()) == false){
                             alert("Preencha TAMANHOS E QUANTIDADES em formato válido para inserir no estoque!");
                         }else{
-                            alert("cadastrar");
+                             // VALIDAÇÃO COM AJAX
+                             $.ajax({
+                                method: "POST",
+                                url: "../php/cadastrar_fornecedor.php",
+                                dataType: "HTML",
+                                data: {
+                                    metodo: "cad_prod_estq",
+                                    id: $("#id_produto").val(),
+                                    preco: $("#preco").val(),
+                                    dt_adicao: $("#dt_adicao").val(),
+                                    disponivel: $("#disponivel").val(),
+                                    tamanhos: $("#tamanhos_quantidades").val()   
+                                }
+                            }).done(function (data) {
+                                console.log(data);
+                                if (data !== "True") {
+                                    alert("Erro: " + data);
+                                } else {
+                                    alert("Alteração realizada com sucesso!");
+                                    limpar();
+                                }
+                            });
                         }                        
                     }
                     
