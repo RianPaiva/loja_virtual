@@ -1,4 +1,6 @@
 <?php
+// include("index.php");
+// include("../header_footer/protect.php");
 include("../conexoes/conexao_bd.php");
 
 if (isset($_POST["email"]) || isset($_POST["password"])) {
@@ -34,7 +36,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
                 header("Location: index.php");
             } else {
-                echo "<script> alert('Senha incorreta! FILHA DA PUTA A SENHA É ESSA: ".$password."') </script>";
+                echo "<script> alert('Senha incorreta!') </script>";
             }
         }else{
             echo "<script> alert('Erro! ". mysqli_error($conn) ."')</script>";

@@ -1,5 +1,7 @@
 <?php
 
+
+include("../header_footer/protect.php");
 include("../header_footer/header.php");
 
 ?>
