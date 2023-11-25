@@ -161,7 +161,9 @@ $(document).ready(function () {
                 $("#categoria").val(vetor[5]);
                 $("#genero").val(vetor[6]);
                 $("#descricao").val(vetor[7]);
+                $('#produto').prop('disabled', true);
                 $("#img_prod").attr("src", vetor[8]);
+
             } else {
                 alert('Erro');
             }
@@ -186,6 +188,7 @@ function limpar() {
     $("#genero").val('');
     $("#imagem").val('');
     $("#img_prod").attr("src", '');
+    $('#produto').prop('disabled', false);
 
 }
 

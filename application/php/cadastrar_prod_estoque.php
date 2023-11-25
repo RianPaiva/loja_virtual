@@ -30,13 +30,17 @@ if ($_POST["metodo"] == "cad_prod_estq") {
     }
 } elseif ($_POST["metodo"] == "alt_prod_estq") {
     $id_prod = $_POST["id"];
+    if(is_null($id_prod)){
+        echo "Selecione um produto para alterar";
+        die();
+    }
     $preco = $_POST["preco"];
     $dt_adicao = $_POST["dt_adicao"];
     $disponivel = $_POST["disponivel"];
     $tamanhos = $_POST["tamanhos"];
 
     $sql_update = "UPDATE tb_item_estoque SET valor_venda = " . $preco . ", dt_hr_entrada = '" . $dt_adicao . "', disponivel = " . $disponivel . ",
-    tamanhos = '" . $tamanhos . "'  WHERE  id_produto=" . $id . ";";
+    lista_tamanhos = '" . $tamanhos . "'  WHERE  id_produto=" . $id_prod . ";";
 
     if (mysqli_query($conn, $sql_update)) {
         echo "Sucesso";

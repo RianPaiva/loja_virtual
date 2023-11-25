@@ -24,7 +24,7 @@ include("../header_footer/header.php");
 
         <div class="col-md-2">
             <label for="produto" class="form-label"> Nome do Produto </label>
-            <input type="text" class="form-control form-border" id="produto">
+            <input type="text" class="form-control form-border" oninput="handleInput(event)" id="produto">
             <div id="listaProduto"></div>
         </div>
 

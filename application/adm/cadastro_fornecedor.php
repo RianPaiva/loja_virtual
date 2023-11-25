@@ -23,8 +23,8 @@ include("../header_footer/header.php");
     <div class="row justify-content-start ">
 
         <div class="col-md-2">
-            <label for="pesquisa_razao" class="form-label">Razão Social</label>
-            <input type="text" class="form-control form-border" id="pesquisa_razao">
+            <label for="pesquisa_razao"  class="form-label">Razão Social</label>
+            <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_razao">
             <div id="listaRazao"></div>
         </div>
 
@@ -74,7 +74,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-3">
                     <label for="cnpj" class="form-label">CNPJ</label>
-                    <input type="text" onkeyup="mascara_cpf_cnpj(event)" maxlength="18" class="form-control" id="cnpj">
+                    <input type="text" oninput="mascara_cpf_cnpj(event)" maxlength="18" class="form-control" id="cnpj">
                 </div>
             </div>
 

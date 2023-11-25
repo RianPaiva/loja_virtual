@@ -24,7 +24,7 @@ include("../header_footer/header.php");
 
         <div class="col-md-2">
             <label for="pesq_prod_est" class="form-label"> Nome Do Produto </label>
-            <input type="text" class="form-control form-border" id="pesq_prod_est">
+            <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesq_prod_est">
             <div id="lista_prod_est"></div>
         </div>
 
@@ -69,7 +69,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-3 ">
                     <label for="Produto" class="form-label"> Produto </label>
-                    <input type="text" name="produto" id="produto" class="form-control" required>
+                    <input type="text" name="produto" id="produto" oninput="handleInput(event)" class="form-control" required>
                     <input type="hidden" id="id_produto" value="">
                     <div id="listaProduto"></div>
                 </div>
@@ -121,6 +121,7 @@ include("../header_footer/header.php");
 
 </div>
 <script src="../js/produto_estoque.js"></script>
+<script src="../js/masks.js"></script>
 
 <?php
 

@@ -63,72 +63,43 @@ echo "INDEX.PHP";
             </div>
 
         </div>
-        <div class="row justify-content-around mb-4">
 
-            <div class="col col-custom mb-3">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
-                    <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
-                        <p class="card-text text-center"> R$200,00 </p>
-                    </div>
-                </div>
-            </div>
+        <!--NOVIDADES PHP -->
+        <?php
+        $sql_news = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+            INNER JOIN tb_produto AS b 
+            ON a.id_produto = b.id_produto 
+            WHERE a.disponivel = 1 ORDER BY a.dt_hr_entrada DESC LIMIT 6";
 
-            <div class="col col-custom mb-3">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                    <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                        <p class="card-text text-center">R$200,00 </p>
-                    </div>
-                </div>
-            </div>
+        $res_news = mysqli_query($conn, $sql_news);
+        if ($res_news->num_rows > 0) {
+            $num_prod = 0;
 
-            <div class="col col-custom mb-3">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                    <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                        <p class="card-text text-center"> R$200,00 </p>
-                    </div>
-                </div>
-            </div>
+            while ($tbl_produto = $res_news->fetch_assoc()) {
+                if ($num_prod == 0) {
+                    echo '<div class="row justify-content-around mb-4">';
+                }
+                echo '<div class="col col-custom mb-3">
+                <a href="./produto.php?id_prod='.$tbl_produto['id_produto'].'">
+       <div class="card custom-card">
+            <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
+           <div class="card-body">
+               <h5 style="font-size: 16px;" class="card-title text-center">' . $tbl_produto['nome_produto'] . '</h5>
+               <p class="card-text text-center">' . $tbl_produto['valor_venda'] . '</p>
+           </div>
+       </div>
+       </a>
+   </div>';
+                $num_prod += 1;
 
-        </div>
-
-        <div class="row justify-content-around mb-4">
-
-            <div class="col col-custom mb-3">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\tenis-wmns-nike-dunk-low-se-just-do-it-white.png" alt="Imagem de capa do card" width="250" height="250">
-                    <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> WMNS Nike Dunk Low </h5>
-                        <p class="card-text text-center"> R$200,00 </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-custom mb-3">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\tenis-nike-dunk-low-retro-cargo-khaki-mystic-red.png" alt="Imagem de capa do card" width="250" height="250">
-                    <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> Nike Dunk Low Retro </h5>
-                        <p class="card-text text-center">R$200,00 </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-custom mb-3">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="..\imagens\tenis-jordan-luka-2-bred.png" alt="Imagem de capa do card" width="250" height="250">
-                    <div class="card-body">
-                        <h5 style="font-size: 16px;" class="card-title text-center"> Jordan Luka 2 </h5>
-                        <p class="card-text text-center"> R$200,00 </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                if ($num_prod == 3) {
+                    echo '</div>';
+                    $num_prod = 0;
+                }
+            }
+        }
+        ?>
+        
 
 
     </div>

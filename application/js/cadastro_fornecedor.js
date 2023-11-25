@@ -78,8 +78,6 @@ $(document).ready(function () {
             }
 
         } else if ($("#btn_cadastrar").val() == "Alterar") {
-            alert("Alterando");
-
             // CONFERE CAMPOS PREENCHIDOS
             if ($("#razao_social").val() === null || $("#razao_social").val().length < 2) {
                 alert("Preencha a RAZÃO SOCIAL");
@@ -193,6 +191,8 @@ $(document).ready(function () {
                 $("#complemento").val(vetor[10]);
                 $("#numero").val(vetor[11]);
                 $("#status").val(vetor[12]);
+                $('#pesquisa_razao').prop('disabled', true);
+                $('#pesquisa_cnpj').prop('disabled', true);
 
             } else {
                 alert(vetor[0]);
@@ -220,5 +220,7 @@ function limpar() {
     $("#complemento").val('');
     $("#numero").val('');
     $("#status").val('');
+    $('#pesquisa_razao').prop('disabled', false);
+    $('#pesquisa_cnpj').prop('disabled', false);
 
 }

@@ -27,6 +27,12 @@ if ($_POST["metodo"] == "cad_fornecedor") {
         die();
     }
 
+    //VERIFICA SE O EMAIL É VÁLIDO
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } else {
+        echo "Email inválido";
+        die();
+    }
 
     // VERIFICAR SE JÁ FOI CADASTRADO
     $conf_cnpj = "N";
@@ -76,12 +82,20 @@ if ($_POST["metodo"] == "cad_fornecedor") {
             }
         }
     }
-} elseif($_POST["metodo"] == "alt_fornecedor"){
+} elseif ($_POST["metodo"] == "alt_fornecedor") {
 
-     //VERIFICA SE CPF/CNPJ É VÁLIDO
-     if (validarCpfCnpj($cnpj)) {
+    //VERIFICA SE CPF/CNPJ É VÁLIDO
+    if (validarCpfCnpj($cnpj)) {
     } else {
         echo "CNPJ Inválido";
+        die();
+    }
+
+
+    //VERIFICA SE O EMAIL É VÁLIDO
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } else {
+        echo "Email inválido";
         die();
     }
 
@@ -91,8 +105,8 @@ if ($_POST["metodo"] == "cad_fornecedor") {
     $conf_razao = "N";
 
     // CONSULTAS NO BANCO
-    $query_cnpj = "SELECT * FROM tb_fornecedor WHERE cnpj = '" . $cnpj . "' AND id_fornecedor <> ".$id_fornecedor." LIMIT 1;";
-    $query_razao = "SELECT * FROM tb_fornecedor WHERE razao_social = '" . $razao_social . "' AND id_fornecedor <> ".$id_fornecedor." LIMIT 1";
+    $query_cnpj = "SELECT * FROM tb_fornecedor WHERE cnpj = '" . $cnpj . "' AND id_fornecedor <> " . $id_fornecedor . " LIMIT 1;";
+    $query_razao = "SELECT * FROM tb_fornecedor WHERE razao_social = '" . $razao_social . "' AND id_fornecedor <> " . $id_fornecedor . " LIMIT 1";
 
     // EXECUÇÃO DAS CONSULTAS
     $result_cnpj = mysqli_query($conn, $query_cnpj);
@@ -134,7 +148,7 @@ if ($_POST["metodo"] == "cad_fornecedor") {
                     complemento = '" . $complemento . "', 
                     num_endereco = '" . $numero . "', 
                     `status` = " . $status . "
-                WHERE id_fornecedor = ".$id_fornecedor.";"; 
+                WHERE id_fornecedor = " . $id_fornecedor . ";";
                 // EXECUÇÃO DA CONSULTA
                 if (mysqli_query($conn, $query_fornecedor)) {
                     echo "True";

@@ -86,25 +86,25 @@ $('#listaProduto').on('click', 'li', function () {
 
 //CADASTRAR
 $("#btn_cadastrar").on("click", function (e) {
-    if($(this).val() == "Cadastrar"){
-        if($("#id_produto").val() == ''){
+    if ($(this).val() == "Cadastrar") {
+        if ($("#id_produto").val() == '') {
             alert("Preencha o campo PRODUTO para inserir no estoque!");
-        }else{
-            if($("#preco").val() <= 3){
+        } else {
+            if ($("#preco").val() <= 3) {
                 alert("Preencha com um PREÇO válido para inserir no estoque!");
-            }else{               
-                if($("#dt_adicao").val() < "2022-10-11"){
+            } else {
+                if ($("#dt_adicao").val() < "2022-10-11") {
                     alert("Preencha com uma DATA válida para inserir no estoque!");
-                }else{
-                    if($("#disponivel").val() == ''){
+                } else {
+                    if ($("#disponivel").val() == '') {
                         alert("Preencha o campo DISPONÍVEL para inserir no estoque!");
-                    }else{
-                        
-                        if(isJSON($("#tamanhos_quantidades").val()) == false){
+                    } else {
+
+                        if (isJSON($("#tamanhos_quantidades").val()) == false) {
                             alert("Preencha TAMANHOS E QUANTIDADES em formato válido para inserir no estoque!");
-                        }else{
-                             // VALIDAÇÃO COM AJAX
-                             $.ajax({
+                        } else {
+                            // VALIDAÇÃO COM AJAX
+                            $.ajax({
                                 method: "POST",
                                 url: "../php/cadastrar_prod_estoque.php",
                                 dataType: "HTML",
@@ -114,7 +114,7 @@ $("#btn_cadastrar").on("click", function (e) {
                                     preco: $("#preco").val(),
                                     dt_adicao: $("#dt_adicao").val(),
                                     disponivel: $("#disponivel").val(),
-                                    tamanhos: $("#tamanhos_quantidades").val()   
+                                    tamanhos: $("#tamanhos_quantidades").val()
                                 }
                             }).done(function (data) {
                                 console.log(data);
@@ -125,16 +125,63 @@ $("#btn_cadastrar").on("click", function (e) {
                                     limpar();
                                 }
                             });
-                        }                        
+                        }
                     }
-                    
+
                 }
-                
+
             }
-           
+
         }
-    }else if($(this).val() == "Alterar"){
-        alert("Alterar");
+    } else if ($(this).val() == "Alterar") {
+        if ($("#id_produto").val() == '') {
+            alert("Preencha o campo PRODUTO para inserir no estoque!");
+        } else {
+            if ($("#preco").val() <= 3) {
+                alert("Preencha com um PREÇO válido para inserir no estoque!");
+            } else {
+                if ($("#dt_adicao").val() < "2022-10-11") {
+                    alert("Preencha com uma DATA válida para inserir no estoque!");
+                } else {
+                    if ($("#disponivel").val() == '') {
+                        alert("Preencha o campo DISPONÍVEL para inserir no estoque!");
+                    } else {
+
+                        if (isJSON($("#tamanhos_quantidades").val()) == false) {
+                            alert("Preencha TAMANHOS E QUANTIDADES em formato válido para inserir no estoque!");
+                        } else {
+
+
+                            $.ajax({
+                                method: "POST",
+                                url: "../php/cadastrar_prod_estoque.php",
+                                dataType: "HTML",
+                                data: {
+                                    metodo: "alt_prod_estq",
+                                    id: $("#id_produto").val(),
+                                    preco: $("#preco").val(),
+                                    dt_adicao: $("#dt_adicao").val(),
+                                    disponivel: $("#disponivel").val(),
+                                    tamanhos: $("#tamanhos_quantidades").val()
+                                }
+                            }).done(function (data) {
+                                console.log(data);
+                                if (data !== "Sucesso") {
+                                    alert("Erro: " + data);
+                                } else {
+                                    alert("Alteração realizada com sucesso!");
+                                    limpar();
+                                }
+                            });
+
+                        }
+
+                    }
+
+                }
+
+            }
+        }
     }
 });
 
@@ -160,7 +207,7 @@ $("#btn_pesquisar").on("click", function (e) {
                 alert("Erro: " + data);
             } else {
                 $('#pesq_cod_produto').val(vetor[1]);
-                $('#pesq_prod_est').val(vetor[2]);                
+                $('#pesq_prod_est').val(vetor[2]);
                 $("#produto").val(vetor[2]);
                 $("#id_produto").val(vetor[1]);
                 $("#preco").val(vetor[3]);
@@ -168,6 +215,8 @@ $("#btn_pesquisar").on("click", function (e) {
                 $("#disponivel").val(vetor[5]);
                 $("#tamanhos_quantidades").val(vetor[6]);
                 $("#btn_cadastrar").val("Alterar");
+                $('#pesq_cod_produto').prop('disabled', true);
+                $('#pesq_prod_est').prop('disabled', true);
             }
         });
     }
@@ -191,6 +240,8 @@ function limpar() {
     $("#disponivel").val('');
     $("#tamanhos_quantidades").val('');
     $("#btn_cadastrar").val("Cadastrar");
+    $('#pesq_cod_produto').prop('disabled', false);
+    $('#pesq_prod_est').prop('disabled', false);
 }
 
 

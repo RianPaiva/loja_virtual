@@ -10,13 +10,11 @@ $sql = "SELECT * FROM tb_item_estoque;";
 $colunas = array(
     'ID',
     'PRODUTO',
-    'PRECO',
-    'DATA',
-    'QUANTIA'
-    // 'CUSTO HORA',
-    // 'DEPARTAMENTO',
-    //'NIVEL HIERARQUICO',
-    //'STATUS'
+    'PREÇO',
+    'DATA ENTRADA',
+    'DISPONÍVEL',
+    'TAMANHOS E QUANTIDADES'
+   
 );
 
 
@@ -61,7 +59,7 @@ if ($result->num_rows > 0) {
 
     while ($tbl = $result->fetch_assoc()) {
         $conteudo .= '<Row>';
-        $conteudo .= '<Cell><Data ss:Type="String">' . $tbl['id_produto'] . '</Data></Cell>';
+        $conteudo .= '<Cell><Data ss:Type="Number">' . $tbl['id_produto'] . '</Data></Cell>';
 
 
 
@@ -74,11 +72,15 @@ if ($result->num_rows > 0) {
             $produto = "";
         }
         $conteudo .= '<Cell><Data ss:Type="String">' . $produto . '</Data></Cell>';
-
-
-        $conteudo .= '<Cell><Data ss:Type="String">' . $tbl['valor_compra'] . '</Data></Cell>';
-        $conteudo .= '<Cell><Data ss:Type="String">' . $tbl['dt_hr_entrada'] . '</Data></Cell>';
-        $conteudo .= '<Cell><Data ss:Type="String">' . $tbl['qtd_disponivel'] . '</Data></Cell>';
+        $conteudo .= '<Cell><Data ss:Type="String">' .$tbl['valor_venda'].'</Data></Cell>';
+        $conteudo .= '<Cell><Data ss:Type="String">' . date("d/m/Y H:i:s", strtotime($tbl['dt_hr_entrada'])) . '</Data></Cell>';
+        if($tbl['disponivel'] == 1){
+            $disponivel = "SIM";
+        }else{
+            $disponivel = "NÃO";
+        }
+        $conteudo .= '<Cell><Data ss:Type="String">' . $disponivel . '</Data></Cell>';
+        $conteudo .= '<Cell><Data ss:Type="String">' . $tbl['lista_tamanhos'] . '</Data></Cell>';
         $conteudo .= '</Row>';
     }
 
