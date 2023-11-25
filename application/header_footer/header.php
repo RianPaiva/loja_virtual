@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['id_cliente'])) {
+if (isset($_SESSION['id_cliente']) || isset($_SESSION['id_usuario'])) {
     $login_feito = "S";
 }
 

@@ -7,7 +7,8 @@ if ($_POST["metodo"] == "cad_prod_estq") {
 
     $id_prod = $_POST["id"];
     $preco = $_POST["preco"];
-    $dt_adicao = $_POST["dt_adicao"];
+    $dt_adicao = strtotime($_POST["dt_adicao"]);
+    $formated_date = date("Y-m-d h:i", $dt_adicao);
     $disponivel = $_POST["disponivel"];
     $tamanhos = $_POST["tamanhos"];
 
@@ -18,7 +19,7 @@ if ($_POST["metodo"] == "cad_prod_estq") {
         die();
     } else {
         $sql_prod_estq = "INSERT INTO tb_item_estoque (id_produto, valor_venda, dt_hr_entrada, disponivel, lista_tamanhos) 
-        VALUES (" . $id_prod . "," . $preco . " '" . $dt_adicao . "', " . $disponivel . ", '" . $tamanhos . "');";
+        VALUES (" . $id_prod . "," . $preco . ", '" . $formated_date . "', " . $disponivel . ", '" . $tamanhos . "');";
 
         if (mysqli_query($conn, $sql_prod_estq)) {
             echo "Sucesso";

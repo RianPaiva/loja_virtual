@@ -1,7 +1,7 @@
 <?php
 
 
-include("../header_footer/protect.php");
+include("../php/protect.php");
 include("../header_footer/header.php");
 
 ?>

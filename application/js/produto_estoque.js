@@ -106,7 +106,7 @@ $("#btn_cadastrar").on("click", function (e) {
                              // VALIDAÇÃO COM AJAX
                              $.ajax({
                                 method: "POST",
-                                url: "../php/cadastrar_fornecedor.php",
+                                url: "../php/cadastrar_prod_estoque.php",
                                 dataType: "HTML",
                                 data: {
                                     metodo: "cad_prod_estq",
@@ -118,10 +118,10 @@ $("#btn_cadastrar").on("click", function (e) {
                                 }
                             }).done(function (data) {
                                 console.log(data);
-                                if (data !== "True") {
+                                if (data !== "Sucesso") {
                                     alert("Erro: " + data);
                                 } else {
-                                    alert("Alteração realizada com sucesso!");
+                                    alert("Cadastro realizado com sucesso!");
                                     limpar();
                                 }
                             });
