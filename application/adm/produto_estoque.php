@@ -22,18 +22,18 @@ include("../header_footer/header.php");
 
     <div class="row justify-content-start ">
 
-        <div class="col-md-2">
+        <div class="col-md-2 mt-4">
             <label for="pesq_prod_est" class="form-label"> Nome Do Produto </label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesq_prod_est">
             <div id="lista_prod_est"></div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mt-4">
             <label for="cod_produto" class="form-label"> Código do Produto </label>
             <input type="text" class="form-control form-border" id="pesq_cod_produto">
         </div>
 
-        <div class="col-md-6 hstack gap-3 ">
+        <div class="col-md-6 hstack gap-3 ms-3 mb-1">
 
             <input type="hidden" id="id_fornecedor">
             <div class="col-md-2">
@@ -116,7 +116,7 @@ include("../header_footer/header.php");
     <hr class="hr-gold mt-4 mb-4">
 
     <div class="row">
-        <hr class="opacity-0" style="border: 21px solid transparent">
+        <hr class="opacity-0" style="border: 0px solid transparent">
     </div>
 
 </div>

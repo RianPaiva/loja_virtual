@@ -22,18 +22,18 @@ include("../header_footer/header.php");
 
     <div class="row justify-content-start ">
 
-        <div class="col-md-2">
+        <div class="col-md-2 mt-4">
             <label for="pesquisa_razao"  class="form-label">Razão Social</label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_razao">
             <div id="listaRazao"></div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mt-4">
             <label for="pesquisa_cnpj" class="form-label">CNPJ</label>
             <input type="text" class="form-control form-border" onkeyup="mascara_cpf_cnpj(event)" maxlength="18" id="pesquisa_cnpj">
         </div>
 
-        <div class="col-md-7 hstack gap-3 ms-3">
+        <div class="col-md-7 hstack gap-3 ms-3 ms-3 mb-1">
             <input type="hidden" id="id_fornecedor">
             <div class="col-md-2">
                 <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
@@ -64,9 +64,9 @@ include("../header_footer/header.php");
 
         <form class="row justify-content-center">
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-0">
 
-                <div class="col-md-3 ">
+                <div class="col-md-3 mb-0">
                     <label for="razao_social" class="form-label">Razão Social</label>
                     <input type="text" class="form-control" oninput="handleInput(event)" id="razao_social">
                 </div>
@@ -175,7 +175,7 @@ include("../header_footer/header.php");
     <hr class="hr-gold mt-4 mb-4">
 
     <div class="row">
-        <hr class="opacity-0" style="border: 21px solid transparent">
+        <hr class="opacity-0" style="border: 0px solid transparent">
     </div>
 
 </div>

@@ -116,3 +116,10 @@ label.radio input:checked+span {
     border-bottom: 1px solid #CFB53B !important;
     /* Outros estilos desejados */
 }
+
+#main-image {
+    min-width: 260px !important; 
+    min-height: 250px !important;
+    max-width: 70% !important;
+    max-height: 70% !important;
+}

@@ -23,7 +23,7 @@ if (isset($_GET["id_prod"])) {
 
 
 <style>
-    a{
+    a {
         text-decoration: none;
     }
 </style>
@@ -46,10 +46,10 @@ if (isset($_GET["id_prod"])) {
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <div class="images p-5">
-                                <div class="row">
-                                    <div class="col col-custom">
-                                        <img class="img-responsive" id="main-image" src="<?php echo ($main_img); ?>" width="260" height="250">
-                                    </div>
+                                <div class="row justify-content-center">
+
+                                    <img class="img-fluid" id="main-image" src="<?php echo ($main_img); ?>">
+
                                 </div>
                                 <div class="row mt-8">
                                     <div class="col col-custom thumbnail mt-5">
@@ -104,18 +104,18 @@ if (isset($_GET["id_prod"])) {
 
                             // Verificar se a decodificação foi bem-sucedida
                             if ($data === null) {
-                            die('Erro ao decodificar o JSON.');
+                                die('Erro ao decodificar o JSON.');
                             }
 
                             // Gerar o bloco HTML apenas para números com quantidade maior que 0
                             foreach ($data as $numero => $quantidade) {
-                            if ($quantidade > 0) {
-                            echo '<label class="radio">';
-                                echo '<input type="radio" name="size" value="' . $numero . '">';
-                                echo '<span>' . $numero . '</span>';
-                                echo '</label>';
-                            echo "\n"; // Adiciona uma quebra de linha para melhorar a legibilidade
-                            }
+                                if ($quantidade > 0) {
+                                    echo '<label class="radio">';
+                                    echo '<input type="radio" name="size" value="' . $numero . '">';
+                                    echo '<span>' . $numero . '</span>';
+                                    echo '</label>';
+                                    echo "\n"; // Adiciona uma quebra de linha para melhorar a legibilidade
+                                }
                             }
                             ?>
                         </div>
@@ -156,22 +156,22 @@ if (isset($_GET["id_prod"])) {
         <div class="row justify-content-around mb-4">
 
             <!--NOVIDADES PHP -->
-        <?php
-        $sql_news = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+            <?php
+            $sql_news = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
             INNER JOIN tb_produto AS b 
             ON a.id_produto = b.id_produto 
             WHERE a.disponivel = 1 ORDER BY a.dt_hr_entrada DESC LIMIT 3";
 
-        $res_news = mysqli_query($conn, $sql_news);
-        if ($res_news->num_rows > 0) {
-            $num_prod = 0;
+            $res_news = mysqli_query($conn, $sql_news);
+            if ($res_news->num_rows > 0) {
+                $num_prod = 0;
 
-            while ($tbl_produto = $res_news->fetch_assoc()) {
-                if ($num_prod == 0) {
-                    echo '<div class="row justify-content-around mb-4">';
-                }
-                echo '<div class="col col-custom mb-3">
-                <a href="./produto.php?id_prod='.$tbl_produto['id_produto'].'">
+                while ($tbl_produto = $res_news->fetch_assoc()) {
+                    if ($num_prod == 0) {
+                        echo '<div class="row justify-content-around mb-4">';
+                    }
+                    echo '<div class="col col-custom mb-3">
+                <a href="./produto.php?id_prod=' . $tbl_produto['id_produto'] . '">
        <div class="card custom-card">
             <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
            <div class="card-body">
@@ -181,16 +181,16 @@ if (isset($_GET["id_prod"])) {
        </div>
        </a>
    </div>';
-                $num_prod += 1;
+                    $num_prod += 1;
 
-                if ($num_prod == 3) {
-                    echo '</div>';
-                    $num_prod = 0;
+                    if ($num_prod == 3) {
+                        echo '</div>';
+                        $num_prod = 0;
+                    }
                 }
             }
-        }
-        ?>
-        
+            ?>
+
 
         </div>
 

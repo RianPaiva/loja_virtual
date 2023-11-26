@@ -27,6 +27,10 @@ hr.hr-gold {
     height: 100% !important;
 }
 
-.form-border {
-    border: 1px solid black !important;
+.form-control {
+    margin-bottom: 0px !important;
+}
+
+#pesq_prod_est, #pesq_cod_produto {
+    margin-bottom: 27px !important;   
 }
