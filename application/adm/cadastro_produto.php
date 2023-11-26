@@ -24,13 +24,13 @@ include("../header_footer/header.php");
 
     <div class="row justify-content-start ">
 
-        <div class="col-md-2">
+        <div class="col-md-2 mt-4">
             <label for="produto" class="form-label"> Nome do Produto </label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="produto">
             <div id="listaProduto"></div>
         </div>
 
-        <div class="col-md-7 hstack gap-3 ">
+        <div class="col-md-7 hstack gap-3 ms-3 mb-1">
             
             <input type="hidden" id="id_produto">
             <div class="col-md-2">
@@ -130,14 +130,13 @@ include("../header_footer/header.php");
 
             </form>
         </div>
-        <img src="" id="img_prod">
     </form>
     <!-- Faixa Dourada -->
 
     <hr class="hr-gold mt-4 mb-4">
 
     <div class="row">
-        <hr class="opacity-0" style="border: 21px solid transparent">
+        <hr class="opacity-0" style="border: 0px solid transparent">
     </div>
 
 </div>

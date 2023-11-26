@@ -8,7 +8,11 @@ echo "INDEX.PHP";
 
 ?>
 
-
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="en">
 
