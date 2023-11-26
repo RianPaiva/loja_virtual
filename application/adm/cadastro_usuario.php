@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+// include('../php/protect.php');
 include("../header_footer/header.php");
 
 ?>
@@ -36,17 +39,17 @@ include("../header_footer/header.php");
         <div class="col-md-7 hstack gap-3 ms-3">
             <input type="hidden" id="id_fornecedor">
             <div class="col-md-2">
-                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
+                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-danger" id="btn_limpar" value="  Limpar  ">
+                <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
+                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
             </div>
             <div class="col-md-2">
                 <a href="./relatorios/rel_usuarios.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+                    <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
                 </a>
             </div>
 
@@ -66,6 +69,20 @@ include("../header_footer/header.php");
 
             <div class="row justify-content-center">
 
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="">
+                </div>
+
+                <!-- <div class="col-md-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" placeholder="">
+                </div> -->
+
+            </div>
+
+            <div class="row justify-content-center">
+
                 <div class="col-md-3 ">
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="nome">
@@ -78,9 +95,9 @@ include("../header_footer/header.php");
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
 
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" placeholder="">
                 </div>
@@ -90,50 +107,50 @@ include("../header_footer/header.php");
                     <input type="password" class="form-control" id="senha" placeholder="">
                 </div>
 
-            </div>
+            </div> -->
 
-            <div class="row justify-content-center">
+                <div class="row justify-content-center">
 
-                <div class="col-md-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select class="form-select" id="status">
-                        <option></option>
-                        <option value="1">Ativo</option>
-                        <option value="2">Inativo</option>
-                    </select>
+                    <div class="col-md-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-select" id="status">
+                            <option></option>
+                            <option value="1">Ativo</option>
+                            <option value="2">Inativo</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="acesso" class="form-label">Nível de Acesso</label>
+                        <select class="form-select" id="acesso">
+                            <option></option>
+                            <option value="1">Acesso Total</option>
+                            <option value="2">Somente Relatórios</option>
+                        </select>
+                    </div>
+
                 </div>
 
-                <div class="col-md-3">
-                    <label for="acesso" class="form-label">Nível de Acesso</label>
-                    <select class="form-select" id="acesso">
-                        <option></option>
-                        <option value="1">Acesso Total</option>
-                        <option value="2">Somente Relatórios</option>
-                    </select>
-                </div>
-
             </div>
+
+        </form>
+
+        <hr class="hr-gold mt-4 mb-4">
+
+        <div class="row">
+            <hr class="opacity-0" style="border: 40px solid transparent">
+        </div>
+
 
     </div>
 
-    </form>
-
-    <hr class="hr-gold mt-4 mb-4">
-
-    <div class="row">
-        <hr class="opacity-0" style="border: 40px solid transparent">
-    </div>
+    <!-- Faixa Dourada -->
 
 
-</div>
+    <script src="../js/cadastro_usuario.js"></script>
 
-<!-- Faixa Dourada -->
+    <?php
 
+    include("../header_footer/footer.php");
 
-
-
-<?php
-
-include("../header_footer/footer.php");
-
-?>
+    ?>

@@ -1,8 +1,20 @@
 <?php
 
+session_start();
 
-include("../php/protect.php");
-include("../header_footer/header.php");
+$login_feito = "N";
+
+// if (!isset($_SESSION)) {
+//     session_start();
+// }
+
+if (isset($_SESSION['id_usuario'])) {
+    $login_feito = "S";
+}
+
+
+include("../header_footer/header_adm.php");
+// include("../php/protect.php");
 
 ?>
 
@@ -12,86 +24,96 @@ include("../header_footer/header.php");
     <script src="../js/grafico.js"></script>
 
 </head>
+<?php
+if ($login_feito == "S"){
 
-<div class="container-fluid mt-5">
 
-    <div class="row">
-        <div class="col">
-            <p>
-            <div class="text-container mb-4 mt-5 ms-5" style="font-weight:500">
-                ÁREA DO ADMINISTRADOR
+    ?>
+    <div class="container-fluid mt-5">
+    
+        <div class="row">
+            <div class="col">
+                <p>
+                <div class="text-container mb-4 mt-5 ms-5" style="font-weight:500">
+                    ÁREA DO ADMINISTRADOR
+                </div>
+                </p>
             </div>
-            </p>
         </div>
-    </div>
-
-    <div class="row justify-content-center">
-
+    
         <div class="row justify-content-center">
-            <div class="col-md-3">
-                <div class="text-center mb-4 mt-4">
-                    <a href="cadastro_fornecedor.php">
-                        <input type="button" class="cadastro" id="btn_cad_fornecedor" value="Fornecedores">
-                    </a>
+    
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="text-center mb-4 mt-4">
+                        <a href="cadastro_fornecedor.php">
+                            <input type="button" class="cadastro" id="btn_cad_fornecedor" value="Fornecedores">
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="text-center mb-4 mt-4">
-                    <a href="cadastro_produto.php">
-                        <input type="button" class="cadastro" id="btn_cad_produto" value="Produto">
-                    </a>
+    
+                <div class="col-md-3">
+                    <div class="text-center mb-4 mt-4">
+                        <a href="cadastro_produto.php">
+                            <input type="button" class="cadastro" id="btn_cad_produto" value="Produto">
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="text-center mb-4 mt-4">
-                    <a href="produto_estoque.php">
-                        <input type="button" class="cadastro" id="btn_cad_estoque" value="Estoque">
-                    </a>
+    
+                <div class="col-md-3">
+                    <div class="text-center mb-4 mt-4">
+                        <a href="produto_estoque.php">
+                            <input type="button" class="cadastro" id="btn_cad_estoque" value="Estoque">
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="text-center mb-4 mt-4">
-                    <a href="cadastro_usuario.php">
-                        <input type="button" class="cadastro" id="btn_cad_usuario" value="Usuário">
-                    </a>
+    
+                <div class="col-md-3">
+                    <div class="text-center mb-4 mt-4">
+                        <a href="cadastro_usuario.php">
+                            <input type="button" class="cadastro" id="btn_cad_usuario" value="Usuário">
+                        </a>
+                    </div>
                 </div>
+    
             </div>
-
+    
+            <div class="row mt-5">
+    
+                <div class="col-md-6">
+                    <div id="div_vendas"></div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div id="div_vendas_mes"></div>
+                </div>
+    
+            </div>
+    
+            <div class="row mt-5">
+    
+                <div class="col-md-6">
+                    <div id="div_taxa_conversao"></div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div id="div_vendas_ano"></div>
+                </div>
+    
+            </div>
+    
         </div>
-
-        <div class="row mt-5">
-
-            <div class="col-md-6">
-                <div id="div_vendas"></div>
-            </div>
-
-            <div class="col-md-6">
-                <div id="div_vendas_mes"></div>
-            </div>
-
-        </div>
-
-        <div class="row mt-5">
-
-            <div class="col-md-6">
-                <div id="div_taxa_conversao"></div>
-            </div>
-
-            <div class="col-md-6">
-                <div id="div_vendas_ano"></div>
-            </div>
-
-        </div>
-
+    
     </div>
 
-</div>
+
+    
+}
+
 
 <?php
 
 include("../header_footer/footer.php");
 
-?>
+
+};

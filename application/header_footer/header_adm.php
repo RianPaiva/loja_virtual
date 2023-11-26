@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['id_cliente'])) {
+if (isset($_SESSION['id_usuario'])) {
     $login_feito = "S";
 }
 
@@ -60,10 +60,10 @@ include("../conexoes/conexao_bd.php");
                     <!-- antiga barra de Pesquisar -->
 
                     <div class="side-nave-button p-2 me-3">
-
+<!-- 
                         <a href="../pages/carrinho.php">
                             <img class="carrinho img-fluid" src="../imagens/carrinho.png" alt="menu">
-                        </a>
+                        </a> -->
                     </div>
 
                     <div class="side-nave-button p-2 me-5 nav-item dropdown">
@@ -72,15 +72,15 @@ include("../conexoes/conexao_bd.php");
                             <?php
                             if ($login_feito == "S") {
                             ?>
-                                <li><a class="dropdown-item" href="perfil_cliente.php"> Perfil </a></li>
+                                <!-- <li><a class="dropdown-item" href="perfil_c.php"> Perfil </a></li>
                                 <li>
                                     <hr class="dropdown-divider">
-                                </li>
+                                </li> -->
                                 <li><a class="dropdown-item" href="../php/logout.php"> Sair </a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a class="dropdown-item" href="login.php">Login</a></li>
+                                <li><a class="dropdown-item" href="../adm/login_adm.php">Login</a></li>
                             <?php
                             }
                             ?>

@@ -1,6 +1,9 @@
 <?php
+
+session_start();
+
 // include("index.php");
-// include("../header_footer/protect.php");
+// include("../php/protect.php");
 include("../conexoes/conexao_bd.php");
 
 if (isset($_POST["email"]) || isset($_POST["password"])) {
@@ -39,7 +42,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
                 echo "<script> alert('Senha incorreta!') </script>";
             }
         }else{
-            echo "<script> alert('Erro! ". mysqli_error($conn) ."')</script>";
+            echo "<script> alert('Email ou Senha incorretos!')</script>";
         }
     }
 }
