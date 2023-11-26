@@ -4,6 +4,14 @@
     font-size: 25px;
 }
 
+.box-info {
+    box-shadow: 15px 10px 15px 5px rgba(0,0,0,0.1);
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    height: 400px;
+}
+
 .comprar {
     width: 50% !important;
     border: none !important;
@@ -47,6 +55,7 @@
     height: 270px !important;
     border-radius: 5px !important;
     font-size: 14px !important;
+    box-shadow: 15px 10px 15px 10px rgba(0,0,0,0.1);
 }
 
 .card-img-top {
@@ -123,3 +132,4 @@ label.radio input:checked+span {
     max-width: 70% !important;
     max-height: 70% !important;
 }
+

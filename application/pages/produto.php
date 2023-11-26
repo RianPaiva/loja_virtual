@@ -78,7 +78,7 @@ if (isset($_GET["id_prod"])) {
 
                 <!-- Descrição do Produto -->
 
-                <div class="col mt-5" style="border: 1px solid black; border-radius: 5px;">
+                <div class="col mt-5 box-info">
 
                     <div class="row ms-2 mt-5 nome-produto">
                         <p> <?php echo ($nome_prod); ?> </p>
