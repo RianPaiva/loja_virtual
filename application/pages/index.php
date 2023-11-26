@@ -33,10 +33,10 @@ echo "INDEX.PHP";
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../imagens/banner_adidas_preto.png" class="d-block w-100" alt="...">
+                    <img src="../imagens/banner_nike.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../imagens/banner_adidas_verde.png" class="d-block w-100" alt="...">
+                    <img src="../imagens/banner_newbalance.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="../imagens/banner_puma.png" class="d-block w-100" alt="...">
