@@ -26,18 +26,18 @@ include("../header_footer/header.php");
     <div class="row justify-content-start ">
 
         <div class="col-md-2">
-            <label for="pesquisa_razao" class="form-label">Razão Social</label>
-            <input type="text" class="form-control form-border" id="pesquisa_razao">
-            <div id="listaRazao"></div>
+            <label for="pesquisa_nome" class="form-label">Nome</label>
+            <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_nome">
+            <div id="listaUsuario"></div>
         </div>
 
         <div class="col-md-2">
-            <label for="pesquisa_cnpj" class="form-label">CNPJ</label>
-            <input type="text" class="form-control form-border" onkeyup="mascara_cpf_cnpj(event)" maxlength="18" id="pesquisa_cnpj">
+            <label for="pesquisa_nome" class="form-label">Email</label>
+            <input type="text" class="form-control form-border" oninput="lowerInput(event)" id="pesquisa_email">
         </div>
 
         <div class="col-md-7 hstack gap-3 ms-3">
-            <input type="hidden" id="id_fornecedor">
+            <input type="hidden" id="id_usuario">
             <div class="col-md-2">
                 <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
             </div>
@@ -71,7 +71,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="">
+                    <input type="text" class="form-control" oninput="lowerInput(event)" id="email" placeholder="">
                 </div>
 
                 <!-- <div class="col-md-3">
@@ -85,13 +85,13 @@ include("../header_footer/header.php");
 
                 <div class="col-md-3 ">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome">
+                    <input type="text" class="form-control" oninput="handleInput(event)" id="nome">
                 </div>
 
 
                 <div class="col-md-3">
                     <label for="sobrenome" class="form-label">Sobrenome</label>
-                    <input type="text" maxlength="18" class="form-control" id="sobrenome">
+                    <input type="text" maxlength="18" class="form-control" oninput="handleInput(event)" id="sobrenome">
                 </div>
             </div>
 
@@ -109,48 +109,50 @@ include("../header_footer/header.php");
 
             </div> -->
 
-                <div class="row justify-content-center">
+            <div class="row justify-content-center">
 
-                    <div class="col-md-3">
-                        <label for="status" class="form-label">Status</label>
-                        <select class="form-select" id="status">
-                            <option></option>
-                            <option value="1">Ativo</option>
-                            <option value="2">Inativo</option>
-                        </select>
-                    </div>
+                <div class="col-md-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select class="form-select" id="status">
+                        <option></option>
+                        <option value="1">Ativo</option>
+                        <option value="2">Inativo</option>
+                    </select>
+                </div>
 
-                    <div class="col-md-3">
-                        <label for="acesso" class="form-label">Nível de Acesso</label>
-                        <select class="form-select" id="acesso">
-                            <option></option>
-                            <option value="1">Acesso Total</option>
-                            <option value="2">Somente Relatórios</option>
-                        </select>
-                    </div>
-
+                <div class="col-md-3">
+                    <label for="acesso" class="form-label">Nível de Acesso</label>
+                    <select class="form-select" id="acesso">
+                        <option></option>
+                        <option value="1">Acesso Total</option>
+                        <option value="2">Somente Relatórios</option>
+                    </select>
                 </div>
 
             </div>
 
-        </form>
-
-        <hr class="hr-gold mt-4 mb-4">
-
-        <div class="row">
-            <hr class="opacity-0" style="border: 40px solid transparent">
-        </div>
-
-
     </div>
 
-    <!-- Faixa Dourada -->
+    </form>
+
+    <hr class="hr-gold mt-4 mb-4">
+
+    <div class="row">
+        <hr class="opacity-0" style="border: 40px solid transparent">
+    </div>
 
 
-    <script src="../js/cadastro_usuario.js"></script>
+</div>
 
-    <?php
+<!-- Faixa Dourada -->
 
-    include("../header_footer/footer.php");
 
-    ?>
+<script src="../js/cadastro_usuario.js"></script>
+<script src="../js/autocomplete_usuario.js"></script>
+<script src="../js/masks.js"></script>
+
+<?php
+// include("../php/autocomplete_usuario.php");
+include("../header_footer/footer.php");
+
+?>
