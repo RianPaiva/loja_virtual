@@ -14,15 +14,15 @@ if (isset($_POST["query"])) {
          WHERE b.nome_produto LIKE '%" .
             $_POST["query"] . "%' ORDER BY b.nome_produto;";
         $result = mysqli_query($conn, $query);
-        $output = '<ul class="list-unstyled">';
+        $output = '<ul class="list-unstyled list-group dropdown-menu" style="transform: translate3d(0px, -30px, 0px); background-color: rgba(0,0,0,0.0); border: none !important;">';
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
 
-                $output .= "<li style='color:blue' value=" . $row["id_produto"] . ">" .
+                $output .= "<li class='list-group-item list-group-item-action' style='color:blue' value=" . $row["id_produto"] . ">" .
                     $row["nome_produto"] . "</li>";
             }
         } else {
-            $output .= '<li>Produto não encontrado</li>';
+            $output .= '<li class="list-group-item list-group-item-action">Produto não encontrado</li>';
         }
         $output .= '</ul>';
         echo $output;

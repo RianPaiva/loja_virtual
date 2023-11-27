@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['id_cliente'])) {
+if (isset($_SESSION['id_usuario'])) {
     $login_feito = "S";
 }
 
@@ -20,8 +20,6 @@ include("../conexoes/conexao_bd.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Lavechia Store </title>
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-1B4LzY1N6H26DkpTF8ev7ZVj5r0IRcXz1r4xE/NlS9W3vBC4MKpMIFsNkKuwBrdF2FLBmuYVwBfMYdVg2pdg5Q==" crossorigin="anonymous" />
 
     <!--import bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -62,10 +60,10 @@ include("../conexoes/conexao_bd.php");
                     <!-- antiga barra de Pesquisar -->
 
                     <div class="side-nave-button p-2 me-3">
-
+<!-- 
                         <a href="../pages/carrinho.php">
                             <img class="carrinho img-fluid" src="../imagens/carrinho.png" alt="menu">
-                        </a>
+                        </a> -->
                     </div>
 
                     <div class="side-nave-button p-2 me-5 nav-item dropdown">
@@ -74,15 +72,15 @@ include("../conexoes/conexao_bd.php");
                             <?php
                             if ($login_feito == "S") {
                             ?>
-                                <li><a class="dropdown-item" href="perfil_cliente.php"> Perfil </a></li>
+                                <!-- <li><a class="dropdown-item" href="perfil_c.php"> Perfil </a></li>
                                 <li>
                                     <hr class="dropdown-divider">
-                                </li>
+                                </li> -->
                                 <li><a class="dropdown-item" href="../php/logout.php"> Sair </a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a class="dropdown-item" href="login.php">Login</a></li>
+                                <li><a class="dropdown-item" href="../adm/login_adm.php">Login</a></li>
                             <?php
                             }
                             ?>

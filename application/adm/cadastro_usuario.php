@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+// include('../php/protect.php');
 include("../header_footer/header.php");
 
 ?>
@@ -22,31 +25,31 @@ include("../header_footer/header.php");
 
     <div class="row justify-content-start ">
 
-        <div class="col-md-2 mt-4">
-            <label for="pesquisa_razao" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="pesquisa_nome">
-            <div id="listaRazao"></div>
+        <div class="col-md-2">
+            <label for="pesquisa_nome" class="form-label">Nome</label>
+            <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_nome">
+            <div id="listaUsuario" class="list-group dropdown"></div>
         </div>
 
-        <div class="col-md-2 mt-4">
-            <label for="pesquisa_cnpj" class="form-label">Email</label>
-            <input type="text" class="form-control form-border" maxlength="18" id="pesquisa_email">
+        <div class="col-md-2">
+            <label for="pesquisa_nome" class="form-label">Email</label>
+            <input type="text" class="form-control form-border" oninput="lowerInput(event)" id="pesquisa_email">
         </div>
 
-        <div class="col-md-7 hstack gap-3 ms-3 ms-3 mb-1">
-            <input type="hidden" id="id_fornecedor">
+        <div class="col-md-7 hstack gap-3 ms-3 mb-4">
+            <input type="hidden" id="id_usuario">
             <div class="col-md-2">
-                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="  Pesquisar  ">
+                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-danger" id="btn_limpar" value="  Limpar  ">
+                <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
             </div>
             <div class="col-md-2">
-                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
+                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
             </div>
             <div class="col-md-2">
                 <a href="./relatorios/rel_usuarios.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+                    <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
                 </a>
             </div>
 
@@ -66,21 +69,35 @@ include("../header_footer/header.php");
 
             <div class="row justify-content-center">
 
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" oninput="lowerInput(event)" id="email" placeholder="">
+                </div>
+
+                <!-- <div class="col-md-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" placeholder="">
+                </div> -->
+
+            </div>
+
+            <div class="row justify-content-center">
+
                 <div class="col-md-3 ">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome">
+                    <input type="text" class="form-control" oninput="handleInput(event)" id="nome">
                 </div>
 
 
                 <div class="col-md-3">
                     <label for="sobrenome" class="form-label">Sobrenome</label>
-                    <input type="text" maxlength="18" class="form-control" id="sobrenome">
+                    <input type="text" maxlength="18" class="form-control" oninput="handleInput(event)" id="sobrenome">
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
 
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" placeholder="">
                 </div>
@@ -90,7 +107,7 @@ include("../header_footer/header.php");
                     <input type="password" class="form-control" id="senha" placeholder="">
                 </div>
 
-            </div>
+            </div> -->
 
             <div class="row justify-content-center">
 
@@ -121,7 +138,7 @@ include("../header_footer/header.php");
     <hr class="hr-gold mt-4 mb-4">
 
     <div class="row">
-        <hr class="opacity-0" style="border: 5px solid transparent">
+        <hr class="opacity-0" style="border: 40px solid transparent">
     </div>
 
 
@@ -130,10 +147,12 @@ include("../header_footer/header.php");
 <!-- Faixa Dourada -->
 
 
-
+<script src="../js/cadastro_usuario.js"></script>
+<script src="../js/autocomplete_usuario.js"></script>
+<script src="../js/masks.js"></script>
 
 <?php
-
+// include("../php/autocomplete_usuario.php");
 include("../header_footer/footer.php");
 
 ?>

@@ -7,5 +7,5 @@ if (!isset($_SESSION)) {
 
 if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['id_cliente'])) {
 
-    die("Login não foi realizado.<p><a href = \"login_adm.php\">Login</a></p>");
+    die("Login não foi realizado.<p><a href = \"../adm/login_adm.php\">Login</a></p>");
 }

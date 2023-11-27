@@ -35,6 +35,8 @@ $(document).ready(function () {
                                     formData.append("id_categoria", $("#categoria").val());
                                     formData.append("genero", $("#genero").val());
                                     formData.append("imagem", $("#imagem")[0].files[0]);
+                                    formData.append("imagem_2", $("#imagem_2")[0].files[1]);
+                                    formData.append("imagem_3", $("#imagem_3")[0].files[2]);
 
                                     $.ajax({
                                         method: "POST",
@@ -188,6 +190,8 @@ function limpar() {
     $("#genero").val('');
     $("#imagem").val('');
     $("#img_prod").attr("src", '');
+    $("#imagem_2").val('');
+    $("#imagem_3").val('');
     $('#produto').prop('disabled', false);
 
 }
