@@ -128,10 +128,22 @@ if (isset($_GET["id_prod"])) {
 
                     <div class="row">
                         <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
+<<<<<<< Updated upstream
                             <input type="hidden" id="id_prod" value="<?php echo($tbl["id_produto"]); ?>">
                             <input type="button" class="btn btn-warning comprar" id="btn_cadastro" value="Adicionar">
+=======
+                            <button type="button" class="btn btn-warning comprar d-flex align-items-center">
+                                <img src="../imagens/carrinho_preto.png" class="text-start mr-2" alt="Carrinho de Compras">
+                                Comprar
+                            </button>
+>>>>>>> Stashed changes
                         </div>
                     </div>
+                    <!-- <div class="row">
+                        <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
+                            <input type="image" src="../imagens/carrinho_preto.png" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
+                        </div>
+                    </div> -->
 
                     <!-- Fim Botão Comprar -->
                 </div>
@@ -195,6 +207,10 @@ if (isset($_GET["id_prod"])) {
 
         </div>
 
+    </div>
+
+    <div class="row">
+        <hr class="opacity-0" style="border: 40px solid transparent">
     </div>
 
 </div>
