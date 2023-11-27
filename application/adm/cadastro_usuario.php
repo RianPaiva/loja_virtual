@@ -36,7 +36,7 @@ include("../header_footer/header.php");
             <input type="text" class="form-control form-border" oninput="lowerInput(event)" id="pesquisa_email">
         </div>
 
-        <div class="col-md-7 hstack gap-3 ms-3">
+        <div class="col-md-7 hstack gap-3 ms-3 mb-4">
             <input type="hidden" id="id_usuario">
             <div class="col-md-2">
                 <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">

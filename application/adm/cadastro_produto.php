@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../php/protect.php');
+// include('../php/protect.php');
 include("../header_footer/header.php");
 
 ?>
@@ -31,7 +31,7 @@ include("../header_footer/header.php");
         </div>
 
         <div class="col-md-7 hstack gap-3 ms-3 mb-1">
-            
+
             <input type="hidden" id="id_produto">
             <div class="col-md-2">
                 <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
@@ -44,7 +44,7 @@ include("../header_footer/header.php");
             </div>
             <div class="col-md-2">
                 <a href="./relatorios/rel_produtos.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
+                    <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
                 </a>
             </div>
 
@@ -71,7 +71,7 @@ include("../header_footer/header.php");
 
                     <div class="col-md-3">
                         <label for="fornecedor" class="form-label"> Fornecedor </label>
-                        <input type="text" class="form-control" id="fornecedor"  oninput="handleInput(event)" placeholder="" name="fornecedor">
+                        <input type="text" class="form-control" id="fornecedor" oninput="handleInput(event)" placeholder="" name="fornecedor">
                         <div id="listaFornecedor"></div>
                         <input type="hidden" id="id_fornecedor">
                     </div>
@@ -85,15 +85,14 @@ include("../header_footer/header.php");
                         <select name="tipo" id="categoria" class="form-select" required>
                             <option selected></option>
                             <?php
-                                $sql_categoria="SELECT * FROM tb_categoria WHERE status = 1";
-                                $result_categoria = mysqli_query($conn, $sql_categoria);
-                                if($result_categoria->num_rows > 0){
-                                    while($tbl_categoria = $result_categoria->fetch_assoc()){
-                                        echo "<option value='".$tbl_categoria['id_categoria']."'>".$tbl_categoria["categoria"]."</option>";
-                                    }
-                                }else{
-
+                            $sql_categoria = "SELECT * FROM tb_categoria WHERE status = 1";
+                            $result_categoria = mysqli_query($conn, $sql_categoria);
+                            if ($result_categoria->num_rows > 0) {
+                                while ($tbl_categoria = $result_categoria->fetch_assoc()) {
+                                    echo "<option value='" . $tbl_categoria['id_categoria'] . "'>" . $tbl_categoria["categoria"] . "</option>";
                                 }
+                            } else {
+                            }
                             ?>
                         </select>
                     </div>
@@ -115,6 +114,24 @@ include("../header_footer/header.php");
                     <div class="col-md-6">
                         <label for="imagem" class="form-label"> Escolha Uma Imagem </label>
                         <input class="form-control" type="file" id="imagem" name="imagem">
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6">
+                        <label for="imagem_2" class="form-label"> Escolha Uma Imagem </label>
+                        <input class="form-control" type="file" id="imagem_2" name="imagem_2">
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6">
+                        <label for="imagem_3" class="form-label"> Escolha Uma Imagem </label>
+                        <input class="form-control" type="file" id="imagem_3" name="imagem_3">
                     </div>
 
                 </div>

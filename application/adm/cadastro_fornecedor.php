@@ -25,7 +25,7 @@ include("../header_footer/header.php");
     <div class="row justify-content-start ">
 
         <div class="col-md-2 mt-4">
-            <label for="pesquisa_razao"  class="form-label">Razão Social</label>
+            <label for="pesquisa_razao" class="form-label">Razão Social</label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_razao">
             <div id="listaRazao"></div>
         </div>
@@ -46,9 +46,9 @@ include("../header_footer/header.php");
             <div class="col-md-2">
                 <input type="submit" class="btn btn-success" id="btn_cadastrar" value="  Cadastrar  ">
             </div>
-            <div class="col-md-2"> 
+            <div class="col-md-2">
                 <a href="./relatorios/rel_fornecedores.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
+                    <input type="submit" class="btn btn-info" id="btn_relatorio" value="  Relatório  ">
                 </a>
             </div>
 
