@@ -128,7 +128,8 @@ if (isset($_GET["id_prod"])) {
 
                     <div class="row">
                         <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
-                            <input type="submit" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
+                            <input type="hidden" id="id_prod" value="<?php echo($tbl["id_produto"]); ?>">
+                            <input type="button" class="btn btn-warning comprar" id="btn_cadastro" value="Adicionar">
                         </div>
                     </div>
 
@@ -197,6 +198,9 @@ if (isset($_GET["id_prod"])) {
     </div>
 
 </div>
+
+
+
 
 <?php
 

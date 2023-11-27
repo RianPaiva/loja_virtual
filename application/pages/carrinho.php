@@ -46,84 +46,47 @@ include("../header_footer/header.php");
 
                         <tbody>
 
-                            <tr>
-                                <td>
-                                    <div class="product">
-                                        <img src="https://picsum.photos/100/120" alt="" />
-                                        <div class="info">
-                                            <div class="name">
-                                                <h6>Nome do produto</h6>
+                            <?php
+                            //SELECT PRODUTOS NO CARRINHO
+                            $sql_carrinho = "SELECT a.*, b.nome_produto, b.local_img, c.valor_venda FROM tb_item_carrinho AS a 
+                            INNER JOIN tb_produto AS b ON a.id_produto = b.id_produto 
+                            INNER JOIN tb_item_estoque 
+                            AS c ON a.id_produto = b.id_produto WHERE a.id_carrinho = 1";
+                            $result_carrinho = mysqli_query($conn, $sql_carrinho);
+                            if ($result_carrinho->num_rows > 0) {
+                                while ($tbl_carrinho = $result_carrinho->fetch_assoc()) {
+                                    echo '<tr>
+                                    <td>
+                                        <div class="product">
+                                            <img src="'.$tbl_carrinho["local_img"].'" style="max-width: 200px;" alt="" />
+                                            <div class="info">
+                                                <div class="name">
+                                                    <h6>'.$tbl_carrinho["nome_produto"].'</h6>
+                                                </div>
+                                                <div class="category">Categoria</div>
                                             </div>
-                                            <div class="category">Categoria</div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>R$ 120</td>
-                                <td>
-                                    <div class="qtd">
-                                        <button><i class="bx bx-minus"></i></button>
-                                        <span>2</span>
-                                        <button><i class="bx bx-plus"></i></button>
-                                    </div>
-                                </td>
-                                <td>R$ 240</td>
-                                <td>
-                                    <button class="remove"><i class="bx bx-x"></i></button>
-                                </td>
-                            </tr>
-
-                            <tr class="bg-css">
-                                <td>
-                                    <div class="product">
-                                        <img src="https://picsum.photos/100/120" alt="" />
-                                        <div class="info">
-                                            <div class="name">
-                                                <h6>Nome do produto</h6>
-                                            </div>
-                                            <div class="category">Categoria</div>
+                                    </td>
+                                    <td>R$ '.$tbl_carrinho["valor_venda"].'</td>
+                                    <td>
+                                        <div class="qtd">
+                                            <button><i class="bx bx-minus"></i></button>
+                                            <span>2</span>
+                                            <button><i class="bx bx-plus"></i></button>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>R$ 120</td>
-                                <td>
-                                    <div class="qtd">
-                                        <button><i class="bx bx-minus"></i></button>
-                                        <span>2</span>
-                                        <button><i class="bx bx-plus"></i></button>
-                                    </div>
-                                </td>
-                                <td>R$ 240</td>
-                                <td>
-                                    <button class="remove"><i class="bx bx-x"></i></button>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>R$ 240</td>
+                                    <td>
+                                        <button class="remove"><i class="bx bx-x"></i></button>
+                                    </td>
+                                </tr>';
+                                }
+                            } else {
+                            }
 
-                            <tr>
-                                <td>
-                                    <div class="product">
-                                        <img src="https://picsum.photos/100/120" alt="" />
-                                        <div class="info">
-                                            <div class="name">
-                                                <h6>Nome do produto</h6>
-                                            </div>
-                                            <div class="category">Categoria</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>R$ 120</td>
-                                <td>
 
-                                    <div class="qtd">
-                                        <button><i class="bx bx-minus"></i></button>
-                                        <span>2</span>
-                                        <button><i class="bx bx-plus"></i></button>
-                                    </div>
-                                </td>
-                                <td>R$ 240</td>
-                                <td>
-                                    <button class="remove"><i class="bx bx-x"></i></button>
-                                </td>
-                            </tr>
+
+                            ?>
                         </tbody>
                     </table>
                 </div>
