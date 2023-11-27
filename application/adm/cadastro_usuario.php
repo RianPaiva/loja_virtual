@@ -28,7 +28,7 @@ include("../header_footer/header.php");
         <div class="col-md-2">
             <label for="pesquisa_nome" class="form-label">Nome</label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_nome">
-            <div id="listaUsuario"></div>
+            <div id="listaUsuario" class="list-group dropdown"></div>
         </div>
 
         <div class="col-md-2">

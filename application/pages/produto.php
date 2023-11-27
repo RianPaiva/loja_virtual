@@ -32,7 +32,7 @@ if (isset($_GET["id_prod"])) {
 
 <div class="clearfix"></div>
 
-<div class="container-fluid" style="border: 1px solid blue; width: 100%;">
+<div class="container-fluid">
 
     <div class="container align-items-center">
 

@@ -27,7 +27,7 @@ include("../header_footer/header.php");
         <div class="col-md-2 mt-4">
             <label for="pesquisa_razao"  class="form-label">Razão Social</label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesquisa_razao">
-            <div id="listaRazao"></div>
+            <div id="listaRazao" class="list-group dropdown"></div>
         </div>
 
         <div class="col-md-2 mt-4">

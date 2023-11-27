@@ -25,7 +25,7 @@ include("../header_footer/header.php");
         <div class="col-md-2 mt-4">
             <label for="pesq_prod_est" class="form-label"> Nome Do Produto </label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesq_prod_est">
-            <div id="lista_prod_est"></div>
+            <div id="lista_prod_est" class="list-group dropdown"></div>
         </div>
 
         <div class="col-md-2 mt-4">

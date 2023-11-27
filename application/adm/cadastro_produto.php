@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../php/protect.php');
+// include('../php/protect.php');
 include("../header_footer/header.php");
 
 ?>
@@ -27,7 +27,7 @@ include("../header_footer/header.php");
         <div class="col-md-2 mt-4">
             <label for="produto" class="form-label"> Nome do Produto </label>
             <input type="text" class="form-control form-border" oninput="handleInput(event)" id="produto">
-            <div id="listaProduto"></div>
+            <div id="listaProduto" class="list-group dropdown"></div>
         </div>
 
         <div class="col-md-7 hstack gap-3 ms-3 mb-1">
@@ -72,7 +72,7 @@ include("../header_footer/header.php");
                     <div class="col-md-3">
                         <label for="fornecedor" class="form-label"> Fornecedor </label>
                         <input type="text" class="form-control" id="fornecedor"  oninput="handleInput(event)" placeholder="" name="fornecedor">
-                        <div id="listaFornecedor"></div>
+                        <div id="listaFornecedor" class="list-group dropdown"></div>
                         <input type="hidden" id="id_fornecedor">
                     </div>
 
