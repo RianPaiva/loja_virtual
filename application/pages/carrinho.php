@@ -31,7 +31,7 @@ include("../header_footer/header.php");
 
             <div class="row text-center d-flex justify-content-around">
 
-                <div class="col-lg-8 ms-4">
+                <div class="col-lg-8 ms-3 overflow-y-scroll row-custom mb-4">
 
                     <table>
                         <thead>
@@ -57,25 +57,25 @@ include("../header_footer/header.php");
                                 while ($tbl_carrinho = $result_carrinho->fetch_assoc()) {
                                     echo '<tr>
                                     <td>
-                                        <div class="product">
-                                            <img src="'.$tbl_carrinho["local_img"].'" style="max-width: 200px;" alt="" />
+                                        <div class="product me-3">
+                                            <img src="'.$tbl_carrinho["local_img"].'" style="max-width: 100px;" alt="" />
                                             <div class="info">
                                                 <div class="name">
                                                     <h6>'.$tbl_carrinho["nome_produto"].'</h6>
                                                 </div>
-                                                <div class="category">Categoria</div>
+                                                <div class="category mb-3">Categoria</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>R$ '.$tbl_carrinho["valor_venda"].'</td>
                                     <td>
-                                        <div class="qtd">
+                                        <div class="qtd ms-3 me-3">
                                             <button><i class="bx bx-minus"></i></button>
                                             <span>2</span>
                                             <button><i class="bx bx-plus"></i></button>
                                         </div>
                                     </td>
-                                    <td>R$ 240</td>
+                                    <td> R$ 240,00 </td>
                                     <td>
                                         <button class="remove"><i class="bx bx-x"></i></button>
                                     </td>
@@ -91,7 +91,7 @@ include("../header_footer/header.php");
                     </table>
                 </div>
 
-                <aside class="col-lg-3 ms-4">
+                <aside class="col-lg-3">
                     <div class="box rounded">
                         <header class="text-center">Resumo da compra</header>
                         <div class="info">

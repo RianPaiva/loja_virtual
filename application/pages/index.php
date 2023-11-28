@@ -111,7 +111,7 @@ echo "INDEX.PHP";
     <div class="container-fluid bg-custom">
 
         <div class="row">
-            <div class="col mt-5">
+            <div class="col mt-3">
                 <h1 class="text-center color-gold"> MARCAS </h1>
             </div>
         </div>
