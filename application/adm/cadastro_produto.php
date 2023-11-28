@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../php/protect.php');
+// include('../php/protect.php');
 include("../header_footer/header.php");
 
 ?>
