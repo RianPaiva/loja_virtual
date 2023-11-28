@@ -178,7 +178,7 @@ if (isset($_GET["id_prod"])) {
 
                 while ($tbl_produto = $res_news->fetch_assoc()) {
                     if ($num_prod == 0) {
-                        echo '<div class="row justify-content-around mb-4">';
+                        echo '<div class="row row-custom justify-content-around mb-4">';
                     }
                     echo '<div class="col col-custom mb-3">
                 <a href="./produto.php?id_prod=' . $tbl_produto['id_produto'] . '">
@@ -207,13 +207,10 @@ if (isset($_GET["id_prod"])) {
     </div>
 
     <div class="row">
-        <hr class="opacity-0" style="border: 40px solid transparent">
+        <hr class="opacity-0 hr-custom">
     </div>
 
 </div>
-
-
-
 
 <?php
 

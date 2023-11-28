@@ -88,6 +88,10 @@
     height: 100% !important;
 }
 
+.row-custom {
+    max-height: 300px !important;
+}
+
 label.radio {
     cursor: pointer;
 }
@@ -132,3 +136,12 @@ label.radio input:checked+span {
     max-height: 70% !important;
 }
 
+.hr-custom {
+    border: 20px solid transparent;
+}
+
+@media (max-width: 1000px) {
+    .hr-custom {
+        border: 300px solid transparent;
+    }
+}
