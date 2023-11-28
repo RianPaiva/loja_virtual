@@ -6,7 +6,7 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    <div class="row">
+                    <div class="row" id="row-logo-footer">
                         <div class="col-md-2 mb-5 ms-3 me-3">
                             <img class="img-logo img-fluid " src="../imagens/logo-new.png" alt="Logo Lavechia Store">
                         </div>

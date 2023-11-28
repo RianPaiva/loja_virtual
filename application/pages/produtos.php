@@ -106,42 +106,39 @@ include("../header_footer/header.php");
 
             <div class="row justify-content-around mb-4">
 
-                
-                    <?php
-                    $sql_produto = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+
+                <?php
+                $sql_produto = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
                     INNER JOIN tb_produto AS b 
                     ON a.id_produto = b.id_produto 
                     WHERE a.disponivel = 1";
 
-                    $res_produto = mysqli_query($conn, $sql_produto);
-                    if ($res_produto->num_rows > 0) {
-                        $num_prod = 0;
+                $res_produto = mysqli_query($conn, $sql_produto);
+                if ($res_produto->num_rows > 0) {
+                    $num_prod = 0;
 
-                        while ($tbl_produto = $res_produto->fetch_assoc()) {
-                            if($num_prod == 0 ){
-                                echo '<div class="row justify-content-around mb-4">';
-                            }
-                           echo '<div class="col col-custom mb-3">
+                    while ($tbl_produto = $res_produto->fetch_assoc()) {
+                        if ($num_prod == 0) {
+                            echo '<div class="row row-custom justify-content-around mb-4">';
+                        }
+                        echo '<div class="col col-custom mb-3">
                            <div class="card custom-card">
-                                <img class="card-img-top" src="'.$tbl_produto['local_img'].'" alt="Imagem de capa do card">
+                                <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
                                <div class="card-body">
-                                   <h5 style="font-size: 16px;" class="card-title text-center">'.$tbl_produto['nome_produto'].'</h5>
-                                   <p class="card-text text-center">'.$tbl_produto['valor_venda'].'</p>
+                                   <h5 style="font-size: 16px;" class="card-title text-center">' . $tbl_produto['nome_produto'] . '</h5>
+                                   <p class="card-text text-center">' . $tbl_produto['valor_venda'] . '</p>
                                </div>
                            </div>
                        </div>';
-                       $num_prod += 1;
+                        $num_prod += 1;
 
-                       if($num_prod == 3 ){
+                        if ($num_prod == 3) {
                             echo '</div>';
                             $num_prod = 0;
-                       }
-
-
-                      
                         }
                     }
-                    ?>
+                }
+                ?>
 
             </div>
 
@@ -166,7 +163,6 @@ include("../header_footer/header.php");
             </div>
         </div>
     </div>
-
 </body>
 
 <?PHP

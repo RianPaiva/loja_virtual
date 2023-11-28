@@ -18,7 +18,7 @@ include("../header_footer/header.php");
 
 <body>
 
-    <main class="container-fluid mb-5">
+    <main class="container-fluid">
         <div class="row meucarrinho">
 
             <div class="col">
@@ -58,16 +58,16 @@ include("../header_footer/header.php");
                                     echo '<tr>
                                     <td>
                                         <div class="product me-3">
-                                            <img src="'.$tbl_carrinho["local_img"].'" style="max-width: 100px;" alt="" />
+                                            <img src="' . $tbl_carrinho["local_img"] . '" style="max-width: 100px;" alt="" />
                                             <div class="info">
                                                 <div class="name">
-                                                    <h6>'.$tbl_carrinho["nome_produto"].'</h6>
+                                                    <h6>' . $tbl_carrinho["nome_produto"] . '</h6>
                                                 </div>
                                                 <div class="category mb-3">Categoria</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>R$ '.$tbl_carrinho["valor_venda"].'</td>
+                                    <td>R$ ' . $tbl_carrinho["valor_venda"] . '</td>
                                     <td>
                                         <div class="qtd ms-3 me-3">
                                             <button><i class="bx bx-minus"></i></button>
@@ -113,6 +113,11 @@ include("../header_footer/header.php");
                 </aside>
             </div>
         </div>
+
+        <div class="row">
+            <hr class="opacity-0 hr-custom">
+        </div>
+
     </main>
 
 

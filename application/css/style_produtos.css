@@ -91,3 +91,7 @@
 .page-link {
     color: black !important;
 }
+
+.row-custom {
+    height: 300px;
+}

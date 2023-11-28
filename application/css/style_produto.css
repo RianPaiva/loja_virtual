@@ -132,8 +132,8 @@ label.radio input:checked+span {
 #main-image {
     min-width: 260px !important; 
     min-height: 250px !important;
-    max-width: 70% !important;
-    max-height: 70% !important;
+    max-width: 50% !important;
+    max-height: 50% !important;
 }
 
 .hr-custom {

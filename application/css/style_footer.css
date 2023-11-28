@@ -44,3 +44,7 @@ footer {
     min-width: 20px;
     min-height: 20px; 
 }
+
+#row-logo-footer {
+    width: 85% !important;
+}

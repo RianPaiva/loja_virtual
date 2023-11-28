@@ -193,3 +193,7 @@ aside>button {
 .row-custom {
   height: 511px !important;
 }
+
+.hr-custom {
+  border: 1px solid transparent;
+}
