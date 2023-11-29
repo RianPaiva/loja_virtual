@@ -95,3 +95,18 @@
 .row-custom {
     height: 300px;
 }
+
+.hr-custom {
+    border: 25px solid transparent;
+}
+
+@media (max-width: 1000px) {
+    .hr-custom {
+        border: 300px solid transparent;
+    }
+}
+
+#row-size {
+    width: 105% !important;
+}
+

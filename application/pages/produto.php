@@ -32,153 +32,156 @@ if (isset($_GET["id_prod"])) {
 
 <div class="clearfix"></div>
 
-<div class="container align-items-center">
+<body>
 
-    <div class="row justify-content-center">
 
-        <!-- Coluna Imagem do Produto -->
+    <div class="container align-items-center">
 
-        <div class="col-xxl-8">
+        <div class="row justify-content-center">
 
-            <div class="card card-produto ms-5 me-5 mt-5 pt-5">
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <div class="images p-5">
-                            <div class="row justify-content-center">
+            <!-- Coluna Imagem do Produto -->
 
-                                <img class="img-fluid" id="main-image" src="<?php echo ($main_img); ?>">
+            <div class="col-md-8">
 
-                            </div>
-                            <div class="row mt-8">
-                                <div class="col col-custom thumbnail mt-5">
-                                    <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                <div class="card card-produto">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <div class="images p-5">
+                                <div class="row justify-content-center">
+
+                                    <img class="img-fluid" id="main-image" src="<?php echo ($main_img); ?>">
+
                                 </div>
-                                <div class="col col-custom thumbnail mt-5">
+                                <div class="row mt-8">
+                                    <div class="col col-custom thumbnail mt-5">
+                                        <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                    </div>
+                                    <div class="col col-custom thumbnail mt-5">
 
-                                    <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
-                                </div>
-                                <div class="col col-custom thumbnail mt-5">
-                                    <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                    </div>
+                                    <div class="col col-custom thumbnail mt-5">
+                                        <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
+            <!-- Fim Coluna Imagem do Produto -->
 
-        <!-- Fim Coluna Imagem do Produto -->
+            <!-- Coluna Descrição do Produto -->
 
-        <!-- Coluna Descrição do Produto -->
+            <div class="col-md-4 mt-5 mb-5">
 
-        <div class="col-sm-4 mt-5 mb-5">
+                <!-- Descrição do Produto -->
 
-            <!-- Descrição do Produto -->
+                <div class="col mt-5 box-info">
 
-            <div class="col mt-5 box-info">
+                    <div class="row ms-2 mt-5 nome-produto">
+                        <p> <?php echo ($nome_prod); ?> </p>
+                    </div>
+                    <div class="row ms-2 mt-1 valor-produto">
+                        <p><?php echo ($valor); ?></p>
+                    </div>
 
-                <div class="row ms-2 mt-5 nome-produto">
-                    <p> <?php echo ($nome_prod); ?> </p>
-                </div>
-                <div class="row ms-2 mt-1 valor-produto">
-                    <p><?php echo ($valor); ?></p>
-                </div>
+                    <!-- Fim Descrição do Produto -->
 
-                <!-- Fim Descrição do Produto -->
+                    <!-- Escolha de tamanho do Tênis -->
 
-                <!-- Escolha de tamanho do Tênis -->
+                    <div class="row ms-2 mt-2">
+                        <p class="tamanho">Escolha o tamanho:</p>
+                    </div>
 
-                <div class="row ms-2 mt-2">
-                    <p class="tamanho">Escolha o tamanho:</p>
-                </div>
+                    <div class="row ms-2 d-flex flex-row">
 
-                <div class="row ms-2 d-flex flex-row">
+                        <div class="sizes mt-1 mb-3">
+                            <?php
+                            // Decodificar o JSON
+                            $data = json_decode($json_tamanhos, true);
 
-                    <div class="sizes mt-1 mb-3">
-                        <?php
-                        // Decodificar o JSON
-                        $data = json_decode($json_tamanhos, true);
-
-                        // Verificar se a decodificação foi bem-sucedida
-                        if ($data === null) {
-                            die('Erro ao decodificar o JSON.');
-                        }
-
-                        // Gerar o bloco HTML apenas para números com quantidade maior que 0
-                        foreach ($data as $numero => $quantidade) {
-                            if ($quantidade > 0) {
-                                echo '<label class="radio">';
-                                echo '<input type="radio" name="size" value="' . $numero . '">';
-                                echo '<span>' . $numero . '</span>';
-                                echo '</label>';
-                                echo "\n"; // Adiciona uma quebra de linha para melhorar a legibilidade
+                            // Verificar se a decodificação foi bem-sucedida
+                            if ($data === null) {
+                                die('Erro ao decodificar o JSON.');
                             }
-                        }
-                        ?>
+
+                            // Gerar o bloco HTML apenas para números com quantidade maior que 0
+                            foreach ($data as $numero => $quantidade) {
+                                if ($quantidade > 0) {
+                                    echo '<label class="radio">';
+                                    echo '<input type="radio" name="size" value="' . $numero . '">';
+                                    echo '<span>' . $numero . '</span>';
+                                    echo '</label>';
+                                    echo "\n"; // Adiciona uma quebra de linha para melhorar a legibilidade
+                                }
+                            }
+                            ?>
+                        </div>
+
                     </div>
 
-                </div>
+                    <!-- Fim Escolha de tamanho do Tênis -->
 
-                <!-- Fim Escolha de tamanho do Tênis -->
+                    <!-- Botão Comprar -->
 
-                <!-- Botão Comprar -->
+                    <div class="row">
+                        <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
+                            <input type="hidden" id="id_prod" value="<?php echo ($tbl["id_produto"]); ?>">
 
-                <div class="row">
-                    <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
-                        <input type="hidden" id="id_prod" value="<?php echo ($tbl["id_produto"]); ?>">
-
-                        <button type="button" class="btn btn-warning comprar  d-flex align-items-center" id="btn_cadastro">
-                            <img src="../imagens/carrinho_preto.png" class="text-start mr-2" alt="Carrinho de Compras">
-                            Comprar
-                        </button>
+                            <button type="button" class="btn btn-warning comprar  d-flex align-items-center" id="btn_cadastro">
+                                <img src="../imagens/carrinho_preto.png" class="text-start mr-2" alt="Carrinho de Compras">
+                                Comprar
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="row">
+                    <!-- <div class="row">
                         <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
                             <input type="image" src="../imagens/carrinho_preto.png" class="btn btn-warning comprar" id="btn_comprar" value="Comprar">
                         </div>
                     </div> -->
 
-                <!-- Fim Botão Comprar -->
+                    <!-- Fim Botão Comprar -->
+                </div>
             </div>
-        </div>
-        <!-- Fim Coluna Descrição Do Produto-->
+            <!-- Fim Coluna Descrição Do Produto-->
 
-    </div>
-
-    <!-- Fim Coluna Descrição do Produto -->
-
-    <div class="row">
-
-        <div class="col">
-            <p>
-            <div class="text-container" style="font-weight:500">
-                MAIS OPÇÕES
-            </div>
-            </p>
         </div>
 
-    </div>
+        <!-- Fim Coluna Descrição do Produto -->
 
-    <div class="row justify-content-around mb-4">
+        <div class="row">
 
-        <!--NOVIDADES PHP -->
-        <?php
-        $sql_news = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+            <div class="col">
+                <p>
+                <div class="text-container" style="font-weight:500">
+                    MAIS OPÇÕES
+                </div>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-around mb-4">
+
+            <!--NOVIDADES PHP -->
+            <?php
+            $sql_news = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
             INNER JOIN tb_produto AS b 
             ON a.id_produto = b.id_produto 
             WHERE a.disponivel = 1 ORDER BY a.dt_hr_entrada DESC LIMIT 3";
 
-        $res_news = mysqli_query($conn, $sql_news);
-        if ($res_news->num_rows > 0) {
-            $num_prod = 0;
+            $res_news = mysqli_query($conn, $sql_news);
+            if ($res_news->num_rows > 0) {
+                $num_prod = 0;
 
-            while ($tbl_produto = $res_news->fetch_assoc()) {
-                if ($num_prod == 0) {
-                    echo '<div class="row row-custom justify-content-around mb-4">';
-                }
-                echo '<div class="col col-custom mb-3">
+                while ($tbl_produto = $res_news->fetch_assoc()) {
+                    if ($num_prod == 0) {
+                        echo '<div class="row row-custom justify-content-around mb-4">';
+                    }
+                    echo '<div class="col col-custom mb-3">
                             <a href="./produto.php?id_prod=' . $tbl_produto['id_produto'] . '">
                                 <div class="card custom-card">
                                     <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
@@ -189,22 +192,23 @@ if (isset($_GET["id_prod"])) {
                                 </div>
                             </a>
                         </div>';
-                $num_prod += 1;
+                    $num_prod += 1;
 
-                if ($num_prod == 3) {
-                    echo '</div>';
-                    $num_prod = 0;
+                    if ($num_prod == 3) {
+                        echo '</div>';
+                        $num_prod = 0;
+                    }
                 }
             }
-        }
-        ?>
+            ?>
 
 
+        </div>
+        <div class="row">
+            <hr class="opacity-0 hr-custom">
+        </div>
     </div>
-    <div class="row">
-        <hr class="opacity-0 hr-custom">
-    </div>
-</div>
+</body>
 
 <?php
 
