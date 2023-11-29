@@ -7,8 +7,9 @@ include("../header_footer/header.php");
 <link rel="stylesheet" href="../css/style_produtos.css">
 
 <body>
-    <div class="container-fluid filter-container position-fixed mt-1">
-        <div class="container-fluid mt-5">
+    <div class="container-fluid">
+        <div class="row filter-container position-fixed mt-4" id="row-size">
+
             <div class="row">
 
                 <div class="col">
@@ -22,12 +23,8 @@ include("../header_footer/header.php");
                 </div>
 
             </div>
-        </div>
 
-
-        <div class="container-expanded" style="background-color: #cfb53b">
-
-            <div class="row justify-content-start ms-2">
+            <div class="row justify-content-start" style="background-color: #cfb53b">
 
                 <div class="col-sm-1 text-center">
                     <img src="../imagens/filtro.png" alt="filtro" height="25" width="25">
@@ -92,36 +89,36 @@ include("../header_footer/header.php");
                 </div>
 
             </div>
-
+            <div class="container-expanded bg-custom"></div>
         </div>
 
-        <div class="container-expanded bg-custom"></div>
-
-    </div>
 
 
 
-    <div class="content-container">
-        <div class="container">
-
-            <div class="row justify-content-around mb-4">
 
 
-                <?php
-                $sql_produto = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+
+        <div class="content-container">
+            <div class="container">
+
+                <div class="row justify-content-around mb-4">
+
+
+                    <?php
+                    $sql_produto = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
                     INNER JOIN tb_produto AS b 
                     ON a.id_produto = b.id_produto 
                     WHERE a.disponivel = 1";
 
-                $res_produto = mysqli_query($conn, $sql_produto);
-                if ($res_produto->num_rows > 0) {
-                    $num_prod = 0;
+                    $res_produto = mysqli_query($conn, $sql_produto);
+                    if ($res_produto->num_rows > 0) {
+                        $num_prod = 0;
 
-                    while ($tbl_produto = $res_produto->fetch_assoc()) {
-                        if ($num_prod == 0) {
-                            echo '<div class="row row-custom justify-content-around mb-4">';
-                        }
-                        echo '<div class="col col-custom mb-3">
+                        while ($tbl_produto = $res_produto->fetch_assoc()) {
+                            if ($num_prod == 0) {
+                                echo '<div class="row row-custom justify-content-around mb-4">';
+                            }
+                            echo '<div class="col col-custom mb-3">
                            <div class="card custom-card">
                                 <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
                                <div class="card-body">
@@ -130,36 +127,40 @@ include("../header_footer/header.php");
                                </div>
                            </div>
                        </div>';
-                        $num_prod += 1;
+                            $num_prod += 1;
 
-                        if ($num_prod == 3) {
-                            echo '</div>';
-                            $num_prod = 0;
+                            if ($num_prod == 3) {
+                                echo '</div>';
+                                $num_prod = 0;
+                            }
                         }
                     }
-                }
-                ?>
+                    ?>
 
+                </div>
+
+                <div class="row mt-5">
+                    <nav class="bg-pagination" aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-
-            <div class="row d-flex">
-                <nav class="bg-pagination" aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="row">
+                <hr class="opacity-0 hr-custom">
             </div>
         </div>
     </div>
