@@ -190,7 +190,7 @@ if (isset($_GET["id_prod"])) {
                     if ($num_prod == 0) {
                         echo '<div class="row row-custom justify-content-around mb-4">';
                     }
-                    echo '<div class="col col-custom col-md-3">
+                    echo '<div class="col col-custom col-md-3 mb-3">
                             <a href="./produto.php?id_prod=' . $tbl_produto['id_produto'] . '">
                                 <div class="card custom-card">
                                     <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">

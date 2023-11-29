@@ -4,11 +4,13 @@ footer {
     width: 100% !important;
     background-color: black !important;
     max-height: 100% !important;
+    z-index: 50;
 }
 
 .img-logo {
     width: 120%;
     min-width: 100%;
+    
 }
  
 .nome-loja, p {
@@ -47,4 +49,5 @@ footer {
 
 #row-logo-footer {
     width: 85% !important;
+    z-index: 1;
 }

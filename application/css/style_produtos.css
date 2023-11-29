@@ -19,6 +19,10 @@
     /* rita a "bolinha" do LI*/
 }
 
+a{
+    text-decoration: none;
+}
+
 .bg-custom {
     background-color: black;
     height: 4px;
@@ -95,15 +99,7 @@
     height: 300px;
 }
 
-.hr-custom {
-    border: 25px solid transparent;
-}
 
-@media (max-width: 1000px) {
-    .hr-custom {
-        height: 550px;
-    }
-}
 
 #row-size {
     width: 105% !important;

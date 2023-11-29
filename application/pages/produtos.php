@@ -114,7 +114,10 @@ include("../header_footer/header.php");
                             if ($num_prod == 0) {
                                 echo '<div class="row justify-content-around mb-3">';
                             }
-                            echo '<div class="col col-md-3 col-custom mt-3">
+                            echo '
+                           
+                            <div class="col col-md-3 col-custom mt-3">
+                            <a href="./produto.php?id_prod=' . $tbl_produto['id_produto'] . '">
                            <div class="card custom-card">
                                 <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
                                <div class="card-body">
@@ -122,7 +125,9 @@ include("../header_footer/header.php");
                                    <p class="card-text text-center">' . $tbl_produto['valor_venda'] . '</p>
                                </div>
                            </div>
-                       </div>';
+                           </a>
+                       </div>
+                       ';
                             $num_prod += 1;
 
                             if ($num_prod == 3) {

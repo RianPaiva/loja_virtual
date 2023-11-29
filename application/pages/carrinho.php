@@ -48,13 +48,17 @@ include("../header_footer/header.php");
 
                             <?php
                             //SELECT PRODUTOS NO CARRINHO
-                            $sql_carrinho = "SELECT a.*, b.nome_produto, b.local_img, c.valor_venda FROM tb_item_carrinho AS a 
+                            $sql_carrinho = "SELECT a.*, b.nome_produto, b.local_img, c.valor_venda 
+                            FROM tb_item_carrinho AS a 
                             INNER JOIN tb_produto AS b ON a.id_produto = b.id_produto 
-                            INNER JOIN tb_item_estoque 
-                            AS c ON a.id_produto = b.id_produto WHERE a.id_carrinho = 1";
+                            INNER JOIN tb_item_estoque AS c ON a.id_produto = c.id_produto 
+                            WHERE a.id_carrinho = 1";
                             $result_carrinho = mysqli_query($conn, $sql_carrinho);
                             if ($result_carrinho->num_rows > 0) {
+                                $total = 0;
                                 while ($tbl_carrinho = $result_carrinho->fetch_assoc()) {
+                                    $sub_total = ($tbl_carrinho["qtd"] * $tbl_carrinho["valor_venda"]);
+                                    $total += $sub_total;
                                     echo '<tr>
                                     <td>
                                         <div class="product me-3">
@@ -71,17 +75,18 @@ include("../header_footer/header.php");
                                     <td>
                                         <div class="qtd ms-3 me-3">
                                             <button><i class="bx bx-minus"></i></button>
-                                            <span>2</span>
+                                            <span>'.$tbl_carrinho["qtd"].'</span>
                                             <button><i class="bx bx-plus"></i></button>
                                         </div>
                                     </td>
-                                    <td> R$ 240,00 </td>
+                                    <td> R$ '.$sub_total.'</td>
                                     <td>
                                         <button class="remove"><i class="bx bx-x"></i></button>
                                     </td>
                                 </tr>';
                                 }
                             } else {
+                                echo "<h1>Carrinho Vazio</h1>";
                             }
 
 
@@ -95,7 +100,7 @@ include("../header_footer/header.php");
                     <div class="box rounded">
                         <header class="text-center">Resumo da compra</header>
                         <div class="info">
-                            <div><span>Sub-total</span><span>R$ 418</span></div>
+                            <div><span>Sub-total</span><span><?php echo($total); ?></span></div>
                             <div><span>Frete</span><span>Gratuito</span></div>
 
                             <div class="col">
@@ -106,7 +111,7 @@ include("../header_footer/header.php");
 
                         <footer class="rounded bg-color">
                             <span>Total</span>
-                            <span>R$ 418</span>
+                            <span><?php echo($total); ?></span>
                         </footer>
                     </div>
                     <button class="rounded">Finalizar Compra</button>
