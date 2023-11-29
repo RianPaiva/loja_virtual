@@ -74,14 +74,14 @@ include("../header_footer/header.php");
                                     <td>R$ ' . $tbl_carrinho["valor_venda"] . '</td>
                                     <td>
                                         <div class="qtd ms-3 me-3">
-                                            <button><i class="bx bx-minus"></i></button>
+                                            <button onclick="remove_produto('.$tbl_carrinho["id_produto"].')"><i class="bx bx-minus"></i></button>
                                             <span>'.$tbl_carrinho["qtd"].'</span>
-                                            <button><i class="bx bx-plus"></i></button>
+                                            <button onclick="add_produto('.$tbl_carrinho["id_produto"].')"><i class="bx bx-plus"></i></button>
                                         </div>
                                     </td>
                                     <td> R$ '.$sub_total.'</td>
                                     <td>
-                                        <button class="remove"><i class="bx bx-x"></i></button>
+                                        <button onclick="del_produto('.$tbl_carrinho["id_produto"].')" class="remove"><i class="bx bx-x"></i></button>
                                     </td>
                                 </tr>';
                                 }
@@ -131,6 +131,7 @@ include("../header_footer/header.php");
 </body>
 
 </html>
+<script src="../js/carrinho.js"></script>
 
 <?php
 include("../header_footer/footer.php");
