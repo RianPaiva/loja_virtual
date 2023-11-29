@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../php/protect.php');
+// include('../php/protect.php');
 include("../header_footer/header.php");
 
 ?>
@@ -113,7 +113,7 @@ include("../header_footer/header.php");
 
                     <div class="col-md-6">
                         <label for="imagem" class="form-label"> Escolha Uma Imagem </label>
-                        <input class="form-control" type="file" id="imagem" name="imagem">
+                        <input class="form-control" type="file" id="imagem" name="imagem" accept = ".png">
                     </div>
 
                 </div>
@@ -122,7 +122,7 @@ include("../header_footer/header.php");
 
                     <div class="col-md-6">
                         <label for="imagem_2" class="form-label"> Escolha Uma Imagem </label>
-                        <input class="form-control" type="file" id="imagem_2" name="imagem_2">
+                        <input class="form-control" type="file" id="imagem_2" name="imagem_2" accept = ".png">
                     </div>
 
                 </div>
@@ -131,7 +131,7 @@ include("../header_footer/header.php");
 
                     <div class="col-md-6">
                         <label for="imagem_3" class="form-label"> Escolha Uma Imagem </label>
-                        <input class="form-control" type="file" id="imagem_3" name="imagem_3">
+                        <input class="form-control" type="file" id="imagem_3" name="imagem_3" accept = ".png">
                     </div>
 
                 </div>
