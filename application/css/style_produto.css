@@ -85,12 +85,11 @@
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    height: 100% !important;
 }
 
-.row-custom {
+/* .row-custom {
     max-height: 300px !important;
-}
+} */
 
 label.radio {
     cursor: pointer;

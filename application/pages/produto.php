@@ -54,14 +54,17 @@ if (isset($_GET["id_prod"])) {
                                 </div>
                                 <div class="row mt-8">
                                     <div class="col col-custom thumbnail mt-5">
-                                        <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)"
+                                            src="<?php echo ($main_img); ?>" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
 
-                                        <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)"
+                                            src="<?php echo ($main_img); ?>" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
-                                        <img class="line-check radio" onclick="change_image(this)" src="<?php echo ($main_img); ?>" height="80" width="80">
+                                        <img class="line-check radio" onclick="change_image(this)"
+                                            src="<?php echo ($main_img); ?>" height="80" width="80">
                                     </div>
                                 </div>
                             </div>
@@ -82,10 +85,14 @@ if (isset($_GET["id_prod"])) {
                 <div class="col mt-5 box-info">
 
                     <div class="row ms-2 mt-5 nome-produto">
-                        <p> <?php echo ($nome_prod); ?> </p>
+                        <p>
+                            <?php echo ($nome_prod); ?>
+                        </p>
                     </div>
                     <div class="row ms-2 mt-1 valor-produto">
-                        <p><?php echo ($valor); ?></p>
+                        <p>
+                            <?php echo ($valor); ?>
+                        </p>
                     </div>
 
                     <!-- Fim Descrição do Produto -->
@@ -131,8 +138,10 @@ if (isset($_GET["id_prod"])) {
                         <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
                             <input type="hidden" id="id_prod" value="<?php echo ($tbl["id_produto"]); ?>">
 
-                            <button type="button" class="btn btn-warning comprar  d-flex align-items-center" id="btn_cadastro">
-                                <img src="../imagens/carrinho_preto.png" class="text-start mr-2" alt="Carrinho de Compras">
+                            <button type="button" class="btn btn-warning comprar  d-flex align-items-center"
+                                id="btn_cadastro">
+                                <img src="../imagens/carrinho_preto.png" class="text-start mr-2"
+                                    alt="Carrinho de Compras">
                                 Comprar
                             </button>
                         </div>
@@ -181,7 +190,7 @@ if (isset($_GET["id_prod"])) {
                     if ($num_prod == 0) {
                         echo '<div class="row row-custom justify-content-around mb-4">';
                     }
-                    echo '<div class="col col-custom mb-3">
+                    echo '<div class="col col-custom col-md-3">
                             <a href="./produto.php?id_prod=' . $tbl_produto['id_produto'] . '">
                                 <div class="card custom-card">
                                     <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
@@ -204,10 +213,9 @@ if (isset($_GET["id_prod"])) {
 
 
         </div>
-        <div class="row">
-            <hr class="opacity-0 hr-custom">
-        </div>
     </div>
+
+
 </body>
 
 <?php

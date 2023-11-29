@@ -61,7 +61,6 @@
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    height: 100% !important;
 }
 
 .filter-container {
@@ -102,7 +101,7 @@
 
 @media (max-width: 1000px) {
     .hr-custom {
-        border: 300px solid transparent;
+        height: 550px;
     }
 }
 
@@ -110,3 +109,14 @@
     width: 105% !important;
 }
 
+@media (max-width: 1000px) {
+    #row-ms {
+        margin-left: 3px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #prod-mt {
+        margin-top: 10px;
+    }
+}

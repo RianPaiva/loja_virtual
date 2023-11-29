@@ -7,7 +7,8 @@ include("../header_footer/header.php");
 <link rel="stylesheet" href="../css/style_produtos.css">
 
 <body>
-    <div class="container-fluid">
+
+    <div class="container-fluid mt-3">
         <div class="row filter-container position-fixed mt-4" id="row-size">
 
             <div class="row">
@@ -24,7 +25,7 @@ include("../header_footer/header.php");
 
             </div>
 
-            <div class="row justify-content-start" style="background-color: #cfb53b">
+            <div class="row justify-content-start" id="row-ms" style="background-color: #cfb53b">
 
                 <div class="col-sm-1 text-center">
                     <img src="../imagens/filtro.png" alt="filtro" height="25" width="25">
@@ -93,15 +94,10 @@ include("../header_footer/header.php");
         </div>
 
 
-
-
-
-
-
         <div class="content-container">
             <div class="container">
 
-                <div class="row justify-content-around mb-4">
+                <div class="row justify-content-around" id="prod-mt">
 
 
                     <?php
@@ -116,9 +112,9 @@ include("../header_footer/header.php");
 
                         while ($tbl_produto = $res_produto->fetch_assoc()) {
                             if ($num_prod == 0) {
-                                echo '<div class="row row-custom justify-content-around mb-4">';
+                                echo '<div class="row justify-content-around mb-3">';
                             }
-                            echo '<div class="col col-custom mb-3">
+                            echo '<div class="col col-md-3 col-custom mt-3">
                            <div class="card custom-card">
                                 <img class="card-img-top" src="' . $tbl_produto['local_img'] . '" alt="Imagem de capa do card">
                                <div class="card-body">
@@ -139,7 +135,9 @@ include("../header_footer/header.php");
 
                 </div>
 
-                <div class="row mt-5">
+
+
+                <div class="row mt-5 mb-3">
                     <nav class="bg-pagination" aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item">
@@ -159,10 +157,11 @@ include("../header_footer/header.php");
                     </nav>
                 </div>
             </div>
-            <div class="row">
-                <hr class="opacity-0 hr-custom">
-            </div>
+
+
+
         </div>
+
     </div>
 </body>
 
