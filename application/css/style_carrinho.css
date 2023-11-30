@@ -197,3 +197,18 @@ aside>button {
 .hr-custom {
   border: 1px solid transparent;
 }
+
+.calcular {
+  width: 27% !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: all .2s ease !important;
+  font-size: 20px !important;
+  background-color: #CFB53B !important;
+}
+
+.calcular:hover {
+  background-color: #B59D35 !important;
+  color: white !important;
+}

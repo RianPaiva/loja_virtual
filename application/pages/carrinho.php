@@ -74,14 +74,14 @@ include("../header_footer/header.php");
                                     <td>R$ ' . $tbl_carrinho["valor_venda"] . '</td>
                                     <td>
                                         <div class="qtd ms-3 me-3">
-                                            <button onclick="remove_produto('.$tbl_carrinho["id_produto"].')"><i class="bx bx-minus"></i></button>
-                                            <span>'.$tbl_carrinho["qtd"].'</span>
-                                            <button onclick="add_produto('.$tbl_carrinho["id_produto"].')"><i class="bx bx-plus"></i></button>
+                                            <button onclick="remove_produto(' . $tbl_carrinho["id_produto"] . ')"><i class="bx bx-minus"></i></button>
+                                            <span>' . $tbl_carrinho["qtd"] . '</span>
+                                            <button onclick="add_produto(' . $tbl_carrinho["id_produto"] . ')"><i class="bx bx-plus"></i></button>
                                         </div>
                                     </td>
-                                    <td> R$ '.$sub_total.'</td>
+                                    <td> R$ ' . $sub_total . '</td>
                                     <td>
-                                        <button onclick="del_produto('.$tbl_carrinho["id_produto"].')" class="remove"><i class="bx bx-x"></i></button>
+                                        <button onclick="del_produto(' . $tbl_carrinho["id_produto"] . ')" class="remove"><i class="bx bx-x"></i></button>
                                     </td>
                                 </tr>';
                                 }
@@ -100,18 +100,24 @@ include("../header_footer/header.php");
                     <div class="box rounded">
                         <header class="text-center">Resumo da compra</header>
                         <div class="info">
-                            <div><span>Sub-total</span><span><?php echo($total); ?></span></div>
+                            <div><span>Sub-total</span><span><?php echo ($total); ?></span></div>
                             <div><span>Frete</span><span>Gratuito</span></div>
 
-                            <div class="col">
+                            <div class="col-md-12">
                                 <input type="text" class="form-control" placeholder="CEP">
+                            </div>
+
+                            <div class="row">
+                                <div class="calcular-button d-flex text-center">
+                                    <input type="submit" class="btn calcular" id="btn_calcular" value="Calcular">
+                                </div>
                             </div>
 
                         </div>
 
                         <footer class="rounded bg-color">
                             <span>Total</span>
-                            <span><?php echo($total); ?></span>
+                            <span><?php echo ($total); ?></span>
                         </footer>
                     </div>
                     <button class="rounded">Finalizar Compra</button>
