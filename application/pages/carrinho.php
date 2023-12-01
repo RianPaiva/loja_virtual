@@ -67,21 +67,21 @@ include("../header_footer/header.php");
                                                 <div class="name">
                                                     <h6>' . $tbl_carrinho["nome_produto"] . '</h6>
                                                 </div>
-                                                <div class="category mb-3">Categoria</div>
+                                                <div class="category mb-3">Tamanho: '.$tbl_carrinho["tamanho"].'</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>R$ ' . $tbl_carrinho["valor_venda"] . '</td>
                                     <td>
                                         <div class="qtd ms-3 me-3">
-                                            <button onclick="remove_produto(' . $tbl_carrinho["id_produto"] . ')"><i class="bx bx-minus"></i></button>
+                                            <button onclick="remove_produto('.$tbl_carrinho["id_produto"].',1,'.$tbl_carrinho["tamanho"].',1)"><i class="bx bx-minus"></i></button>
                                             <span>' . $tbl_carrinho["qtd"] . '</span>
-                                            <button onclick="add_produto(' . $tbl_carrinho["id_produto"] . ')"><i class="bx bx-plus"></i></button>
+                                            <button onclick="add_produto('.$tbl_carrinho["id_produto"].',1,'.$tbl_carrinho["tamanho"].','.$tbl_carrinho["qtd"].',1)"><i class="bx bx-plus"></i></button>
                                         </div>
                                     </td>
                                     <td> R$ ' . $sub_total . '</td>
                                     <td>
-                                        <button onclick="del_produto(' . $tbl_carrinho["id_produto"] . ')" class="remove"><i class="bx bx-x"></i></button>
+                                        <button onclick="del_produto('.$tbl_carrinho["id_produto"].',1,'.$tbl_carrinho["tamanho"].',1)" class="remove"><i class="bx bx-x"></i></button>
                                     </td>
                                 </tr>';
                                 }
