@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 
         if ($("#btn_cadastrar").val() === "Cadastrar") {
-            if ($("#nome_produto").val() === null || $("#nome_produto").val().length < 3) {
+            if ($("#nome_produto").val() === null || $("#nome_produto").val().length < 2) {
                 alert("Preencha o NOME DO PRODUTO!");
             } else {
                 if ($("#id_fornecedor").val() === null || $("#id_fornecedor").val().length < 2) {
@@ -114,7 +114,6 @@ $(document).ready(function () {
                                     var altera_img_3 = 1;
                                 }
 
-
                                 var formData = new FormData();
                                 formData.append("metodo", 'alterar');
                                 formData.append("id_produto", $("#id_produto").val());
@@ -141,15 +140,13 @@ $(document).ready(function () {
                                 } else {
                                     formData.append("fl_altera_img_3", '0');
                                 }
-
-
                                 $.ajax({
                                     method: "POST",
                                     url: "../php/cadastrar_produto.php",
                                     dataType: "HTML",
                                     data: formData,
                                     contentType: false,
-                                    processData: false,
+                                    processData: false
                                 }).done(function (data) {
                                     console.log(data);
                                     if (data !== 'True') {
@@ -162,7 +159,10 @@ $(document).ready(function () {
 
 
 
+
                             }
+
+
                         }
                     }
                 }

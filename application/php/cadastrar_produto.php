@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-            
+
 
             if (isset($_FILES["imagem_3"]) && !empty($_FILES["imagem_3"])) {
                 $nomeArquivo_3 = $_FILES["imagem_3"]["name"];
-                //caminho imagem
+
                 $caminhoCompleto_3 = "../imagens_produto/" . $nomeArquivo_3;
             }
 
@@ -55,47 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         if ($result_nome->num_rows > 0) {
                             echo "PRODUTO já cadastrado!";
                             die();
-                        }
-
-                        // //PEGAR CAMPOS DO FORM
-                        // $nome_produto = $_POST["nome_produto"];
-                        // $fornecedor = $_POST["id_fornecedor"];
-                        // $categoria = $_POST["id_categoria"];
-                        // $genero = $_POST["genero"];
-                        // $imagem = $caminhoCompleto;
-                        // $imagem_2 = $caminhoCompleto_2;
-                        // $imagem_3 = $caminhoCompleto_3;
-                        // // $imagem_3 = $caminhoCompleto_3;
-                        // $descricao = $_POST["descricao"];
-
-                        // //QUERY VERIFICAÇÃO SE JÁ EXISTE ESTE REGISTRO
-                        // $query_nome = "SELECT * FROM tb_produto WHERE nome_produto = '" . $nome_produto . "' LIMIT 1;";
-                        // $result_nome = mysqli_query($conn, $query_nome);
-
-                        // if ($result_nome->num_rows > 0) {
-                        //     echo "PRODUTO já cadastrado!";
-                        //     die();
-
-
-                        // //PEGAR CAMPOS DO FORM
-                        // $nome_produto = $_POST["nome_produto"];
-                        // $fornecedor = $_POST["id_fornecedor"];
-                        // $categoria = $_POST["id_categoria"];
-                        // $genero = $_POST["genero"];
-                        // $imagem = $caminhoCompleto;
-                        // $imagem_2 = $caminhoCompleto_2;
-                        // // $imagem_3 = $caminhoCompleto_3;
-                        // $descricao = $_POST["descricao"];
-
-                        // //QUERY VERIFICAÇÃO SE JÁ EXISTE ESTE REGISTRO
-                        // $query_nome = "SELECT * FROM tb_produto WHERE nome_produto = '" . $nome_produto . "' LIMIT 1;";
-                        // $result_nome = mysqli_query($conn, $query_nome);
-
-                        // if ($result_nome->num_rows > 0) {
-                        //     echo "PRODUTO já cadastrado!";
-                        //     die();
-                        // } 
-                        else {
+                        } else {
                             $query_produto = "INSERT INTO tb_produto(nome_produto, id_fornecedor,id_categoria, genero, local_img, local_img_2, local_img_3, descricao) 
                 VALUES('" . $nome_produto . "','" . $fornecedor . "','" . $categoria . "','" . $genero . "','" . $imagem . "','" . $imagem_2 . "','" . $imagem_3 . "','" . $descricao . "');";
 
@@ -140,28 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     $caminhoCompleto_3 = "../imagens_produto/" . $nomeArquivo_3;
                                 }
                             }
-
-                            // if (isset($_FILES["imagem_2"])) {
-                            //     $nomeArquivo_2 = $_FILES["imagem_2"]["name"];
-                            //     //caminho imagem
-                            //     $caminhoCompleto_2 = "../imagens_produto/" . $nomeArquivo_2;
-                            // }
-
-                            // if ($_POST["fl_altera_img_3"] == 1) {
-
-                            //     if (isset($_FILES["imagem_3"])) {
-                            //         $nomeArquivo_3 = $_FILES["imagem_3"]["name"];
-                            //         //caminho imagem
-                            //         $caminhoCompleto_3 = "../imagens_produto/" . $nomeArquivo_3;
-                            //     }
-                            // }
-
-                            // if (isset($_FILES["imagem_3"])) {
-                            //     $nomeArquivo_3 = $_FILES["imagem_3"]["name"];
-                            //     //caminho imagem
-                            //     $caminhoCompleto_3 = "../imagens_produto/" . $nomeArquivo_3;
-                            // }
-
                             if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $caminhoCompleto)) {
 
 

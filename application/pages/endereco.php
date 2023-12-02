@@ -195,12 +195,12 @@ include("../header_footer/header.php");
                                             <div class="row justify-content-center mt-3">
                                                 <div class="col-md-6 text-start">
                                                     <label for="rua" class="form-label">Rua</label>
-                                                    <input type="text" class="form-control" id="rua">
+                                                    <input type="text" class="form-control" id="rua" oninput="handleInput(event)">
                                                 </div>
 
                                                 <div class="col-md-6 text-start">
                                                     <label for="bairro" class="form-label">Bairro</label>
-                                                    <input type="text" class="form-control" id="bairro">
+                                                    <input type="text" class="form-control" id="bairro" oninput="handleInput(event)">
                                                 </div>
 
                                             </div>
@@ -208,31 +208,44 @@ include("../header_footer/header.php");
                                             <div class="row justify-content-center">
                                                 <div class="col-md-6 text-start">
                                                     <label for="cidade" class="form-label">Cidade</label>
-                                                    <input type="text" class="form-control" id="cidade" placeholder="">
-                                                </div>
-
-                                                <div class="col-md-6 text-start">
-                                                    <label for="numero" class="form-label">Numero</label>
-                                                    <input type="text" class="form-control" id="numero" placeholder="">
-                                                </div>
-                                            </div>
-
-                                            <div class="row justify-content-center">
-
-                                                <div class="col-md-6 text-start">
-                                                    <label for="complemento" class="form-label">Complemento</label>
-                                                    <input type="text" class="form-control" id="complemento" placeholder="">
+                                                    <input type="text" class="form-control" id="cidade" placeholder="" oninput="handleInput(event)">
                                                 </div>
 
                                                 <div class="col-md-6 text-start">
                                                     <label for="estado" class="form-label">Estado</label>
-                                                    <input type="text" class="form-control" id="estado" placeholder="">
+                                                    <select class="form-select" id="estado">
+                                                        <option selected> </option>
+                                                        <?php
+                                                        $sql_estado = "SELECT * FROM tb_estado_br;";
+                                                        $res_estado = mysqli_query($conn, $sql_estado);
+                                                        if ($res_estado->num_rows > 0) {
+                                                            while ($tbl_estado = $res_estado->fetch_assoc()) {
+                                                                echo "<option value='" . $tbl_estado["id_estado"] . "'>" . $tbl_estado["nome"] . "</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+
                                                 </div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-6 text-start">
+                                                    <label for="numero" class="form-label ">Número</label>
+                                                    <input type="number" class="form-control " id="numero">
+
+                                                </div>
+                                                <div class="col-md-6 text-start">
+                                                    <label for="complemento" class="form-label">Complemento</label>
+                                                    <input type="text" class="form-control" id="complemento" placeholder="" oninput="handleInput(event)">
+                                                </div>
+
+
                                             </div>
 
                                             <div class="row">
                                                 <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
-                                                    <input type="submit" class="btn btn-warning cadastrar" id="btn_comprar" value="Cadastrar">
+                                                    <input type="submit" class="btn btn-warning cadastrar" id="btn_cadastrar" value="Cadastrar">
                                                 </div>
                                             </div>
                                     </div>
@@ -277,8 +290,10 @@ include("../header_footer/header.php");
 
 </div>
 
-</html>
+<script src="../js/cadastro_endereco.js"></script>
+<script src="../js/masks.js"></script>
 
+</html>
 
 
 <?php
