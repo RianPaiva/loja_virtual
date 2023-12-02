@@ -19,9 +19,7 @@ $(document).ready(function () {
                             if ($("#numero").val() === null || $("#numero").val().length < 2) {
                                 alert("Preencha o NÚMERO")
                             } else {
-                                if ($("#complemento").val() === null || $("#complemento").val().length < 2) {
-                                    alert("Preencha o ESTADO");
-                                } else {
+{
 
                                     $.ajax({
 
@@ -30,6 +28,7 @@ $(document).ready(function () {
                                         DataType: "HTML",
                                         data: {
                                             metodo: "cad_endereco",
+                                            id_cliente: 1,
                                             rua: $("#rua").val(),
                                             bairro: $("#bairro").val(),
                                             cidade: $("#cidade").val(),
