@@ -26,7 +26,17 @@ function lowerInput(e) {
     e.target.value = e.target.value.toLowerCase();
 }
 
+// CEP
+function mascaraCEP(element) {
+    // Remove caracteres não numéricos
+    var cep = element.value.replace(/\D/g, '');
 
+    // Adiciona a máscara "XXXXX-XXX"
+    cep = cep.replace(/(\d{5})(\d{3})/, '$1-$2');
+
+    // Atualiza o valor no campo
+    element.value = cep;
+}
 
 //CPF CNPJ
 

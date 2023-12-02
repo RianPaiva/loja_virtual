@@ -56,6 +56,7 @@ include("../header_footer/header.php");
                             $result_carrinho = mysqli_query($conn, $sql_carrinho);
                             if ($result_carrinho->num_rows > 0) {
                                 $total = 0;
+                                $num_itens = 0;
                                 while ($tbl_carrinho = $result_carrinho->fetch_assoc()) {
                                     $sub_total = ($tbl_carrinho["qtd"] * $tbl_carrinho["valor_venda"]);
                                     $total += $sub_total;
@@ -67,26 +68,29 @@ include("../header_footer/header.php");
                                                 <div class="name">
                                                     <h6>' . $tbl_carrinho["nome_produto"] . '</h6>
                                                 </div>
-                                                <div class="category mb-3">Tamanho: '.$tbl_carrinho["tamanho"].'</div>
+                                                <div class="category mb-3">Tamanho: ' . $tbl_carrinho["tamanho"] . '</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>R$ ' . $tbl_carrinho["valor_venda"] . '</td>
+                                    <td>R$ ' . number_format($tbl_carrinho["valor_venda"],2,',','.') . '</td>
                                     <td>
                                         <div class="qtd ms-3 me-3">
-                                            <button onclick="remove_produto('.$tbl_carrinho["id_produto"].',1,'.$tbl_carrinho["tamanho"].',1)"><i class="bx bx-minus"></i></button>
+                                            <button onclick="remove_produto(' . $tbl_carrinho["id_produto"] . ',1,' . $tbl_carrinho["tamanho"] . ',' . $tbl_carrinho["qtd"] . ',1)"><i class="bx bx-minus"></i></button>
                                             <span>' . $tbl_carrinho["qtd"] . '</span>
-                                            <button onclick="add_produto('.$tbl_carrinho["id_produto"].',1,'.$tbl_carrinho["tamanho"].','.$tbl_carrinho["qtd"].',1)"><i class="bx bx-plus"></i></button>
+                                            <button onclick="add_produto(' . $tbl_carrinho["id_produto"] . ',1,' . $tbl_carrinho["tamanho"] . ',' . $tbl_carrinho["qtd"] . ',1)"><i class="bx bx-plus"></i></button>
                                         </div>
                                     </td>
-                                    <td> R$ ' . $sub_total . '</td>
+                                    <td> R$ ' . number_format($sub_total,2,',','.') . '</td>
                                     <td>
-                                        <button onclick="del_produto('.$tbl_carrinho["id_produto"].',1,'.$tbl_carrinho["tamanho"].',1)" class="remove"><i class="bx bx-x"></i></button>
+                                        <button onclick="del_produto(' . $tbl_carrinho["id_produto"] . ',1,' . $tbl_carrinho["tamanho"] . ',' . $tbl_carrinho["qtd"] . ',1)" class="remove"><i class="bx bx-x"></i></button>
                                     </td>
                                 </tr>';
+                                $num_itens += $tbl_carrinho["qtd"];
                                 }
                             } else {
                                 echo "<h1>Carrinho Vazio</h1>";
+                                $num_itens = 0;
+                                $total = 0;
                             }
 
 
@@ -94,22 +98,26 @@ include("../header_footer/header.php");
                             ?>
                         </tbody>
                     </table>
+
                 </div>
+
 
                 <aside class="col-lg-3">
                     <div class="box rounded">
                         <header class="text-center">Resumo da compra</header>
                         <div class="info">
-                            <div><span>Sub-total</span><span><?php echo ($total); ?></span></div>
-                            <div><span>Frete</span><span>Gratuito</span></div>
+                            <div><span>Total itens</span><span><?php echo ($num_itens); ?></span></div>
+                            <div><span>Sub-total</span><span><?php echo "R$ " . number_format($total,2,',','.'); ?></span></div>
+                            <div><span>Frete</span><label id="valor_frete">-</label></div>
 
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="CEP">
+                                <input type="text" class="form-control" oninput="mascaraCEP(this)" id="cep" placeholder="CEP" maxlength="9">
                             </div>
 
                             <div class="row">
                                 <div class="calcular-button d-flex text-center">
-                                    <input type="submit" class="btn calcular" id="btn_calcular" value="Calcular">
+                                    <input type="hidden"  id="qtd_itens" value="<?php echo ($num_itens); ?>">
+                                    <input type="submit" class="btn calcular" id="btn_frete" value="Calcular">
                                 </div>
                             </div>
 
@@ -117,7 +125,7 @@ include("../header_footer/header.php");
 
                         <footer class="rounded bg-color">
                             <span>Total</span>
-                            <span><?php echo ($total); ?></span>
+                            <span><?php echo "R$ " . number_format($total,2,',','.'); ?></span>
                         </footer>
                     </div>
                     <button class="rounded">Finalizar Compra</button>
@@ -138,6 +146,7 @@ include("../header_footer/header.php");
 
 </html>
 <script src="../js/carrinho.js"></script>
+<script src="../js/masks.js"></script>
 
 <?php
 include("../header_footer/footer.php");

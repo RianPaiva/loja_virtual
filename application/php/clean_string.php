@@ -20,3 +20,10 @@ function CleanString($str){
         '#',';' ), ' ', $str);
     return $res;
 }
+
+function cleanNumber($string) {
+    // Remove todos os caracteres que não são números
+    $string = preg_replace('/[^0-9]/', '', $string);
+    
+    return $string;
+}

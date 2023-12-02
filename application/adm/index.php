@@ -1,5 +1,5 @@
 <?php
-
+/*
 session_start();
 
 $login_feito = "N";
@@ -11,9 +11,9 @@ $login_feito = "N";
 if (isset($_SESSION['id_usuario'])) {
     $login_feito = "S";
 }
+*/
 
-
-include("../header_footer/header_adm.php");
+include("../header_footer/header.php");
 // include("../php/protect.php");
 
 ?>
@@ -24,8 +24,7 @@ include("../header_footer/header_adm.php");
     <script src="../js/grafico.js"></script>
 
 </head>
-<?php
-if ($login_feito == "S"){
+
 
 
     ?>
@@ -108,12 +107,15 @@ if ($login_feito == "S"){
 
 
     
-}
+
+
+
+
+
+
 
 
 <?php
 
 include("../header_footer/footer.php");
-
-
-};
+?>

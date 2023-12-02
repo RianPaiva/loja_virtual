@@ -22,9 +22,10 @@ $(document).ready(function () {
                 url: "../php/carrinho.php",
                 dataType: "HTML",
                 data: {
-                    metodo: "incluir_carrinho",
+                    metodo: "incluir_tela_produto",
                     id_prod: $("#id_prod").val(),
                     tamanho: $('input[name="size"]:checked').val(),
+                    id_carrinho: 1,
                     id_cliente: 1
                 }
             }).done(function (data) {
@@ -42,7 +43,6 @@ $(document).ready(function () {
 
 
 });
-
 
 
 
