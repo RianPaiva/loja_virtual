@@ -30,6 +30,7 @@ include("../header_footer/header.php");
                         <th>Total</th>
                         <th>Frete</th>
                         <th> Visualizar Pedido </th>
+                        <th> Status </th>
                     </tr>
                 </thead>
 
@@ -63,6 +64,10 @@ include("../header_footer/header.php");
                         <td>
                             <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
                         </td>
+
+                        <td>
+                            Despachado pela transportadora
+                        </td>
                     </tr>
 
                     <tr class="ms-2 mt-2 ms-2">
@@ -93,9 +98,11 @@ include("../header_footer/header.php");
                         <td>
                             <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
                         </td>
-                    </tr>
 
-
+                        <td>
+                            Aprovado, esperando envio
+                        </td>
+                    </tr>   
                 </tbody>
             </table>
         </div>
