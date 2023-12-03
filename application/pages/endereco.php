@@ -23,160 +23,61 @@ include("../header_footer/header.php");
         <div class="col-md-7 mt-4">
             <h2> Endereços Salvos </h2>
 
-            <div class="row row-custom overflow-y-scroll">
+            <div class="row row-custom overflow-y-scroll" id="list_enderecos">
 
-                <div class="row mt-4">
-                    <div class="col-lg-12">
-
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div class="row mt-3">
-
-                                    <label class="">
-                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
-                                            <input type="radio" name="endereco">
-                                        </div>
-
-                                        <div class="col-md-10 ms-5">
-
-                                            <div class="row text-start">
-                                                <h4>Rua 1*******</H4>
-                                            </div>
-
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
+                <?php
+                $sql_endereco = "SELECT a.*, b.nome, b.uf FROM tb_endereco AS a INNER JOIN tb_estado_br AS b ON a.estado = b.id_estado WHERE id_cliente = 1;";
+                $res_endereco = mysqli_query($conn, $sql_endereco);
+                if ($res_endereco->num_rows > 0) {
+                    while($tbl_endereco = $res_endereco->fetch_assoc()){
+                        echo '
+                        
+                        <div class="row mt-3">
+                        <div class="col-lg-12">    
+                            <div class="card">
+                                <div class="card-body">    
+                                    <div class="row mt-3">    
+                                        <label class="">
+                                            <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
+                                                <input type="radio" id="sel_endereco" name="endereco" value="'.$tbl_endereco["id_endereco"].'">
+                                            </div>    
+                                            <div class="col-md-10 ms-5">    
+                                                <div class="row text-start">
+                                                    <h4>Rua: '.$tbl_endereco["rua"]. ', '.$tbl_endereco["numero"].' - '.$tbl_endereco["bairro"].', '.$tbl_endereco["cidade"].'- '.$tbl_endereco["uf"].'</h4>
+                                                </div>    
+                                                <div class="row text-start">
+                                                    <div class="col-md-3">
+                                                        <H6>CEP: '.$tbl_endereco["cep"].'</h6>
+                                                    </div>
+                                                    <div class="col-md-3 edit">
+                                                        <i class="fa fa-edit" style="font-size:24px" onclick="editarEndereco('.$tbl_endereco["id_endereco"].')"></i> Editar
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
                                             </div>
-                                        </div>
-                                    </label>
-
+                                        </label>    
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                        
+                        ';
+                    }
+                    
+                } else {
+                    echo "<h2>Nenhum endereço cadastrado</h2>";
+                }
 
-                <div class="row mt-3">
-                    <div class="col-lg-12">
+                ?>
 
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div class="row mt-3">
-
-                                    <label class="">
-                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
-                                            <input type="radio" name="endereco">
-                                        </div>
-
-                                        <div class="col-md-10 ms-5">
-
-                                            <div class="row text-start">
-                                                <h4>Rua 2*******</H4>
-                                            </div>
-
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </label>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-lg-12">
-
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div class="row mt-3">
-
-                                    <label class="">
-                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
-                                            <input type="radio" name="endereco">
-                                        </div>
-
-                                        <div class="col-md-10 ms-5">
-
-                                            <div class="row text-start">
-                                                <h4>Rua 3*******</H4>
-                                            </div>
-
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </label>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-lg-12">
-
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div class="row mt-3">
-
-                                    <label class="">
-                                        <div class="col-md-2 position-absolute top-50 ms-2 translate-middle">
-                                            <input type="radio" name="endereco">
-                                        </div>
-
-                                        <div class="col-md-10 ms-5">
-
-                                            <div class="row text-start">
-                                                <h4>Rua 4*******</H4>
-                                            </div>
-
-                                            <div class="row text-start">
-                                                <div class="col-md-3">
-                                                    <H6>CEP : 12345-678</h6>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <H6> Numero: 1</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </label>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                
             </div>
 
             <div class="row mt-4 mb-2 text-center justify-content-around">
 
                 <div class="col-md-4">
                     <p class="">
-                        <a class="btn btn-warning avancar" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Novo Endereço</a>
+                        <a class="btn btn-warning avancar" id="open_form" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Novo Endereço</a>
                     </p>
                 </div>
 
@@ -245,6 +146,7 @@ include("../header_footer/header.php");
 
                                             <div class="row">
                                                 <div class="comprar-button d-flex justify-content-center mb-4 mt-4">
+                                                    <input type="hidden" id="id_end_edit" value="">
                                                     <input type="submit" class="btn btn-warning cadastrar" id="btn_cadastrar" value="Cadastrar">
                                                 </div>
                                             </div>

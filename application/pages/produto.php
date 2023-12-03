@@ -64,10 +64,14 @@ if (isset($_GET["id_prod"])) {
                                         <img class="line-check radio" onclick="change_image(this)"
                                             src="<?php echo ($img_2); ?>" height="80" width="80">
                                     </div>
+                                    <?php
+                                        if($img_3 != ''){
+                                    ?>
                                     <div class="col col-custom thumbnail mt-5">
                                         <img class="line-check radio" onclick="change_image(this)"
                                             src="<?php echo ($img_3); ?>" height="80" width="80">
                                     </div>
+                                   <?php } ?>
                                 </div>
                             </div>
                         </div>

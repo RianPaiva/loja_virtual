@@ -128,3 +128,7 @@ aside>button {
 .bg-color {
     background-color: #D9D9D9 !important;
 }
+
+.edit i:hover {
+    cursor: pointer;
+}
