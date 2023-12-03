@@ -16,44 +16,88 @@ include("../header_footer/header.php");
         </div>
     </div>
 
-    <div class="row text-center d-flex justify-content-around">
+    <div class="row text-center d-flex justify-content-around overflow-y-scroll row-custom me-1 mb-3">
 
         <div class="col-12 row-custom mb-4">
 
             <table>
                 <thead>
                     <tr>
+                        <th>N° Pedido</th>
+                        <th> Data do Pedido </th>
                         <th>Cliente</th>
                         <th>Endereço</th>
-                        <th>Quantidade</th>
                         <th>Total</th>
-                        <th>-</th>
+                        <th>Frete</th>
+                        <th> Visualizar Pedido </th>
                     </tr>
                 </thead>
+
+
+                <tbody>
+                    <tr class="ms-2 mt-2 ms-2">
+                        <td>
+                            #1
+                        </td>
+
+                        <td>
+                            14/12/2023
+                        </td>
+
+                        <td>
+                            Gabriel Uruga
+                        </td>
+
+                        <td>
+                            Rua do pica fio, Centro, SP N°10 07807-000
+                        </td>
+
+                        <td>
+                            R$ 300,00
+                        </td>
+
+                        <td>
+                            R$ 15,00
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
+                        </td>
+                    </tr>
+
+                    <tr class="ms-2 mt-2 ms-2">
+                        <td>
+                            #2
+                        </td>
+
+                        <td>
+                            20/12/2023
+                        </td>
+
+                        <td>
+                            Gabriel Uruga
+                        </td>
+
+                        <td>
+                            Rua do pica fio, Centro, SP N°10 07807-000
+                        </td>
+
+                        <td>
+                            R$ 300,00
+                        </td>
+
+                        <td>
+                            R$ 15,00
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
+                        </td>
+                    </tr>
+
+
+                </tbody>
             </table>
-
-            <tbody>
-                <tr>
-                    <td>
-                        <div>
-                            <div class="col">
-                                <p class="h3">Urugay</p>
-                            </div>
-                            <div class="col">
-                                <p class="h3"></p>
-                            </div>
-                            <div class="col">
-                                <p class="h3"></p>
-                            </div>
-                            <div class="col">
-                                <p class="h3"></p>
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-
         </div>
 
     </div>

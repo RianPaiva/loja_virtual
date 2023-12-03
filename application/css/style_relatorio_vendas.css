@@ -19,3 +19,7 @@ table thead tr th {
     color: black;
     background-color: #CFB53B;
 }
+
+.row-custom {
+    height: 500px !important;
+}
