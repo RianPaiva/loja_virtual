@@ -1,80 +1,117 @@
 <?php
-if (isset($_POST["query"])) {
-    $output = '';
-
-    if ($_POST["metodo"] == "timesheet") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
-        $query = "SELECT * FROM cad_clientes WHERE razao_social LIKE '%" .
-            $_POST["query"] . "%' ORDER BY razao_social";
+if ($_POST["metodo"] == "cadastrar") {
+
+    // Verifica se um arquivo de imagem foi enviado
+    if (isset($_FILES["imagem"])) {
+        $nomeArquivo = $_FILES["imagem"]["name"];
+        //caminho imagem
+        $caminhoCompleto = "../imagens_produto/" . $nomeArquivo;
 
 
-        $result = mysqli_query($conn, $query);
-        $output = '<ul class="list-unstyled">';
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_array($result)) {
+        if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $caminhoCompleto)) {
 
-                $cpf = $row["nome"];
+            //PEGAR CAMPOS DO FORM
+            $nome_produto = $_POST["nome_produto"];
+            $fornecedor = $_POST["id_fornecedor"];
+            $categoria = $_POST["id_categoria"];
+            $genero = $_POST["genero"];
+            $imagem = $caminhoCompleto;
+            $descricao = $_POST["descricao"];
 
-                $output .= "<li style='color:blue' value=" . $row[" id_cliente"] . ">" .
-                    $row["razao_social"] . "</li>";
+            //QUERY VERIFICAÇÃO SE JÁ EXISTE ESTE REGISTRO
+            $query_nome = "SELECT * FROM tb_produto WHERE nome_produto = '" . $nome_produto . "' LIMIT 1;";
+            $result_nome = mysqli_query($conn, $query_nome);
+
+            if ($result_nome->num_rows > 0) {
+                echo "PRODUTO já cadastrado!";
+                die();
+            } else {
+                $query_produto = "INSERT INTO tb_produto(nome_produto, id_fornecedor,id_categoria, genero, local_img, descricao) 
+            VALUES('" . $nome_produto . "','" . $fornecedor . "','" . $categoria . "','" . $genero . "','" . $imagem . "','" . $descricao . "');";
+
+                if (mysqli_query($conn, $query_produto)) {
+                    echo "True";
+                } else {
+                    echo mysqli_error($conn);
+                }
             }
         } else {
-            $output .= '<li>Cliente não encontrado </li>';
+            echo "Erro ao salvar a imagem.";
         }
-        $output .= '</ul>';
+    } else {
+        echo "Erro: Nenhuma imagem foi enviada.";
+    }
+} elseif ($_POST["metodo"] == "alterar") {
+    //VERIFICA ALTERAÇÃO DAS IMAGENS DO PRODUTO
+    if ($_POST["fl_altera_img"] == 1) {
+
+        // Verifica se um arquivo de imagem foi enviado
+        if (isset($_FILES["imagem"])) {
+            $nomeArquivo = $_FILES["imagem"]["name"];
+            //caminho imagem
+            $caminhoCompleto = "../imagens_produto/" . $nomeArquivo;
+
+            if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $caminhoCompleto)) {
+
+                //PEGAR CAMPOS DO FORM
+                $id_produto = $_POST["id_produto"];
+                $nome_produto = $_POST["nome_produto"];
+                $fornecedor = $_POST["id_fornecedor"];
+                $categoria = $_POST["id_categoria"];
+                $genero = $_POST["genero"];
+                $imagem = $caminhoCompleto;
+                $descricao = $_POST["descricao"];
+
+                //QUERY CASO HAJA ALTERAÇÃO DE IMAGEM
+                $query_produto = "UPDATE tb_produto SET 
+                nome_produto = '" . $nome_produto . "',
+                id_fornecedor = " . $fornecedor . ",
+                id_categoria = " . $categoria . ",
+                genero = '" . $genero . "',
+                local_img= '" . $caminhoCompleto . "',
+                descricao = '" . $descricao . "'
+                WHERE id_produto = " . $id_produto . ";";
+            } else {
+                echo "Erro ao salvar a imagem.";
+            }
+        } else {
+            echo "Erro: Nenhuma imagem foi enviada.";
+        }
+    } else {
+        //PEGAR CAMPOS DO FORM
+        $id_produto = $_POST["id_produto"];
+        $nome_produto = $_POST["nome_produto"];
+        $fornecedor = $_POST["id_fornecedor"];
+        $categoria = $_POST["id_categoria"];
+        $genero = $_POST["genero"];
+        $descricao = $_POST["descricao"];
+        //QUERY CASO NÃO HAJA ALTERAÇÃO DE IMAGEM
+        $query_produto = "UPDATE tb_produto SET 
+         nome_produto = '" . $nome_produto . "',
+         id_fornecedor = " . $fornecedor . ",
+         id_categoria = " . $categoria . ",
+         genero = '" . $genero . "',
+         descricao = '" . $descricao . "'
+         WHERE id_produto = " . $id_produto . ";";
+    }
+
+    $query_nome = "SELECT * FROM tb_produto WHERE 
+    nome_produto = '" . $nome_produto . "' AND id_produto <> ".$id_produto." LIMIT 1;";
+    $result_nome = mysqli_query($conn, $query_nome);
+
+    if ($result_nome->num_rows > 0) {
+        echo "NOME já CADASTRADO em OUTRO produto!";
+        die();
+    } else {
+
+        if (mysqli_query($conn, $query_produto)) {
+            echo "True";
+        } else {
+            echo mysqli_error($conn);
+        }
     }
 }
-
-
-
-
-
-
-/* JS
-
-
-  $('#busca_razao').keyup(function(){
-           
-           $('#busca_cnpj').val('');
-          var query = $(this).val();
-         
-          
-      
-          var caractere = query.length;
-        
-          if(query !== '' && caractere > 1){
-              $.ajax({
-                  url:'./php/busca_clientes.php',
-                  method:"POST",
-                  data:{
-                      'query':query,
-                      'tipo' : status
-                  },
-                  success:function(data)
-                  {
-                     vetor = data.split("##");
-                    $('#listaRazao').fadeIn();
-                    $('#listaRazao').html(data);
-                   
-                  }
-              });
-          }else{
-              
-              $('#listaRazao').fadeOut();
-          }
-          
-      });
-    
-      $('#listaRazao').on('click', 'li', function(){
-        
-            
-            $('#busca_razao').val($(this).text());
-            $('#id_cliente').val($(this).val());
-            $('#listaRazao').fadeOut();
-            
-      });
-
-
-
-*/
+}

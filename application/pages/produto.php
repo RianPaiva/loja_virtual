@@ -2,7 +2,7 @@
 include("../header_footer/header.php");
 
 if (isset($_GET["id_prod"])) {
-    $sql_busca = "SELECT a.*, b.local_img, b.nome_produto FROM tb_item_estoque AS a 
+    $sql_busca = "SELECT a.*, b.local_img, b.local_img_2, b.local_img_3, b.nome_produto FROM tb_item_estoque AS a 
     INNER JOIN tb_produto AS b 
     ON a.id_produto = b.id_produto 
     WHERE a.id_produto = " . $_GET["id_prod"] . "  AND a.disponivel = 1";
@@ -10,6 +10,8 @@ if (isset($_GET["id_prod"])) {
     if ($res_prod->num_rows > 0) {
         $tbl = $res_prod->fetch_assoc();
         $main_img = $tbl["local_img"];
+        $img_2 = $tbl["local_img_2"];
+        $img_3 = $tbl["local_img_3"];
         $nome_prod = $tbl["nome_produto"];
         $valor = $tbl["valor_venda"];
         $json_tamanhos = $tbl["lista_tamanhos"];
@@ -60,11 +62,11 @@ if (isset($_GET["id_prod"])) {
                                     <div class="col col-custom thumbnail mt-5">
 
                                         <img class="line-check radio" onclick="change_image(this)"
-                                            src="<?php echo ($main_img); ?>" height="80" width="80">
+                                            src="<?php echo ($img_2); ?>" height="80" width="80">
                                     </div>
                                     <div class="col col-custom thumbnail mt-5">
                                         <img class="line-check radio" onclick="change_image(this)"
-                                            src="<?php echo ($main_img); ?>" height="80" width="80">
+                                            src="<?php echo ($img_3); ?>" height="80" width="80">
                                     </div>
                                 </div>
                             </div>

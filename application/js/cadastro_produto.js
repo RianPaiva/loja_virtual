@@ -30,44 +30,39 @@ $(document).ready(function () {
 
                                     if (campo_img_2.files.length < 1) {
                                         alert("Escolha uma SEGUNDA IMAGEM!");
-
-                                    } else {
-
-                                        if (campo_img_3.files.length < 1) {
-                                            alert("Escolha a TERCEIRA IMAGEM!")
-
-
+                                    }else{
+                                        var formData = new FormData();
+                                        formData.append("metodo", 'cadastrar');
+                                        formData.append("nome_produto", $("#nome_produto").val());
+                                        formData.append("descricao", $("#descricao").val());
+                                        formData.append("id_fornecedor", $("#id_fornecedor").val());
+                                        formData.append("id_categoria", $("#categoria").val());
+                                        formData.append("genero", $("#genero").val());
+                                        formData.append("imagem", $("#imagem")[0].files[0]);
+                                        formData.append("imagem_2", $("#imagem_2")[0].files[0]);
+                                        if(campo_img_3.files.length > 0) {
+                                            formData.append("imagem_3", $("#imagem_3")[0].files[0]);
                                         }
+                                        $.ajax({
+                                            method: "POST",
+                                            url: "../php/cadastrar_produto.php",
+                                            dataType: "HTML",
+                                            data: formData,
+                                            contentType: false,
+                                            processData: false,
+                                        }).done(function (data) {
+                                            console.log(data);
+                                            if (data !== 'True') {
+                                                alert("Erro: " + data);
+                                            } else {
+                                                alert("Cadastro realizado com sucesso!");
+                                                limpar();
+                                            }
+                                        });
+
+
                                     }
-
-
-                                    var formData = new FormData();
-                                    formData.append("metodo", 'cadastrar');
-                                    formData.append("nome_produto", $("#nome_produto").val());
-                                    formData.append("descricao", $("#descricao").val());
-                                    formData.append("id_fornecedor", $("#id_fornecedor").val());
-                                    formData.append("id_categoria", $("#categoria").val());
-                                    formData.append("genero", $("#genero").val());
-                                    formData.append("imagem", $("#imagem")[0].files[0]);
-                                    formData.append("imagem_2", $("#imagem_2")[0].files[0]);
-                                    formData.append("imagem_3", $("#imagem_3")[0].files[0]);
-
-                                    $.ajax({
-                                        method: "POST",
-                                        url: "../php/cadastrar_produto.php",
-                                        dataType: "HTML",
-                                        data: formData,
-                                        contentType: false,
-                                        processData: false,
-                                    }).done(function (data) {
-                                        console.log(data);
-                                        if (data !== 'True') {
-                                            alert("Erro: " + data);
-                                        } else {
-                                            alert("Cadastro realizado com sucesso!");
-                                            limpar();
-                                        }
-                                    });
+                                   
 
 
                                 }
@@ -234,7 +229,7 @@ function limpar() {
     $("#imagem").val('');
     $("#img_prod").attr("src", '');
     $("#imagem_2").val('');
-    $("#img_prod").attr("src", '');
+    $("#img_prod_2").attr("src", '');
     $("#imagem_3").val('');
     $("#img_prod_3").attr("src", '');
     $('#produto').prop('disabled', false);

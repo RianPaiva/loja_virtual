@@ -148,10 +148,12 @@ include("../header_footer/header.php");
             </form>
         </div>
     </form>
-    <!-- Faixa Dourada -->
+    <!-- Faixa Dourada -->  
 
     <hr class="hr-gold mt-4 mb-4">
-
+    <img src="" id="img_prod">
+    <img src="" id="img_prod_2">
+    <img src="" id="img_prod_3">
     <div class="row">
         <hr class="opacity-0" style="border: 0px solid transparent">
     </div>

@@ -39,6 +39,8 @@ if ($result_query = mysqli_query($conn, $query) ){
     $return .= $tbl["genero"] . "##";
     $return .= $tbl["descricao"] . "##";
     $return .= $tbl["local_img"] . "##";
+    $return .= $tbl["local_img_2"] . "##";
+    $return .= $tbl["local_img_3"] . "##";
     
 }else{
     $sucesso = "N";
