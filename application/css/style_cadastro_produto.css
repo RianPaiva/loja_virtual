@@ -34,3 +34,10 @@ hr.hr-gold {
 #produto {
     margin-bottom: 27px !important;   
 }
+
+.img-tamanho {
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 100px;
+    min-height: 100px;
+}
