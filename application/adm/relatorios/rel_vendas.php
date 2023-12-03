@@ -14,6 +14,7 @@ INNER JOIN tb_endereco AS c ON a.id_endereco = c.id_endereco; ";
 $colunas = array(
     'ID_PRODUTO',
     'NOME',
+    'VALOR',
     'QTD',
     'TOTAL',
     'ID_CLIENTE',
@@ -76,13 +77,12 @@ if ($result->num_rows > 0) {
         $tbl_produto = $result_produto->fetch_assoc();
         $conteudo .= '<Cell><Data ss:Type="String">' . $tbl_produto['nome_produto'] . '</Data></Cell>';
 
-
+        $conteudo .= '<Cell><Data ss:Type="Number">' . $tbl['valor_venda'] . '</Data></Cell>';
         $conteudo .= '<Cell><Data ss:Type="Number">' . $tbl['qtd'] . '</Data></Cell>';
+
 
         $valor_total = $tbl['valor_venda'] * $tbl['qtd'];
         $conteudo .= '<Cell><Data ss:Type="Number">' . $valor_total . '</Data></Cell>';
-
-
 
         $conteudo .= '<Cell><Data ss:Type="Number">' . $tbl['id_cliente'] . '</Data></Cell>';
 
