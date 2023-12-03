@@ -25,9 +25,6 @@ include("../header_footer/header.php");
 
 </head>
 
-
-
-    ?>
     <div class="container-fluid mt-5">
     
         <div class="row">
@@ -43,7 +40,7 @@ include("../header_footer/header.php");
         <div class="row justify-content-center">
     
             <div class="row justify-content-center">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="text-center mb-4 mt-4">
                         <a href="cadastro_fornecedor.php">
                             <input type="button" class="cadastro" id="btn_cad_fornecedor" value="Fornecedores">
@@ -51,7 +48,7 @@ include("../header_footer/header.php");
                     </div>
                 </div>
     
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="text-center mb-4 mt-4">
                         <a href="cadastro_produto.php">
                             <input type="button" class="cadastro" id="btn_cad_produto" value="Produto">
@@ -59,7 +56,7 @@ include("../header_footer/header.php");
                     </div>
                 </div>
     
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="text-center mb-4 mt-4">
                         <a href="produto_estoque.php">
                             <input type="button" class="cadastro" id="btn_cad_estoque" value="Estoque">
@@ -67,10 +64,18 @@ include("../header_footer/header.php");
                     </div>
                 </div>
     
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="text-center mb-4 mt-4">
                         <a href="cadastro_usuario.php">
                             <input type="button" class="cadastro" id="btn_cad_usuario" value="Usuário">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="text-center mb-4 mt-4">
+                        <a href="">
+                            <input type="button" class="cadastro" id="btn_rel_vendas" value="Vendas">
                         </a>
                     </div>
                 </div>

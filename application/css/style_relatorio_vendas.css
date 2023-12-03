@@ -1,0 +1,21 @@
+.text-container {
+    font-size: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.meucarrinho {
+    padding-top: 40px;
+}
+
+table thead tr th {
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    color: black;
+    background-color: #CFB53B;
+}
