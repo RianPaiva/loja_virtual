@@ -46,7 +46,7 @@ if (isset($_GET["id_prod"])) {
             <div class="col-md-8">
 
                 <div class="card card-produto">
-                    <div class="row">
+                    <div class="row text-center">
                         <div class="col-sm-12 text-center">
                             <div class="images p-5">
                                 <div class="row justify-content-center">

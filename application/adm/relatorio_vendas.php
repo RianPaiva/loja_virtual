@@ -31,9 +31,27 @@ include("../header_footer/header.php");
                     </tr>
                 </thead>
             </table>
-            
-            <tbody>
 
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <div class="col">
+                                <p class="h3">Urugay</p>
+                            </div>
+                            <div class="col">
+                                <p class="h3"></p>
+                            </div>
+                            <div class="col">
+                                <p class="h3"></p>
+                            </div>
+                            <div class="col">
+                                <p class="h3"></p>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </td>
+                </tr>
             </tbody>
 
         </div>
