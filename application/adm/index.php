@@ -30,7 +30,7 @@ include("../header_footer/header.php");
         <div class="row">
             <div class="col">
                 <p>
-                <div class="text-container mb-4 mt-5 ms-5" style="font-weight:500">
+                <div class="text-container mb-4 mt-5" style="font-weight:500">
                     ÁREA DO ADMINISTRADOR
                 </div>
                 </p>
