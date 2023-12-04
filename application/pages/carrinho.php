@@ -115,7 +115,7 @@ include("../header_footer/header.php");
                             </div>
 
                             <div class="row">
-                                <div class="calcular-button d-flex text-center">
+                                <div class="calcular-button text-center">
                                     <input type="hidden"  id="qtd_itens" value="<?php echo ($num_itens); ?>">
                                     <input type="submit" class="btn calcular" id="btn_frete" value="Calcular">
                                 </div>
@@ -128,14 +128,14 @@ include("../header_footer/header.php");
                             <span><?php echo "R$ " . number_format($total,2,',','.'); ?></span>
                         </footer>
                     </div>
-                    <button class="rounded">Finalizar Compra</button>
+                    <button class="rounded mb-3">Finalizar Compra</button>
                 </aside>
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <hr class="opacity-0 hr-custom">
-        </div>
+        </div> -->
 
     </main>
 

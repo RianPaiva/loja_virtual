@@ -194,12 +194,12 @@ aside>button {
   height: 511px !important;
 }
 
-.hr-custom {
+/* .hr-custom {
   border: 1px solid transparent;
-}
+} */
 
 .calcular {
-  width: 27% !important;
+  width: 50% !important;
   border: none !important;
   border-radius: 5px !important;
   cursor: pointer !important;
