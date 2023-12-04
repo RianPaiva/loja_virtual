@@ -13,7 +13,7 @@ include("../header_footer/header.php");
         <div class="col">
             <p>
             <div class="text-container mb-4 mt-5 ms-5" style="font-weight:500">
-                VENDAS
+                REGISTROS DE VENDAS
             </div>
             </p>
         </div>
@@ -46,14 +46,10 @@ include("../header_footer/header.php");
 
                 $result = mysqli_query($conn, $query);
 
-                // if ($result->num_rows > 0) {
-                //     $tbl = $result->fetch_assoc();
-                // }
-
                 while ($tbl = $result->fetch_assoc()) {
 
                     // VALOR DO FRENTE
-                    $frete = 'R$ '.''.$tbl['frete'].'';
+                    $frete = 'R$ ' . '' . $tbl['frete'] . '';
 
                     // CONVERTENDO ID DO ESTADO PARA NOME
                     $query_estado = "SELECT nome FROM tb_estado_br WHERE id_estado = " . $tbl['estado'] . " LIMIT 1;";
@@ -62,7 +58,7 @@ include("../header_footer/header.php");
                     $estado = $tbl_estado["nome"];
 
                     // CONCATENAÇÃO DOS CAMPOS DE ENDERÇO
-                    $endereco = $tbl["rua"] . ', ' . $tbl["bairro"] . ', ' . $tbl["numero"] . ', ' . $tbl["cidade"] . ', ' . $estado. ', ' . $tbl["cep"];
+                    $endereco = $tbl["rua"] . ', ' . $tbl["bairro"] . ', ' . $tbl["numero"] . ', ' . $tbl["cidade"] . ', ' . $estado . ', ' . $tbl["cep"];
 
                     // CONVERSÃO DE ID PRA NOME COMPLETO DO CLIENTE
                     $query_cliente = "SELECT nome, sobrenome FROM tb_cliente WHERE id_cliente = " . $tbl['id_cliente'] . " LIMIT 1;";
@@ -105,109 +101,15 @@ include("../header_footer/header.php");
                         </td>
 
                         <td>
-                            Despachado pela transportadora
+                            Aprovado
                         </td>
                     </tr>
     
                 ';
                 }
-
-                // 
                 ?>
 
-                <!-- // <tbody>
-
-                // <tr class="ms-2 mt-2 ms-2">
-                    // <td>
-
-                        // '. $tbl['id_pedido'] .';
-
-                        // </td>
-
-                    // <td>
-                        // <?php
-                            //             echo $tbl['data_pedido'];
-                            //             
-                            ?>
-                        // </td>
-
-                    // <td>
-
-                        // <?php
-                            //             $query_cliente = "SELECT nome, sobrenome FROM tb_cliente WHERE id_cliente = " . $tbl['id_cliente'] . " LIMIT 1;";
-                            //             $result_cliente = mysqli_query($conn, $query_cliente);
-                            //             $tbl_cliente = $result_cliente->fetch_assoc();
-                            //             echo $tbl_cliente['nome'] . ' ' . $tbl_cliente['sobrenome'];
-                            //             
-                            ?>
-
-                        // </td>
-
-                    // <td>
-                        // <?php
-                            //             $query_estado = "SELECT nome FROM tb_estado_br WHERE id_estado = " . $tbl['estado'] . " LIMIT 1;";
-                            //             $result_estado = mysqli_query($conn, $query_estado);
-                            //             $tbl_estado = $result_estado->fetch_assoc();
-
-                            //             echo $tbl['rua'] . ', ' . $tbl['bairro'] . ', ' . $tbl['numero'] . ', ' . $tbl['cidade'] . ', ' . $tbl_estado['nome'];
-                            //             
-                            ?>
-                        // </td>
-
-                    // <td>
-                        // <?php
-                            //             echo $valor_total = 'R$ '. $tbl['valor_venda'] * $tbl['qtd'];
-                            //             
-                            ?>
-                        // </td>
-
-                    // <td>
-                        // R$ 15,00
-                        // </td>
-
-                    // <td>
-                        // <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
-                        // </td>
-                    // </tr> -->
-
-                <!-- <tr class="ms-2 mt-2 ms-2">
-                        <td>
-                            #2
-                        </td>
-
-                        <td>
-                            20/12/2023
-                        </td>
-
-                        <td>
-                            Gabriel Uruga
-                        </td>
-
-                        <td>
-                            Rua do pica fio, Centro, SP N°10 07807-000
-                        </td>
-
-                        <td>
-                            R$ 300,00
-                        </td>
-
-                        <td>
-                            R$ 15,00
-                        </td>
-
-                        <td>
-                            <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
-                        </td>
-<<<<<<< HEAD:application/adm/relatorio_vendas.php
-                    </tr> -->
-
-=======
->>>>>>> bf0c0560bd8cfa3785b6b102c7236ac6d89a6492:application/adm/relatorio_pedidos.php
-
-                        <td>
-                            Aprovado, esperando envio
-                        </td>
-                    </tr>   
+                </tr>
                 </tbody>
             </table>
         </div>
