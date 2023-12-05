@@ -152,7 +152,7 @@ function limpar() {
 }
 
 
-function updateList(id_cliente){
+function updateList(id_cliente) {
     $.ajax({
         method: "POST",
         url: "../php/lista_endereco.php",
@@ -166,3 +166,83 @@ function updateList(id_cliente){
         $("#list_enderecos").append(data);
     });
 }
+
+
+$("#btn_avancar").on("click", function (e) {
+    e.preventDefault();
+
+    var id_endereco = $('input[name="endereco"]:checked').val();
+
+    $.ajax({
+
+        method: "POST",
+        url: "../php/finalizar_compra.php",
+        DataType: "HTML",
+        data: {
+            metodo: "finalizar_compra",
+            id_cliente: 1,
+            id_carrinho: 1,
+            id_endereco: id_endereco,
+            frete: $("#val_frete").text(),
+            valor_total: $("#total").text()
+        }
+    }).done(function (data) {
+        var novaAbaURL = data;
+        console.log(novaAbaURL);
+        alert("Pedido Realizado! Você será redirecionado ao pagamento");
+        window.open(novaAbaURL, '_blank', 'noopener,noreferrer');
+    });
+});
+
+
+
+$('input[name="endereco"]').change(function (e) {
+    e.preventDefault();
+    var qtd_itens = $("#qtd_prod").text();
+    var id_endereco = $('input[name="endereco"]:checked').val();
+    var cep = $("#"+id_endereco).text();
+    
+
+
+    $.ajax({
+        method: "POST",
+        url: "../php/calcular_frete.php",
+        dataType: "HTML",
+        data: {
+            metodo: "calcular_frete",
+            qtd_prod: qtd_itens,
+            cep: cep
+        }
+    }).done(function (data) {
+        vetor = data.split("##");
+        if (vetor[0] != "Sucesso") {
+            alert("Erro: " + data);
+        } else {
+
+            $("#val_frete").text("R$ " + vetor[1]);
+
+            // Use parseFloat e substitua ',' por '.' durante a conversão
+            var frete = parseFloat(vetor[1].replace(',', '.'));
+            
+            // Use parseFloat e replace para remover caracteres não numéricos do sub_total
+            var totalAtual = parseFloat($("#sub_total").text().replace(/[^\d.]/g, ''));
+            
+            // Verifique se os valores são válidos antes de realizar os cálculos
+            if (!isNaN(frete) && !isNaN(totalAtual)) {
+                // Somar os valores
+                var total = frete + totalAtual;
+            
+                // Use toLocaleString para formatar com precisão
+                var formattedTotal = total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            
+                //$("#total").text("R$ " + formattedTotal);
+            }
+        }
+    });
+
+
+
+
+});
+
+

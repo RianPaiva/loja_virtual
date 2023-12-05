@@ -66,7 +66,7 @@ if (isset($_POST["cep"])){
 
             // Imprimir os valore
             echo "Sucesso" . "##";
-            echo "R$ " . number_format($price, 2, ',', '.') . "##";
+            echo number_format($price, 2, ',', '.') . "##";
 
            
         } else {

@@ -32,7 +32,6 @@ include("../header_footer/header.php");
                         <th>Endereço</th>
                         <th>Total</th>
                         <th>Frete</th>
-                        <th> Visualizar Pedido </th>
                         <th> Status </th>
                     </tr>
                 </thead>
@@ -40,9 +39,13 @@ include("../header_footer/header.php");
 
                 <?php
 
-                $query = "SELECT a.*, b.id_produto, b.valor_venda, b.qtd, b.tamanho, c.rua, c.bairro, c.cidade, c.estado, c.numero, c.cep FROM tb_pedido AS a
+               /* $query = "SELECT a.*, b.id_produto, b.valor_venda, b.qtd, b.tamanho, c.rua, c.bairro, c.cidade, c.estado, c.numero, c.cep FROM tb_pedido AS a
                     INNER JOIN tb_item_pedido AS b ON a.id_pedido = b.id_pedido
-                    INNER JOIN tb_endereco AS c ON a.id_endereco = c.id_endereco; ";
+                    INNER JOIN tb_endereco AS c ON a.id_endereco = c.id_endereco; ";*/
+                    $query = "SELECT a.*, b.id_produto, b.valor_venda, b.qtd, b.tamanho, c.rua, c.bairro, c.cidade, c.estado, c.numero, c.cep 
+FROM tb_pedido AS a
+LEFT JOIN tb_item_pedido AS b ON a.id_pedido = b.id_pedido
+LEFT JOIN tb_endereco AS c ON a.id_endereco = c.id_endereco";
 
                 $result = mysqli_query($conn, $query);
 
@@ -72,7 +75,7 @@ include("../header_footer/header.php");
                     echo '
                     <tr class="ms-2 mt-2 ms-2">
                         <td>
-                        ' . $tbl["id_produto"] . '
+                        ' . $tbl["id_pedido"] . '
                         </td>
 
                         <td>
@@ -93,15 +96,10 @@ include("../header_footer/header.php");
 
                         <td>
                         ' . $frete . '
-                        </td>  
-    
-    
-                        <td>
-                        <button type="button" class="btn btn-success mt-1"> ABRIR PEDIDO </button>
                         </td>
 
                         <td>
-                            Aprovado
+                            Pendente
                         </td>
                     </tr>
     

@@ -107,7 +107,7 @@ include("../header_footer/header.php");
                         <header class="text-center">Resumo da compra</header>
                         <div class="info">
                             <div><span>Total itens</span><span><?php echo ($num_itens); ?></span></div>
-                            <div><span>Sub-total</span><span><?php echo "R$ " . number_format($total,2,',','.'); ?></span></div>
+                            <div><span>Sub-total</span><span id="subtotal"><?php echo number_format($total,2,',','.'); ?></span></div>
                             <div><span>Frete</span><label id="valor_frete">-</label></div>
 
                             <div class="col-md-12">
@@ -125,10 +125,10 @@ include("../header_footer/header.php");
 
                         <footer class="rounded bg-color">
                             <span>Total</span>
-                            <span><?php echo "R$ " . number_format($total,2,',','.'); ?></span>
+                            <span>R$ <span id="preco_total"><?php echo number_format($total,2,',','.'); ?></span></span>
                         </footer>
                     </div>
-                    <button class="rounded mb-3">Finalizar Compra</button>
+                    <button class="rounded mb-3" id="btn_finalizar">Comprar</button>
                 </aside>
             </div>
         </div>

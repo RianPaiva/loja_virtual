@@ -96,6 +96,19 @@ $("#btn_frete").on('click', function (e) {
 
                     $("#valor_frete").text(vetor[1]);
 
+                    // Use parseFloat e substitua ',' por '.' durante a conversão
+                    var frete = parseFloat(vetor[1].replace(',', '.'));
+                    var subtotal = parseFloat($("#preco_total").text().replace(',', '.'));
+                    
+                    // Somar os valores
+                    var total = frete + subtotal;
+                    
+                    console.log("Valor total antes do formato: frete:" + vetor[1] + " " + $("#preco_total").text());
+                    
+                    // Use toLocaleString para formatar com precisão
+                    var formattedTotal = total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    
+                    $("#preco_total").text(formattedTotal);           
                 }
             });
         }
@@ -106,3 +119,9 @@ $("#btn_frete").on('click', function (e) {
 
 });
 
+
+$("#btn_finalizar").on('click', function (e) {
+    var qtd_itens = $("#qtd_itens").val();
+    window.location.href = "../pages/endereco.php?id_carrinho=1&subtotal="+$("#preco_total").text()+"&qtd_prod="+qtd_itens;
+    
+});

@@ -47,7 +47,7 @@ include("../header_footer/header.php");
                                                 </div>    
                                                 <div class="row text-start">
                                                     <div class="col-md-3">
-                                                        <H6>CEP: '.$tbl_endereco["cep"].'</h6>
+                                                        <H6 id="'.$tbl_endereco["id_endereco"].'">CEP: '.$tbl_endereco["cep"].'</h6>
                                                     </div>
                                                     <div class="col-md-3 edit">
                                                         <i class="fa fa-edit" style="font-size:24px" onclick="editarEndereco('.$tbl_endereco["id_endereco"].')"></i> Editar
@@ -166,19 +166,20 @@ include("../header_footer/header.php");
                 <header class="text-center">Resumo da compra</header>
 
                 <div class="info">
-                    <div><span>Sub-total</span><span>R$418,00</span></div>
-                    <div><span>Frete</span><span>R$0,00</span></div>
+                    <div><span>Qtd Produtos</span><span id="qtd_prod"><?php echo($_GET["qtd_prod"]);?></span></div>
+                    <div><span>Sub-total</span><span id="sub_total">R$ <?php echo($_GET["subtotal"]);?></span></div>
+                    <div><span>Frete</span><span id="val_frete">R$0,00</span></div>
                 </div>
 
                 <footer class="rounded bg-transparent" style="border: 1px solid black">
                     <span>Total</span>
-                    <span>R$ 418</span>
+                    <span id="total">R$ <?php echo($_GET["subtotal"]);?></span>
                 </footer>
             </div>
 
             <div class="row">
                 <div class="comprar-button d-flex justify-content-center mb-4 mt-1">
-                    <input type="submit" class="btn btn-warning avancar" id="btn_avancar" value="Avançar">
+                    <input type="submit" class="btn btn-warning avancar" id="btn_avancar" value="Finalizar Compra">
                 </div>
             </div>
         </aside>

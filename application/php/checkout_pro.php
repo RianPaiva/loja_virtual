@@ -4,14 +4,14 @@ stream_context_set_default(['ssl' => ['verify_peer' => false, 'verify_peer_name'
 
 require_once '../../../vendor/autoload.php';
 
-$access_token = "";
+$access_token = "TEST-4884739433039271-120107-fa8029f639c5da6c8254ab841d0b9995-219926496";
 MercadoPago\SDK::setAccessToken($access_token);
 $preference = new MercadoPago\Preference();
 
 $item = new MercadoPago\Item();
-$item->title = 'Camiseta Santástico';
+$item->title = 'Compra Lavechia Store';
 $item->quantity = 1;
-$item->unit_price = (double)75.00;
+$item->unit_price = (double)$valor_compra;
 $preference->items  = array($item);
 
 
