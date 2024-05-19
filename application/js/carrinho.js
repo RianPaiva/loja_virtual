@@ -98,7 +98,7 @@ $("#btn_frete").on('click', function (e) {
 
                     // Use parseFloat e substitua ',' por '.' durante a conversão
                     var frete = parseFloat(vetor[1].replace(',', '.'));
-                    var subtotal = parseFloat($("#preco_total").text().replace(',', '.'));
+                    var subtotal = parseFloat($("#sub_total").text().replace(',', '.'));
                     
                     // Somar os valores
                     var total = frete + subtotal;

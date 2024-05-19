@@ -225,7 +225,7 @@ $('input[name="endereco"]').change(function (e) {
             var frete = parseFloat(vetor[1].replace(',', '.'));
             
             // Use parseFloat e replace para remover caracteres não numéricos do sub_total
-            var totalAtual = parseFloat($("#sub_total").text().replace(/[^\d.]/g, ''));
+            var totalAtual = parseFloat($("#subtotal").text().replace(/[^\d.]/g, ''));
             
             // Verifique se os valores são válidos antes de realizar os cálculos
             if (!isNaN(frete) && !isNaN(totalAtual)) {
