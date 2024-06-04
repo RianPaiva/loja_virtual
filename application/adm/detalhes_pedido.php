@@ -31,21 +31,36 @@ include("../header_footer/header.php");
             <div class="row justify-content-center">
 
                 <div class="col-md-3 ">
-                    <label for="Produto" class="form-label"> Produto </label>
-                    <input type="text" name="produto" id="produto" oninput="handleInput(event)" class="form-control" required>
-                    <input type="hidden" id="id_produto" value="">
-                    <div id="listaProduto"></div>
+                    <label for="dt_adicao" class="form-label"> Data do Pedido </label>
+                    <input type="datetime-local" name="data_pedido" id="dt_pedido" class="form-control" required>
                 </div>
 
                 <div class="col-md-3">
-                    <label for="preco" class="form-label"> Preço </label>
+                    <label for="preco" class="form-label"> Status Pedido </label>
+                    <select name="disponivel" id="status_pedido" class="form-select" required>
+                        <option selected></option>
+                        <option value="0">Aguardando Pagamento</option>
+                        <option value="1">Em Separação</option>
+                        <option value="2">Despachado</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-md-3 ">
+                    <label for="Cliente" class="form-label"> Cliente </label>
+                    <input type="text" name="Cliente" id="cliente" oninput="handleInput(event)" class="form-control">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="preco" class="form-label"> Valor Total </label>
                     <input type="number" name="preco" id="preco" class="form-control" step="0.01" required>
                 </div>
 
             </div>
 
             <div class="row justify-content-center">
-
                 <div class="col-md-3">
                     <label for="dt_adicao" class="form-label"> Data de Adição </label>
                     <input type="datetime-local" name="data adição" id="dt_adicao" class="form-control" required>
@@ -61,17 +76,6 @@ include("../header_footer/header.php");
                 </div>
 
             </div>
-
-            <div class="row justify-content-center">
-
-                <div class="col-md-6">
-                    <label for="tamanhos_quantidades" class="form-label"> Tamanhos e Quantidades (JSON) </label>
-                    <input type="text" name="tamanhos_quantidades" id="tamanhos_quantidades" class="form-control" required>
-                    <small class="form-text text-muted">Exemplo: {"35": 10, "36": 20, "37": 15}</small>
-                </div>
-
-            </div>
-
         </form>
     </div>
     <!-- Faixa Dourada -->
