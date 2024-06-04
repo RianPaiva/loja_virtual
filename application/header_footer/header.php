@@ -1,16 +1,32 @@
 <?php
+// Obter a URL atual
+$current_url = $_SERVER['REQUEST_URI'];
+
+// Verificar se a URL contém a palavra "adm"
+if (strpos($current_url, '/adm/') !== false) {
+    $index = 'index_adm.php';
+} else {
+    $index = 'index.php';
+}
 
 $login_feito = "N";
+$login_usuario = "N";
 
 if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['id_cliente'])) {
+
+if(isset($_SESSION["id_usuario"])){
+    $login_usuario = "S";
+}
+else if (isset($_SESSION['id_cliente'])) {
     $login_feito = "S";
 }
 
 include("../conexoes/conexao_bd.php");
+include("../php/protect.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +70,7 @@ include("../conexoes/conexao_bd.php");
                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../imagens/menu.png" class="menu img-fluid">
                     </button>
 
-                    <a class="navbar-brand justify-content-start ms-2" href="index.php"><img class="img-logo img-fluid" src="..\imagens\logo-new.png" alt="Lavechia Store" height=""></a>
+                    <a class="navbar-brand justify-content-start ms-2" href="<?php echo($index)?>"><img class="img-logo img-fluid" src="..\imagens\logo-new.png" alt="Lavechia Store" height=""></a>
 
                     <div class="navbar-collapse">
                     </div>
@@ -72,9 +88,27 @@ include("../conexoes/conexao_bd.php");
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <img class="usuario img-fluid" src="../imagens/usuario.png" alt="menu"> </a>
                         <ul class="dropdown-menu dropdown-menu-lg-start">
                             <?php
-                            if ($login_feito == "S") {
+                            if ($login_feito == "S" || $login_usuario == "S") {
                             ?>
+                                <?php
+                                    if($login_feito == "S"){
+                                ?>
                                 <li><a class="dropdown-item" href="perfil_cliente.php"> Perfil </a></li>
+                                
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <?php
+                                    }else if($login_usuario == "S"){   
+                                ?>
+                                        <li><a class="dropdown-item" href="../pages/perfil_cliente.php"> Perfil </a></li>
+                                        <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                        <li><a class="dropdown-item" href="../adm/index_adm.php"> Área Administrativa </a></li>
+                                <?php
+                                    }
+                                ?>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -109,7 +143,15 @@ include("../conexoes/conexao_bd.php");
                             <li><a href="../pages/produtos.php?categoria=BONÉS">Bonés</a></li>
                             <li><a href="../pages/produtos.php?categoria=CAMISAS">Camisas</a></li>
                             <li><a href="../pages/produtos.php?categoria=TÊNIS">Tênis</a></li>
-                        </ul>
+                     
+                    <?php
+                        if(isset($login_usuario) && $login_usuario == "S"){ 
+                    ?>
+                        <li><a href="../adm/index.php">Área ADM</a></li>
+                    <?php
+                        }
+                    ?>
+                       </ul>
                     </div>
                 </div>
             </div>

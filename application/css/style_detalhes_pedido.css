@@ -1,0 +1,36 @@
+hr.hr-gold {
+    border: 6px solid #CFB53B !important;
+    opacity: 100% !important;
+}
+
+
+.text-container {
+    font-size: 50px;
+}
+
+.btn-primary, .btn-danger, .btn-success, .btn-info {
+    width: 100% !important;
+    margin-top: 2.0rem !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: all .2s ease !important;
+    font-size: 18px !important;
+    color: white !important;
+}
+
+.bg-custom {
+    background-color: #D9D9D9;
+}
+
+.container-fluid {
+    height: 100% !important;
+}
+
+.form-control {
+    margin-bottom: 0px !important;
+}
+
+#pesq_prod_est, #pesq_cod_produto {
+    margin-bottom: 27px !important;   
+}

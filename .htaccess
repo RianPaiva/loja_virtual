@@ -1,0 +1,8 @@
+# Impede a listagem de diretórios
+Options -Indexes
+
+# Página de erro personalizada para 404
+ErrorDocument 404 /loja_virtual/404.php
+
+# Página de erro personalizada para 403
+ErrorDocument 403 /loja_virtual/403.php

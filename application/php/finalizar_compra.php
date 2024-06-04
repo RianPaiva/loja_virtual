@@ -1,12 +1,19 @@
 <?php
+stream_context_set_default(['ssl' => ['verify_peer' => false, 'verify_peer_name' => false]]);
 include("../conexoes/conexao_bd.php");
 //RECEBENDO DADOS DO CARRINHO E CLI
-$id_cliente = $_POST["id_cliente"];
-$id_carrinho = $_POST["id_carrinho"];
-$id_endereco = $_POST["id_endereco"];
-$valor_frete = (float) str_replace(',', '.', preg_replace('/[^\d,]/', '', $_POST["frete"]));
-$valor_total = (float) str_replace(',', '.', preg_replace('/[^\d,]/', '', $_POST["valor_total"]));
-
+//$id_cliente = $_POST["id_cliente"];
+$id_cliente = 1;
+//$id_carrinho = $_POST["id_carrinho"];
+$id_carrinho = 1;
+//$id_endereco = $_POST["id_endereco"];
+$id_endereco = 1;
+$frete = 5.99;
+$total = 100;
+//$valor_frete = (float) str_replace(',', '.', preg_replace('/[^\d,]/', '', $_POST["frete"]));
+$valor_frete = (float) str_replace(',', '.', preg_replace('/[^\d,]/', '', $frete));
+//$valor_total = (float) str_replace(',', '.', preg_replace('/[^\d,]/', '', $_POST["valor_total"]));
+$valor_total = (float) str_replace(',', '.', preg_replace('/[^\d,]/', '', $total));
 
 //SELECT NO CARRINHO
 $query = "SELECT a.*, b.valor_venda FROM tb_item_carrinho AS a INNER JOIN 
@@ -51,10 +58,17 @@ if ($res_carrinho->num_rows > 0) {
                 // Desativa temporariamente a verificação do certificado SSL
                 stream_context_set_default(['ssl' => ['verify_peer' => false, 'verify_peer_name' => false]]);
 
-                require_once '../../../vendor/autoload.php';
+                require_once '../../vendor/autoload.php';
 
                 $access_token = "TEST-4884739433039271-120107-fa8029f639c5da6c8254ab841d0b9995-219926496";
                 MercadoPago\SDK::setAccessToken($access_token);
+                /*Desabilitar verificação SSL
+                MercadoPago\SDK::setCurlOptions([
+                    CURLOPT_SSL_VERIFYPEER => false,
+                    CURLOPT_SSL_VERIFYHOST => false,
+                ]);
+                */
+                
                 $preference = new MercadoPago\Preference();
 
                 $item = new MercadoPago\Item();

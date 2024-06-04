@@ -1,6 +1,10 @@
 <?php
 include("../conexoes/conexao_bd.php");
-
+session_start();
+if(isset($_SESSION["id_usuario"]) || isset($_SESSION["id_cliente"])){
+    header("Location: index.php");
+    exit();
+}
 
 if (isset($_POST["email"]) || isset($_POST["password"])) {
 

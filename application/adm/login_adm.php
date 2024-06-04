@@ -6,6 +6,12 @@ session_start();
 // include("../php/protect.php");
 include("../conexoes/conexao_bd.php");
 
+
+if(isset($_SESSION["id_usuario"])){
+    header("Location: index_adm.php");
+    exit();
+}
+
 if (isset($_POST["email"]) || isset($_POST["password"])) {
 
     if (strlen($_POST["email"]) == 0) {
@@ -37,7 +43,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
                 $_SESSION['id_usuario'] = $id_usuario;
                 $_SESSION['nome'] = $nome_usuario;
 
-                header("Location: index.php");
+                header("Location: index_adm.php");
             } else {
                 echo "<script> alert('Senha incorreta!') </script>";
             }

@@ -40,17 +40,16 @@
         </div>
 
         <div>
-            <h1 class="text-container mb-2 mt-4"> Você foi desconectado </h1>
+            <h1 class="text-container mb-2 mt-4"> 404 Página não encontrada </h1>
         </div>
 
         <div>
-            <h4 class="text-desconectado mb-2 mt-4"> Sua sessão expirou. Clique em "Fazer Login" para ser
-                direcionado para a pagina de login</h4>
+            <h4 class="text-desconectado mb-2 mt-4">Não encontramos esta página. Clique em "Ir Para a Loja" que te encaminharemos para o menu inicial.</h4>
         </div>
 
         <form action="" method="">
             <div class="continue-button text-center" href="login.php">
-                <input type="button" class="btn btn-warning continue" id="btn_login" value="Fazer Login" onclick="go_login()">
+                <input type="button" class="btn btn-warning continue" id="btn_loja" value="Ir Para A Loja" onclick="go_store()">
             </div>
 
         </form>
@@ -63,7 +62,7 @@
 
 
 <script>
-    function go_login(){
-        window.location.href = "login.php";
+    function go_store(){
+        window.location.href = "../../application/pages/login.php";
     }
 </script>

@@ -1,57 +1,22 @@
 <?php
-
 include("../header_footer/header.php");
-
 ?>
 
-<link rel="stylesheet" href="../css/style_produto_estoque.css">
+
+
+<link rel="stylesheet" href="../css/style_detalhes_pedido.css">
 
 <div class="container-fluid mt-5">
+
 
     <div class="row">
         <div class="col">
             <p>
             <div class="text-container mb-4 mt-5 ms-5" style="font-weight:500">
-                CADASTRO NO ESTOQUE
+                DETALHES DO PEDIDO: #022
             </div>
             </p>
         </div>
-    </div>
-
-    <div class="row justify-content-start ">
-
-        <div class="col-md-2 mt-4">
-            <label for="pesq_prod_est" class="form-label"> Nome Do Produto </label>
-            <input type="text" class="form-control form-border" oninput="handleInput(event)" id="pesq_prod_est">
-            <div id="lista_prod_est" class="list-group dropdown"></div>
-        </div>
-
-        <div class="col-md-2 mt-4">
-            <label for="cod_produto" class="form-label"> Código do Produto </label>
-            <input type="text" class="form-control form-border" id="pesq_cod_produto">
-        </div>
-
-        <div class="col-md-6 hstack gap-3 ms-3 mb-1">
-
-            <input type="hidden" id="id_fornecedor">
-            <div class="col-md-2">
-                <input type="submit" class="btn btn-primary" id="btn_pesquisar" value="Pesquisar">
-            </div>
-            <div class="col-md-2">
-                <input type="submit" class="btn btn-danger" id="btn_limpar" value="Limpar">
-            </div>
-            <div class="col-md-2">
-                <input type="submit" class="btn btn-success" id="btn_cadastrar" value="Cadastrar">
-            </div>
-            <div class="col-md-2">
-                <a href="./relatorios/rel_estoque.php">
-                <input type="submit" class="btn btn-info" id="btn_relatorio" value="Relatório">
-                </a>
-            </div>
-
-
-        </div>
-
     </div>
 
     <!-- Faixa Dourada -->
@@ -118,11 +83,20 @@ include("../header_footer/header.php");
     </div>
 
 </div>
-<script src="../js/produto_estoque.js"></script>
-<script src="../js/masks.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
-
 include("../header_footer/footer.php");
-
 ?>
