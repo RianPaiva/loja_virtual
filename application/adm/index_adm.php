@@ -60,7 +60,7 @@ include("../header_footer/header.php");
 
                 <div class="col-md-2">
                     <div class="text-center mb-4 mt-4">
-                        <a href="relatorio_vendas.php">
+                        <a href="relatorio_pedidos.php">
                             <input type="button" class="cadastro" id="btn_rel_vendas" value="Vendas">
                         </a>
                     </div>
