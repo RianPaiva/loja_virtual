@@ -66,37 +66,20 @@ include("../header_footer/header.php");
                     </div>
                 </div>
     
-            </div>
-    
-            <div class="row mt-5">
-    
-                <div class="col-md-6">
-                    <div id="div_vendas"></div>
-                </div>
-    
-                <div class="col-md-6">
-                    <div id="div_vendas_mes"></div>
-                </div>
-    
-            </div>
-    
-            <div class="row mt-5">
-    
-                <div class="col-md-6">
-                    <div id="div_taxa_conversao"></div>
-                </div>
-    
-                <div class="col-md-6">
-                    <div id="div_vendas_ano"></div>
-                </div>
-    
-            </div>
-    
         </div>
     
     </div>
+    <div class="dashboard" align = "center">
 
-
+    <iframe width=100% 
+    height="1200" 
+    src="https://lookerstudio.google.com/embed/reporting/0a410153-5c3b-4f3b-a545-b0843d1c2b58/page/gAH1D" 
+    frameborder="0" 
+    style="border:0" 
+    allowfullscreen 
+    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    </div>
+    
 <script src="../js/autocomplete_usuario.js"></script>
 
 
