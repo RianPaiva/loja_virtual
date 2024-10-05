@@ -33,7 +33,7 @@ $(document).ready(function () {
                 if (data !== "Sucesso") {
                     alert("Erro: " + data);
                 } else {
-                    alert("Produto dicionado ao carrinho!");
+                    alert("Produto adicionado ao carrinho!");
                 }
             });
 

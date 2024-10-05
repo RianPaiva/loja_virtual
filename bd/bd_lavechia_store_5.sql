@@ -770,7 +770,7 @@ ALTER TABLE `tb_item_pedido`
 ALTER TABLE `tb_pedido`
   ADD CONSTRAINT `FK_tb_pedido_tb_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tb_endereco` (`id_endereco`),
   ADD CONSTRAINT `tb_pedido_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente` (`id_cliente`);
-
+tb_usuario
 --
 -- Limitadores para a tabela `tb_produto`
 --
